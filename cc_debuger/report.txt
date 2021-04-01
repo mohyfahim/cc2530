@@ -1,0 +1,29 @@
+INFO: Found a CC2530 chip on /dev/ttyUSB0
+
+Chip information:
+      Chip ID : 0xa524
+   Flash size : 256 Kb
+    Page size : 2 Kb
+    SRAM size : 8 Kb
+          USB : No
+
+Device information:
+ IEEE Address : 00124b00043e
+           PC : 0000
+
+Debug status:
+ [ ] CHIP_ERASE_BUSY
+ [ ] PCON_IDLE
+ [X] CPU_HALTED
+ [ ] PM_ACTIVE
+ [ ] HALT_STATUS
+ [ ] DEBUG_LOCKED
+ [X] OSCILLATOR_STABLE
+ [ ] STACK_OVERFLOW
+
+Debug config:
+ [ ] SOFT_POWER_MODE
+ [ ] TIMERS_OFF
+ [X] DMA_PAUSE
+ [X] TIMER_SUSPEND
+
