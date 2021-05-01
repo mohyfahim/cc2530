@@ -1,0 +1,1387 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.40.1.7397 for 8051               01/May/2021  16:40:01
+# Copyright 2004-2021 IAR Systems AB.
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        E:\Texas Instruments\Z-Stack 3.0.2\Components\mt\MT_APP.c
+#    Command line       =  
+#        -f C:\Users\asus\AppData\Local\Temp\EW941.tmp ("E:\Texas
+#        Instruments\Z-Stack 3.0.2\Components\mt\MT_APP.c" -D
+#        BDB_FINDING_BINDING_CAPABILITY_ENABLED=0 -D TC_LINKKEY_JOIN -D
+#        HAL_UART_DMA_RX_MAX=128 -D MAXMEMHEAP=2765 -D NWK_MAX_DEVICE_LIST=10
+#        -D ZDSECMGR_TC_DEVICE_MAX=30 -D DISABLE_GREENPOWER_BASIC_PROXY -D
+#        FEATURE_SYSTEM_STATS -D MT_GP_CB_FUNC -D ASSERT_RESET -D FAKE_CRC_SHDW
+#        -lC "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List" -lA
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List"
+#        --diag_suppress Pe001,Pa010 -o "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\Obj" -e --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+#        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR | DEVICE_BUILD_ROUTER
+#        | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL -DZNP_RUN_WDOG=FALSE
+#        -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO -DZIGBEE_FRAGMENTATION
+#        -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE -DSAPI_CB_FUNC=FALSE
+#        -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT -DNUM_DISC_ATTEMPTS=0
+#        -DMT_UTIL_FUNC -DMT_SYS_FUNC -DMT_AF_FUNC -DMT_SAPI_FUNC
+#        -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC -DMT_ZDO_FUNC -DMT_ZDO_MGMT
+#        -DMT_ZDO_EXTENSIONS -DMT_GP_CB_FUNC -DMT_APP_FUNC -DMT_APP_CNF_FUNC
+#        -DZNP_ALT) -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
+#        -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg" -I
+#        "E:\Texas Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\Source\" -I "E:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\..\Source\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I "E:\Texas
+#        Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Utilities\BootLoad\Source\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I "E:\Texas
+#        Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\gp\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\bdb\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes --no_code_motion)
+#    Locale             =  English_USA.1252
+#    List file          =  
+#        E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List\MT_APP.lst
+#    Object file        =  
+#        E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\Obj\MT_APP.r51
+#
+###############################################################################
+
+E:\Texas Instruments\Z-Stack 3.0.2\Components\mt\MT_APP.c
+      1          /***************************************************************************************************
+      2            Filename:       MT_APP.c
+      3            Revised:        $Date: 2015-01-26 08:25:50 -0800 (Mon, 26 Jan 2015) $
+      4            Revision:       $Revision: 42025 $
+      5          
+      6            Description:    MonitorTest processing for APP commands
+      7          
+      8            Copyright 2007-2015 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License"). You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product. Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          
+     38           ***************************************************************************************************/
+     39          
+     40          /***************************************************************************************************
+     41           * INCLUDES
+     42           ***************************************************************************************************/
+     43          #include "ZComDef.h"
+     44          #include "MT.h"        /* This is here because all the SPI_CMD_XXX are defined in this header */
+     45          #include "MT_APP.h"
+     46          #include "MT_AF.h"     /* This is here because this MT_APP makes some routine call to AF */
+     47          #include "MT_RPC.h"
+     48          
+     49          #if defined( APP_TP )
+     50           #include "TestProfile.h"
+     51          #endif
+     52          #if defined( APP_TP2 )
+     53           #include "TestProfile2.h"
+     54           #include "nwk_util.h"
+     55          #endif
+     56          
+     57          /***************************************************************************************************
+     58           * LOCAL FUNCTIONS
+     59           ***************************************************************************************************/
+     60          #if defined (MT_APP_FUNC)
+     61          static void MT_AppMsg(uint8 *pBuf);
+     62          static void MT_AppUserCmd(byte *pData);
+     63          #if defined ( MT_APP_PB_ZCL_FUNC )
+     64          static void MT_AppPB_ZCLMsg(byte *pData);
+     65          static void MT_AppPB_ZCLCfg(byte *pData);
+     66          #endif // MT_APP_PB_ZCL_FUNC
+     67          #endif // MT_APP_FUNC
+     68          
+     69          #if defined (MT_APP_FUNC)
+     70          /***************************************************************************************************
+     71           * @fn      MT_AppCommandProcessing
+     72           *
+     73           * @brief  Process all the APP commands that are issued by test tool
+     74           *
+     75           * @param   pBuf - pointer to the received buffer
+     76           *
+     77           * @return  status
+     78           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     79          uint8 MT_AppCommandProcessing(uint8 *pBuf)
+   \                     MT_AppCommandProcessing:
+     80          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV       A,#-0x1
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+     81            uint8 status = MT_RPC_SUCCESS;
+   \   00000A   7E00         MOV       R6,#0x0
+     82          
+     83            switch (pBuf[MT_RPC_POS_CMD1])
+   \   00000C   8A82         MOV       DPL,R2
+   \   00000E   8B83         MOV       DPH,R3
+   \   000010   A3           INC       DPTR
+   \   000011   A3           INC       DPTR
+   \   000012   E0           MOVX      A,@DPTR
+   \   000013   6005         JZ        ??MT_AppCommandProcessing_0
+   \   000015   14           DEC       A
+   \   000016   6007         JZ        ??MT_AppCommandProcessing_1
+   \   000018   8023         SJMP      ??MT_AppCommandProcessing_2
+     84            {
+     85              case MT_APP_MSG:
+     86                MT_AppMsg(pBuf);
+   \                     ??MT_AppCommandProcessing_0:
+   \   00001A                ; Setup parameters for call to function MT_AppMsg
+   \   00001A   12....       LCALL     `??MT_AppMsg::?relay`; Banked call to: MT_AppMsg
+     87                break;
+   \   00001D   8020         SJMP      ??MT_AppCommandProcessing_3
+     88          
+     89              case MT_APP_USER_TEST:
+     90                MT_AppUserCmd(pBuf);
+   \                     ??MT_AppCommandProcessing_1:
+   \   00001F   8A82         MOV       DPL,R2
+   \   000021   8B83         MOV       DPH,R3
+   \   000023   A3           INC       DPTR
+   \   000024   A3           INC       DPTR
+   \   000025   E0           MOVX      A,@DPTR
+   \   000026   FA           MOV       R2,A
+   \   000027   85..82       MOV       DPL,?XSP + 0
+   \   00002A   85..83       MOV       DPH,?XSP + 1
+   \   00002D   7403         MOV       A,#0x3
+   \   00002F   F0           MOVX      @DPTR,A
+   \   000030                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000030   AC..         MOV       R4,?XSP + 0
+   \   000032   AD..         MOV       R5,?XSP + 1
+   \   000034   7B01         MOV       R3,#0x1
+   \   000036   7969         MOV       R1,#0x69
+   \   000038   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+     91                break;
+   \   00003B   8002         SJMP      ??MT_AppCommandProcessing_3
+     92          
+     93          #if defined ( MT_APP_PB_ZCL_FUNC )
+     94              case MT_APP_PB_ZCL_MSG:
+     95                MT_AppPB_ZCLMsg(pBuf);
+     96                break;
+     97          
+     98              case MT_APP_PB_ZCL_CFG:
+     99                MT_AppPB_ZCLCfg(pBuf);
+    100                break;
+    101          #endif // MT_APP_PB_ZCL_FUNC
+    102          
+    103              default:
+    104                status = MT_RPC_ERR_COMMAND_ID;
+   \                     ??MT_AppCommandProcessing_2:
+   \   00003D   7E02         MOV       R6,#0x2
+    105                break;
+    106            }
+    107          
+    108            return status;
+   \                     ??MT_AppCommandProcessing_3:
+   \   00003F   EE           MOV       A,R6
+   \   000040   F9           MOV       R1,A
+   \   000041   7401         MOV       A,#0x1
+   \   000043   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000046   7F01         MOV       R7,#0x1
+   \   000048   02....       LJMP      ?BANKED_LEAVE_XDATA
+    109          }
+    110          
+    111          /***************************************************************************************************
+    112           * @fn      MT_AppMsg
+    113           *
+    114           * @brief   Process APP_MSG command
+    115           *
+    116           * @param   pBuf - pointer to the received buffer
+    117           *
+    118           * @return  void
+    119           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    120          static void MT_AppMsg(uint8 *pBuf)
+   \                     MT_AppMsg:
+    121          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000   74ED         MOV       A,#-0x13
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 19
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV       A,#-0x1
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   8B..         MOV       ?V1,R3
+    122            uint8 retValue = ZFailure;
+   \   00000C   85..82       MOV       DPL,?XSP + 0
+   \   00000F   85..83       MOV       DPH,?XSP + 1
+   \   000012   7401         MOV       A,#0x1
+   \   000014   F0           MOVX      @DPTR,A
+    123            uint8 endpoint;
+    124            endPointDesc_t *epDesc;
+    125            mtSysAppMsg_t *msg;
+    126            uint8 cmdId, dataLen;
+    127          
+    128            /* parse header */
+    129            dataLen = pBuf[MT_RPC_POS_LEN];
+   \   000015   8A82         MOV       DPL,R2
+   \   000017   8B83         MOV       DPH,R3
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   F5..         MOV       ?V5,A
+    130            cmdId = pBuf[MT_RPC_POS_CMD1];
+   \   00001C   A3           INC       DPTR
+   \   00001D   A3           INC       DPTR
+   \   00001E   E0           MOVX      A,@DPTR
+   \   00001F   F5..         MOV       ?V4,A
+    131            pBuf += MT_RPC_FRAME_HDR_SZ;
+    132          
+    133            /* Get the endpoint and skip past it.*/
+    134            endpoint = *pBuf++;
+   \   000021   8A82         MOV       DPL,R2
+   \   000023   8B83         MOV       DPH,R3
+   \   000025   A3           INC       DPTR
+   \   000026   A3           INC       DPTR
+   \   000027   A3           INC       DPTR
+   \   000028   E0           MOVX      A,@DPTR
+   \   000029   F5..         MOV       ?V6,A
+   \   00002B   EA           MOV       A,R2
+   \   00002C   2404         ADD       A,#0x4
+   \   00002E   F5..         MOV       ?V0,A
+   \   000030   5002         JNC       ??MT_AppMsg_0
+   \   000032   05..         INC       ?V1
+    135            dataLen--;
+   \                     ??MT_AppMsg_0:
+   \   000034   15..         DEC       ?V5
+    136          
+    137            /* Look up the endpoint */
+    138            epDesc = afFindEndPointDesc( endpoint );
+   \   000036                ; Setup parameters for call to function afFindEndPointDesc
+   \   000036   A9..         MOV       R1,?V6
+   \   000038   12....       LCALL     `??afFindEndPointDesc::?relay`; Banked call to: afFindEndPointDesc
+   \   00003B   8A..         MOV       ?V2,R2
+   \   00003D   8B..         MOV       ?V3,R3
+    139          
+    140            if (epDesc)
+   \   00003F   EA           MOV       A,R2
+   \   000040   4B           ORL       A,R3
+   \   000041   607D         JZ        ??MT_AppMsg_1
+    141            {
+    142              /* Build and send the message to the APP */
+    143              msg = (mtSysAppMsg_t *)osal_msg_allocate(sizeof(mtSysAppMsg_t) + (dataLen));
+   \   000043                ; Setup parameters for call to function osal_msg_allocate
+   \   000043   E5..         MOV       A,?V5
+   \   000045   2406         ADD       A,#0x6
+   \   000047   FA           MOV       R2,A
+   \   000048   E4           CLR       A
+   \   000049   3400         ADDC      A,#0x0
+   \   00004B   FB           MOV       R3,A
+   \   00004C   12....       LCALL     `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   00004F   8A..         MOV       ?V8,R2
+   \   000051   8B..         MOV       ?V9,R3
+   \   000053   AE..         MOV       R6,?V8
+   \   000055   AF..         MOV       R7,?V9
+    144              if ( msg )
+   \   000057   EA           MOV       A,R2
+   \   000058   4F           ORL       A,R7
+   \   000059   6065         JZ        ??MT_AppMsg_1
+    145              {
+    146                /* Build and send message up the app */
+    147                msg->hdr.event = MT_SYS_APP_MSG;
+   \   00005B   8A82         MOV       DPL,R2
+   \   00005D   8B83         MOV       DPH,R3
+   \   00005F   7423         MOV       A,#0x23
+   \   000061   F0           MOVX      @DPTR,A
+    148                msg->endpoint = endpoint;
+   \   000062   A3           INC       DPTR
+   \   000063   A3           INC       DPTR
+   \   000064   E5..         MOV       A,?V6
+   \   000066   F0           MOVX      @DPTR,A
+    149                msg->appDataLen = dataLen;
+   \   000067   8A82         MOV       DPL,R2
+   \   000069   8B83         MOV       DPH,R3
+   \   00006B   A3           INC       DPTR
+   \   00006C   A3           INC       DPTR
+   \   00006D   A3           INC       DPTR
+   \   00006E   E5..         MOV       A,?V5
+   \   000070   F0           MOVX      @DPTR,A
+    150                msg->appData = (uint8*)(msg+1);
+   \   000071   EA           MOV       A,R2
+   \   000072   2406         ADD       A,#0x6
+   \   000074   FA           MOV       R2,A
+   \   000075   E4           CLR       A
+   \   000076   3F           ADDC      A,R7
+   \   000077   FB           MOV       R3,A
+   \   000078   8E82         MOV       DPL,R6
+   \   00007A   8F83         MOV       DPH,R7
+   \   00007C   A3           INC       DPTR
+   \   00007D   A3           INC       DPTR
+   \   00007E   A3           INC       DPTR
+   \   00007F   A3           INC       DPTR
+   \   000080   EA           MOV       A,R2
+   \   000081   F0           MOVX      @DPTR,A
+   \   000082   A3           INC       DPTR
+   \   000083   EB           MOV       A,R3
+   \   000084   F0           MOVX      @DPTR,A
+    151                osal_memcpy( msg->appData, pBuf, dataLen);
+   \   000085                ; Setup parameters for call to function osal_memcpy
+   \   000085   85....       MOV       ?V8,?V0
+   \   000088   85....       MOV       ?V9,?V1
+   \   00008B   75..00       MOV       ?V10,#0x0
+   \   00008E   78..         MOV       R0,#?V8
+   \   000090   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   000093   AC..         MOV       R4,?V5
+   \   000095   7D00         MOV       R5,#0x0
+   \   000097   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00009A   7403         MOV       A,#0x3
+   \   00009C   12....       LCALL     ?DEALLOC_XSTACK8
+    152                osal_msg_send( *(epDesc->task_id), (uint8 *)msg );
+   \   00009F                ; Setup parameters for call to function osal_msg_send
+   \   00009F   EE           MOV       A,R6
+   \   0000A0   FA           MOV       R2,A
+   \   0000A1   EF           MOV       A,R7
+   \   0000A2   FB           MOV       R3,A
+   \   0000A3   85..82       MOV       DPL,?V2
+   \   0000A6   85..83       MOV       DPH,?V3
+   \   0000A9   A3           INC       DPTR
+   \   0000AA   A3           INC       DPTR
+   \   0000AB   E0           MOVX      A,@DPTR
+   \   0000AC   F8           MOV       R0,A
+   \   0000AD   A3           INC       DPTR
+   \   0000AE   E0           MOVX      A,@DPTR
+   \   0000AF   F583         MOV       DPH,A
+   \   0000B1   8882         MOV       DPL,R0
+   \   0000B3   E0           MOVX      A,@DPTR
+   \   0000B4   F9           MOV       R1,A
+   \   0000B5   12....       LCALL     `??osal_msg_send::?relay`; Banked call to: osal_msg_send
+    153          
+    154                /* Info for response */
+    155                retValue = ZSuccess;
+   \   0000B8   85..82       MOV       DPL,?XSP + 0
+   \   0000BB   85..83       MOV       DPH,?XSP + 1
+   \   0000BE   E4           CLR       A
+   \   0000BF   F0           MOVX      @DPTR,A
+    156              }
+    157            }
+    158          
+    159            /* Build and send back the response */
+    160            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP), cmdId, 1, &retValue);
+   \                     ??MT_AppMsg_1:
+   \   0000C0                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   0000C0   AC..         MOV       R4,?XSP + 0
+   \   0000C2   AD..         MOV       R5,?XSP + 1
+   \   0000C4   7B01         MOV       R3,#0x1
+   \   0000C6   AA..         MOV       R2,?V4
+   \   0000C8   7969         MOV       R1,#0x69
+   \   0000CA   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    161          }
+   \   0000CD   7401         MOV       A,#0x1
+   \   0000CF   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000D2   7F0B         MOV       R7,#0xb
+   \   0000D4   02....       LJMP      ?BANKED_LEAVE_XDATA
+    162          
+    163          /***************************************************************************************************
+    164           * @fn      MT_AppMsg
+    165           *
+    166           * @brief   Process APP_MSG command
+    167           *
+    168           * @param   pBuf - pointer to the received buffer
+    169           *
+    170           * @return  void
+    171           ***************************************************************************************************/
+    172          static void MT_AppUserCmd(uint8 *pBuf)
+    173          {
+    174          
+    175            uint8 retValue, cmdId;
+    176          
+    177          #if defined (APP_TGEN) || defined (NWK_TEST) || defined (APP_TP) || defined (APP_TP2) || defined (OSAL_TOTAL_MEM) || defined (APP_DEBUG)
+    178            uint16 app_cmd;
+    179            uint8 srcEp;
+    180            uint16 param1;
+    181            uint16 param2;
+    182          #endif
+    183          #if defined (OSAL_TOTAL_MEM)
+    184            uint8 pData[2];
+    185          #endif
+    186          
+    187            /* parse header */
+    188            cmdId = pBuf[MT_RPC_POS_CMD1];
+    189            pBuf += MT_RPC_FRAME_HDR_SZ;
+    190          
+    191            retValue = INVALID_TASK;     //should be changed later
+    192          
+    193          #if defined (APP_TGEN) || defined (NWK_TEST) || defined (APP_TP) || defined (APP_TP2) || defined (OSAL_TOTAL_MEM) || defined (APP_DEBUG)
+    194          
+    195            srcEp = *pBuf++;
+    196          
+    197            app_cmd = osal_build_uint16( pBuf );
+    198            pBuf = pBuf + sizeof( uint16 );
+    199          
+    200            param1 = osal_build_uint16( pBuf );
+    201            pBuf = pBuf + sizeof( uint16 );
+    202          
+    203            param2 = osal_build_uint16( pBuf );
+    204          
+    205            switch ( app_cmd )
+    206            {
+    207          
+    208          #if defined (APP_TGEN)
+    209              case TGEN_START:
+    210                TrafficGenApp_SendCmdMSG( param1, param2, TRAFFICGENAPP_CMD_START );
+    211                retValue = ZSUCCESS;
+    212                break;
+    213          
+    214              case TGEN_STOP:
+    215                TrafficGenApp_SendCmdMSG( param1, param2, TRAFFICGENAPP_CMD_STOP );
+    216                retValue = ZSUCCESS;
+    217                break;
+    218          
+    219              case TGEN_COUNT:
+    220                retValue = TrafficGenApp_CountPkt( param1, param2 );
+    221                return;
+    222                break;
+    223          #endif
+    224          
+    225          #if defined (NWK_TEST)
+    226              case HW_TEST:
+    227                HwApp_Start( HI_UINT16(param1), LO_UINT16(param1), HI_UINT16(param2),
+    228                              1000, LO_UINT16(param2), 3, 0 );
+    229                break;
+    230          
+    231              case HW_DISPLAY_RESULT:
+    232                HwApp_TestInfo();
+    233                break;
+    234          
+    235              case HW_SEND_STATUS:
+    236                HwApp_SendStats();
+    237                break;
+    238          #endif
+    239          
+    240          #if defined( APP_TP ) || defined ( APP_TP2 )
+    241            #if defined( APP_TP )
+    242              case TP_SEND_NODATA:
+    243                retValue = TestProfileApp_SendNoData( srcEp, (byte)param1 );
+    244                break;
+    245            #endif // APP_TP
+    246          
+    247              case TP_SEND_BUFFERTEST:
+    248                retValue = TestProfileApp_SendBufferReq( srcEp, (uint8)param1, (uint8)param2 );
+    249                break;
+    250          
+    251            #if defined( APP_TP )
+    252              case TP_SEND_UINT8:
+    253                retValue = TestProfileApp_SendUint8( srcEp, (byte)param1 );
+    254                break;
+    255          
+    256              case TP_SEND_INT8:
+    257                retValue = TestProfileApp_SendInt8( srcEp, (byte)param1 );
+    258                break;
+    259          
+    260              case TP_SEND_UINT16:
+    261                retValue = TestProfileApp_SendUint16( srcEp, (byte)param1 );
+    262                break;
+    263          
+    264              case TP_SEND_INT16:
+    265                retValue = TestProfileApp_SendInt16( srcEp, (byte)param1 );
+    266                break;
+    267          
+    268              case TP_SEND_SEMIPREC:
+    269                retValue = TestProfileApp_SendSemiPrec( srcEp, (byte)param1 );
+    270                break;
+    271          
+    272              case TP_SEND_FREEFORM:
+    273                retValue = TestProfileApp_SendFreeFormReq( srcEp, (byte)param1 );
+    274                break;
+    275          
+    276            #else // APP_TP
+    277              case TP_SEND_FREEFORM:
+    278                retValue = TestProfileApp_SendFreeFormReq(srcEp, (byte)param1, (byte)param2);
+    279                break;
+    280            #endif
+    281          
+    282            #if defined( APP_TP )
+    283              case TP_SEND_ABS_TIME:
+    284                retValue = TestProfileApp_SendAbsTime( srcEp, (byte)param1 );
+    285                break;
+    286          
+    287              case TP_SEND_REL_TIME:
+    288                retValue = TestProfileApp_SendRelativeTime( srcEp, (byte)param1 );
+    289                break;
+    290          
+    291              case TP_SEND_CHAR_STRING:
+    292                retValue = TestProfileApp_SendCharString( srcEp, (byte)param1 );
+    293                break;
+    294          
+    295              case TP_SEND_OCTET_STRING:
+    296                retValue = TestProfileApp_SendOctetString( srcEp, (byte)param1 );
+    297                break;
+    298            #endif // APP_TP
+    299          
+    300              case TP_SET_DSTADDRESS:
+    301                retValue = TestProfileApp_SetDestAddress(HI_UINT16(param1), LO_UINT16(param1), param2);
+    302                break;
+    303          
+    304            #if defined( APP_TP2 )
+    305              case TP_SEND_BUFFER_GROUP:
+    306                retValue = TestProfileApp_SendBufferGroup( srcEp, (byte)param1 );
+    307                break;
+    308            #endif // APP_TP
+    309          
+    310              case TP_SEND_BUFFER:
+    311                retValue = TestProfileApp_SendBuffer( srcEp, (byte)param1 );
+    312                break;
+    313          
+    314            #if defined( APP_TP )
+    315              case TP_SEND_MULT_KVP_8BIT:
+    316                TestProfileApp_SendMultiKVP_8bit( srcEp, (byte)param1 );
+    317                retValue = ZSuccess;
+    318                break;
+    319          
+    320              case TP_SEND_MULT_KVP_16BIT:
+    321                TestProfileApp_SendMultiKVP_16bit( srcEp, (byte)param1 );
+    322                retValue = ZSuccess;
+    323                break;
+    324          
+    325              case TP_SEND_MULT_KVP_TIME:
+    326                TestProfileApp_SendMultiKVP_Time( srcEp, (byte)param1 );
+    327                retValue = ZSuccess;
+    328                break;
+    329          
+    330              case TP_SEND_MULT_KVP_STRING:
+    331                TestProfileApp_SendMultiKVP_String( srcEp, (byte)param1 );
+    332                retValue = ZSuccess;
+    333                break;
+    334          
+    335              case TP_SEND_MULTI_KVP_STR_TIME:
+    336                retValue = ZSuccess;
+    337                TestProfileApp_SendMultiKVP_String_Time( srcEp, (byte)param1 );
+    338                break;
+    339            #endif // APP_TP
+    340          
+    341              case TP_SEND_COUNTED_PKTS:
+    342                TestProfileApp_SendCountedPktsReq(HI_UINT16(param1), LO_UINT16(param1), param2);
+    343                retValue = ZSuccess;
+    344                break;
+    345          
+    346              case TP_SEND_RESET_COUNTER:
+    347                TestProfileApp_CountedPakts_ResetCounterReq( (byte)param1 );
+    348                retValue = ZSuccess;
+    349                break;
+    350          
+    351              case TP_SEND_GET_COUNTER:
+    352                TestProfileApp_CountedPakts_GetCounterReq( srcEp, (byte)param1 );
+    353                retValue = ZSuccess;
+    354                break;
+    355          
+    356              case TP_SET_PERMIT_JOIN:
+    357                if ( ZG_BUILD_RTR_TYPE && ZG_DEVICE_RTR_TYPE )
+    358                {
+    359                  NLME_PermitJoiningRequest( (byte)param1 );
+    360                  retValue = ZSuccess;
+    361                }
+    362                else
+    363                {
+    364                  retValue = ZFailure;
+    365                }
+    366                break;
+    367          
+    368            #if defined ( APP_TP2 )
+    369              case TP_ADD_GROUP:
+    370                retValue = TestProfileApp_SetGroup( srcEp, param1 );
+    371                break;
+    372          
+    373              case TP_REMOVE_GROUP:
+    374                retValue = TestProfileApp_RemoveGroup( srcEp, param1 );
+    375                break;
+    376          
+    377              case TP_SEND_UPDATE_KEY:
+    378                retValue = TestProfileApp_UpdateKey( srcEp, (uint8)param1, param2 );
+    379                break;
+    380          
+    381              case TP_SEND_SWITCH_KEY:
+    382                retValue = TestProfileApp_SwitchKey(  srcEp, (uint8)param1, param2 );
+    383                break;
+    384          
+    385              case TP_SEND_BUFFERTEST_GROUP:
+    386                retValue = TestProfileApp_SendBufferGroupReq( srcEp, (byte)param1, (byte)param2 );
+    387                break;
+    388          
+    389              case TP_SEND_ROUTE_DISC_REQ:
+    390                retValue = TestProfileApp_SendRouteDiscReq( srcEp, param1,
+    391                                            HI_UINT16( param2 ), LO_UINT16( param2 ) );
+    392                break;
+    393          
+    394              case TP_SEND_ROUTE_DISCOVERY:
+    395                if ( ZG_BUILD_RTR_TYPE && ZG_DEVICE_RTR_TYPE )
+    396                {
+    397                  retValue = TestProfileApp_SendRouteDiscovery( param1,
+    398                                              HI_UINT16( param2 ), LO_UINT16( param2 ) );
+    399                }
+    400                break;
+    401          
+    402              case TP_SEND_NEW_ADDR:
+    403                retValue = TestProfileApp_ChangeShortAddr( param1, LO_UINT16(param2) );
+    404                break;
+    405          
+    406              case TP_SEND_NWK_UPDATE:
+    407                /* Send out a Network Update command. */
+    408                retValue = NLME_SendNetworkUpdate( NWK_BROADCAST_SHORTADDR, NWKUPDATE_PANID_UPDATE,
+    409                                                  _NIB.extendedPANID, _NIB.nwkUpdateId+1, param1 );
+    410                break;
+    411          
+    412              case TP_NWK_ADDR_CONFLICT:
+    413                retValue = NLME_SendNetworkStatus( NWK_BROADCAST_SHORTADDR_DEVZCZR, param1,
+    414                                                   NWKSTAT_ADDRESS_CONFLICT, FALSE );
+    415                break;
+    416          
+    417           #if (ZG_BUILD_JOINING_TYPE)
+    418              case TP_AK_SETUP_PARTNER:
+    419                retValue = TestProfileApp_AppKeySetupPartner( srcEp, param1, param2 );
+    420                break;
+    421          
+    422              case TP_AK_REQ_KEY:
+    423                retValue = TestProfileApp_AppKeyRequest( srcEp, param1, param2 );
+    424                break;
+    425          
+    426              case TP_AK_PARTNER_NWKADDR:
+    427                retValue = TestProfileApp_SetPartnerNwkAddr( srcEp, param1, param2 );
+    428                break;
+    429          
+    430              case TP_AK_PARTNER_EXTADDR7654:
+    431                 retValue = TestProfileApp_SetPartnerExtAddr7654( srcEp, param1, param2 );
+    432                break;
+    433          
+    434              case TP_AK_PARTNER_EXTADDR3210:
+    435                retValue = TestProfileApp_SetPartnerExtAddr3210( srcEp, param1, param2 );
+    436                break;
+    437          
+    438              case TP_AK_PARTNER_SET:
+    439                retValue = TestProfileApp_SetPartner( srcEp, param1, param2 );
+    440                break;
+    441          #endif /* ZG_BUILD_JOINING_TYPE */
+    442          
+    443          #if (ZG_BUILD_COORDINATOR_TYPE)
+    444              case TP_AK_TYPE_SET:
+    445                retValue = TestProfileApp_AppKeyTypeSet( srcEp, param1, param2 );
+    446                break;
+    447          #endif /* ZG_BUILD_COORDINATOR_TYPE */
+    448          
+    449          #if defined ( ZIGBEE_FRAGMENTATION )
+    450              case TP_FRAG_SKIP_BLOCK:
+    451                retValue = TestProfileApp_FragSkipBlock( (uint8)param1 );
+    452                break;
+    453          #endif
+    454          
+    455              case TP_APS_REMOVE:
+    456                retValue = TestProfileApp_APSRemove( param1, param2 );
+    457                break;
+    458          
+    459          #if defined ( APP_TP2_TEST_MODE )
+    460              case TP_GU_SET_TX_APS_SEC:
+    461                retValue = TestProfileApp_GuSetTxApsSecurity( LO_UINT16(param1), param2 );
+    462                break;
+    463          
+    464              case TP_GU_SET_RX_APS_SEC:
+    465                retValue = TestProfileApp_GuSetRxApsSecurity( LO_UINT16(param1), param2 );
+    466                break;
+    467          #endif
+    468          
+    469              case TP_SET_LEAVE_REQ_ALLOWED:
+    470                retValue = TestProfileApp_SetLeaveReqAllowed( LO_UINT16(param1) );
+    471                break;
+    472                
+    473              case TP_SET_NOT_REMOVE_DEV_WHEN_SEND_LEAVE_REQ:
+    474                retValue = TestProfileApp_SetNotRemoveWhenSendLeaveReq(LO_UINT16(param1));
+    475                  break;
+    476          
+    477            case TP_SEND_REJOIN_REQ_SECURE:
+    478                retValue = TestProfileApp_SendRejoinReqSecurity( param1, param2 , TRUE);
+    479                break;
+    480                
+    481            case TP_SEND_REJOIN_REQ_UNSECURE:
+    482                retValue = TestProfileApp_SendRejoinReqSecurity( param1, param2, FALSE );
+    483              break;
+    484          #endif // APP_TP2
+    485          
+    486          #endif  // APP_TP || APP_TP2
+    487          
+    488          #if defined ( OSAL_TOTAL_MEM )
+    489              case OSAL_MEM_STACK_HIGH_WATER:
+    490              case OSAL_MEM_HEAP_HIGH_WATER:
+    491                if ( app_cmd == OSAL_MEM_STACK_HIGH_WATER)
+    492                {
+    493                  param1 = osal_stack_used();
+    494                }
+    495                else
+    496                {
+    497                  param1 = osal_heap_high_water();
+    498                }
+    499          
+    500                pData[0] = LO_UINT16( param1 );
+    501                pData[1] = HI_UINT16( param1 );
+    502          
+    503                MT_BuildAndSendZToolResponse((MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP), cmdId, 2, pData);
+    504                return;
+    505          #endif
+    506          
+    507          #if defined ( APP_DEBUG )
+    508              case DEBUG_GET:
+    509                DebugApp_SendQuery( param1 );
+    510                retValue = ZSUCCESS;
+    511                break;
+    512          #endif
+    513          
+    514          #if defined ( APP_TP2 )
+    515              case TP_SEND_BCAST_RSP:
+    516                retValue = TestProfileApp_SendBcastRsp( srcEp, (byte)param1 );
+    517                break;
+    518          #endif
+    519          
+    520              default:
+    521                break;
+    522            }
+    523          #endif // (APP_TGEN) || (NWK_TEST) || (APP_TP) || (APP_TP2) || (OSAL_TOTAL_MEM) || (APP_DEBUG)
+    524          
+    525            /* Build and send back the response */
+    526            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP), cmdId, 1, &retValue);
+    527          }
+    528          
+    529          #if defined ( MT_APP_PB_ZCL_FUNC )
+    530          /***************************************************************************************************
+    531           * @fn      MT_AppPB_ZCLMsg
+    532           *
+    533           * @brief   Process MT_APP_PB_ZCL_MSG command
+    534           *
+    535           * @param   pBuf - pointer to the received buffer
+    536           *
+    537           * @return  void
+    538           ***************************************************************************************************/
+    539          static void MT_AppPB_ZCLMsg( uint8 *pBuf )
+    540          {
+    541            uint8 retValue = ZFailure;
+    542            uint8 appEP;
+    543            endPointDesc_t *epDesc;
+    544            mtAppPB_ZCLMsg_t *cmd;
+    545            uint8 cmdId;
+    546            uint8 dataLen;
+    547          
+    548            /* Parse the RPC header */
+    549            dataLen = pBuf[MT_RPC_POS_LEN] - MT_APP_PB_ZCL_MSG_HDR_LEN;
+    550            cmdId = pBuf[MT_RPC_POS_CMD1];
+    551            pBuf += MT_RPC_FRAME_HDR_SZ;
+    552          
+    553            /* Application End Point */
+    554            appEP = *pBuf++;
+    555          
+    556            /* Look up the endpoint */
+    557            epDesc = afFindEndPointDesc( appEP );
+    558          
+    559            if ( epDesc )
+    560            {
+    561              /* Build and send the message to the APP */
+    562              cmd = (mtAppPB_ZCLMsg_t *)osal_msg_allocate( sizeof( mtAppPB_ZCLMsg_t ) + dataLen );
+    563              if ( cmd )
+    564              {
+    565                /* Build and send message to the app */
+    566                cmd->hdr.event = MT_SYS_APP_PB_ZCL_CMD;
+    567          
+    568                /* PB ZCL command type */
+    569                cmd->type = MT_APP_PB_ZCL_CMD_MSG;
+    570          
+    571                /* Application End Point */
+    572                cmd->appEP = appEP;
+    573          
+    574                /* Destination Address */
+    575                cmd->dstAddr.addr.shortAddr = osal_build_uint16( pBuf );
+    576                pBuf += sizeof(uint16);
+    577          
+    578                /* Destination Address Mode */
+    579                cmd->dstAddr.addrMode = afAddr16Bit;
+    580          
+    581                /* Destination End Point */
+    582                cmd->dstAddr.endPoint = *pBuf++;;
+    583          
+    584                /* Use Default PAN ID */
+    585                cmd->dstAddr.panId = 0xFFFF;
+    586          
+    587                /* Cluster ID */
+    588                cmd->clusterID = osal_build_uint16( pBuf );
+    589                pBuf += sizeof( uint16 );
+    590          
+    591                /* Command ID */
+    592                cmd->commandID = *pBuf++;
+    593          
+    594                /* Cluster Specific Command */
+    595                cmd->specific = *pBuf++;
+    596          
+    597                /* Command Direction */
+    598                cmd->direction = *pBuf++;
+    599          
+    600                /* Disable Default Response */
+    601                cmd->disableDefRsp = *pBuf++;
+    602          
+    603                /* Manufacturer Code */
+    604                cmd->manuCode = osal_build_uint16( pBuf );
+    605                pBuf += sizeof( uint16 );
+    606          
+    607                /* ZCL Transaction Sequence Number */
+    608                cmd->transSeqNum  = *pBuf++;
+    609          
+    610                /* Application Data Length */
+    611                cmd->appPBDataLen = dataLen;
+    612          
+    613                /* Application Data */
+    614                cmd->appPBData = (uint8 *)( cmd + 1 );
+    615                osal_memcpy( cmd->appPBData, pBuf, dataLen );
+    616          
+    617                /* Send the message */
+    618                osal_msg_send( *(epDesc->task_id), (uint8 *)cmd );
+    619          
+    620                /* Info for response */
+    621                retValue = ZSuccess;
+    622              }
+    623            }
+    624          
+    625            /* Build and send back the response */
+    626            MT_BuildAndSendZToolResponse( ( (uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP ),
+    627                                          cmdId, 1, &retValue);
+    628          }
+    629          #endif
+    630          
+    631          #if defined ( MT_APP_PB_ZCL_FUNC )
+    632          /***************************************************************************************************
+    633           * @fn      MT_AppPB_ZCLCfg
+    634           *
+    635           * @brief   Process MT_APP_PB_ZCL_CFG command
+    636           *
+    637           * @param   pBuf - pointer to the received buffer
+    638           *
+    639           * @return  void
+    640           ***************************************************************************************************/
+    641          static void MT_AppPB_ZCLCfg( uint8 *pBuf )
+    642          {
+    643            uint8 retValue = ZFailure;
+    644            uint8 appEP;
+    645            endPointDesc_t *epDesc;
+    646            mtAppPB_ZCLCfg_t *cmd;
+    647            uint8 cmdId;
+    648          
+    649            /* Parse the RPC header */
+    650            cmdId = pBuf[MT_RPC_POS_CMD1];
+    651            pBuf += MT_RPC_FRAME_HDR_SZ;
+    652          
+    653            /* Application End Point */
+    654            appEP = *pBuf++;
+    655          
+    656            /* Look up the endpoint */
+    657            epDesc = afFindEndPointDesc( appEP );
+    658          
+    659            if ( epDesc )
+    660            {
+    661              /* Build and send the message to the APP */
+    662              cmd = (mtAppPB_ZCLCfg_t *)osal_msg_allocate( sizeof( mtAppPB_ZCLCfg_t ) );
+    663          
+    664              if ( cmd )
+    665              {
+    666                /* Build and send message to the app */
+    667                cmd->hdr.event = MT_SYS_APP_PB_ZCL_CMD;
+    668          
+    669                /* PB ZCL command type*/
+    670                cmd->type = MT_APP_PB_ZCL_CMD_CFG;
+    671          
+    672                /* PB ZCL Config Mode */
+    673                cmd->mode = *pBuf++;
+    674          
+    675                /* Send the message */
+    676                osal_msg_send( *(epDesc->task_id), (uint8 *)cmd );
+    677          
+    678                /* Info for response */
+    679                retValue = ZSuccess;
+    680              }
+    681            }
+    682          
+    683            /* Build and send back the response */
+    684            MT_BuildAndSendZToolResponse( ( (uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP ),
+    685                                          cmdId, 1, &retValue );
+    686          }
+    687          #endif
+    688          
+    689          /***************************************************************************************************
+    690           * @fn      MT_AppPB_ZCLInd
+    691           *
+    692           * @brief   Send an MT_APP_PB_ZCL_IND command
+    693           *
+    694           * @param   pInd - pointer to the indication
+    695           *
+    696           * @return  void
+    697           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    698          void MT_AppPB_ZCLInd( mtAppPB_ZCLInd_t *pInd )
+   \                     MT_AppPB_ZCLInd:
+    699          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000   74F1         MOV       A,#-0xf
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V2,R2
+   \   000007   8B..         MOV       ?V3,R3
+    700            uint8 *pData;
+    701            uint8 *pBuf;
+    702            uint8 len;
+    703          
+    704            len = MT_APP_PB_ZCL_IND_HDR_LEN + pInd->appPBDataLen;
+   \   000009   EA           MOV       A,R2
+   \   00000A   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   00000D   240D         ADD       A,#0xd
+   \   00000F   FE           MOV       R6,A
+    705          
+    706            pData = (uint8 *)osal_mem_alloc( len );
+   \   000010                ; Setup parameters for call to function osal_mem_alloc
+   \   000010   FA           MOV       R2,A
+   \   000011   7B00         MOV       R3,#0x0
+   \   000013   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000016   8A..         MOV       ?V0,R2
+   \   000018   8B..         MOV       ?V1,R3
+    707            if ( pData != NULL )
+   \   00001A   EA           MOV       A,R2
+   \   00001B   4B           ORL       A,R3
+   \   00001C   7003         JNZ       $+5
+   \   00001E   02....       LJMP      ??MT_AppPB_ZCLInd_0 & 0xFFFF
+    708            {
+    709              pBuf = pData;
+    710              *pBuf++ = pInd->appEP;
+   \   000021   85..82       MOV       DPL,?V2
+   \   000024   85..83       MOV       DPH,?V3
+   \   000027   12....       LCALL     ??Subroutine12_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_23:
+   \   00002A   12....       LCALL     ?Subroutine7 & 0xFFFF
+    711              *pBuf++ = LO_UINT16( pInd->srcAddr );
+   \                     ??CrossCallReturnLabel_15:
+   \   00002D   A882         MOV       R0,DPL
+   \   00002F   A983         MOV       R1,DPH
+   \   000031   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000034   12....       LCALL     ?Subroutine3 & 0xFFFF
+    712              *pBuf++ = HI_UINT16( pInd->srcAddr );
+   \                     ??CrossCallReturnLabel_6:
+   \   000037   A3           INC       DPTR
+   \   000038   A3           INC       DPTR
+   \   000039   12....       LCALL     ?Subroutine7 & 0xFFFF
+    713              *pBuf++ = pInd->srcEP;
+   \                     ??CrossCallReturnLabel_16:
+   \   00003C   A3           INC       DPTR
+   \   00003D   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000040   F0           MOVX      @DPTR,A
+    714              *pBuf++ = LO_UINT16( pInd->clusterID );
+   \   000041   E5..         MOV       A,?V2
+   \   000043   2404         ADD       A,#0x4
+   \   000045   12....       LCALL     ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000048   12....       LCALL     ?Subroutine3 & 0xFFFF
+    715              *pBuf++ = HI_UINT16( pInd->clusterID );
+   \                     ??CrossCallReturnLabel_7:
+   \   00004B   12....       LCALL     ?Subroutine2 & 0xFFFF
+    716              *pBuf++ = pInd->commandID;
+   \                     ??CrossCallReturnLabel_4:
+   \   00004E   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000051   12....       LCALL     ?Subroutine2 & 0xFFFF
+    717              *pBuf++ = pInd->specific;
+   \                     ??CrossCallReturnLabel_5:
+   \   000054   12....       LCALL     ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_25:
+   \   000057   12....       LCALL     ?Subroutine1 & 0xFFFF
+    718              *pBuf++ = pInd->direction;
+   \                     ??CrossCallReturnLabel_2:
+   \   00005A   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   00005D   12....       LCALL     ?Subroutine1 & 0xFFFF
+    719              *pBuf++ = pInd->disableDefRsp;
+   \                     ??CrossCallReturnLabel_3:
+   \   000060   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000063   A3           INC       DPTR
+   \   000064   A3           INC       DPTR
+   \   000065   A3           INC       DPTR
+   \   000066   A3           INC       DPTR
+   \   000067   A3           INC       DPTR
+   \   000068   A3           INC       DPTR
+   \   000069   F0           MOVX      @DPTR,A
+    720              *pBuf++ = LO_UINT16( pInd->manuCode );
+   \   00006A   E5..         MOV       A,?V2
+   \   00006C   240A         ADD       A,#0xa
+   \   00006E   12....       LCALL     ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000071   A3           INC       DPTR
+   \   000072   A3           INC       DPTR
+   \   000073   A3           INC       DPTR
+   \   000074   A3           INC       DPTR
+   \   000075   A3           INC       DPTR
+   \   000076   A3           INC       DPTR
+   \   000077   F0           MOVX      @DPTR,A
+    721              *pBuf++ = HI_UINT16( pInd->manuCode );
+   \   000078   8882         MOV       DPL,R0
+   \   00007A   8983         MOV       DPH,R1
+   \   00007C   A3           INC       DPTR
+   \   00007D   E0           MOVX      A,@DPTR
+   \   00007E   C0E0         PUSH      A
+   \   000080   EA           MOV       A,R2
+   \   000081   240B         ADD       A,#0xb
+   \   000083   F582         MOV       DPL,A
+   \   000085   E4           CLR       A
+   \   000086   35..         ADDC      A,?V1
+   \   000088   F583         MOV       DPH,A
+   \   00008A   D0E0         POP       A
+   \   00008C   F0           MOVX      @DPTR,A
+    722              *pBuf++ = pInd->transSeqNum;
+   \   00008D   E5..         MOV       A,?V2
+   \   00008F   240C         ADD       A,#0xc
+   \   000091   F582         MOV       DPL,A
+   \   000093   E4           CLR       A
+   \   000094   35..         ADDC      A,?V3
+   \   000096   F583         MOV       DPH,A
+   \   000098   E0           MOVX      A,@DPTR
+   \   000099   C0E0         PUSH      A
+   \   00009B   EA           MOV       A,R2
+   \   00009C   240C         ADD       A,#0xc
+   \   00009E   F582         MOV       DPL,A
+   \   0000A0   E4           CLR       A
+   \   0000A1   35..         ADDC      A,?V1
+   \   0000A3   F583         MOV       DPH,A
+   \   0000A5   D0E0         POP       A
+   \   0000A7   F0           MOVX      @DPTR,A
+    723              osal_memcpy( pBuf, pInd->appPBData, pInd->appPBDataLen );
+   \   0000A8                ; Setup parameters for call to function osal_memcpy
+   \   0000A8   E5..         MOV       A,?V2
+   \   0000AA   240E         ADD       A,#0xe
+   \   0000AC   F582         MOV       DPL,A
+   \   0000AE   E4           CLR       A
+   \   0000AF   35..         ADDC      A,?V3
+   \   0000B1   F583         MOV       DPH,A
+   \   0000B3   E0           MOVX      A,@DPTR
+   \   0000B4   F5..         MOV       ?V4,A
+   \   0000B6   A3           INC       DPTR
+   \   0000B7   E0           MOVX      A,@DPTR
+   \   0000B8   F5..         MOV       ?V5,A
+   \   0000BA   75..00       MOV       ?V6,#0x0
+   \   0000BD   78..         MOV       R0,#?V4
+   \   0000BF   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   0000C2   E5..         MOV       A,?V2
+   \   0000C4   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   0000C7   FC           MOV       R4,A
+   \   0000C8   7D00         MOV       R5,#0x0
+   \   0000CA   EA           MOV       A,R2
+   \   0000CB   240D         ADD       A,#0xd
+   \   0000CD   FA           MOV       R2,A
+   \   0000CE   E4           CLR       A
+   \   0000CF   35..         ADDC      A,?V1
+   \   0000D1   FB           MOV       R3,A
+   \   0000D2   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0000D5   7403         MOV       A,#0x3
+   \   0000D7   12....       LCALL     ?DEALLOC_XSTACK8
+    724          
+    725              MT_BuildAndSendZToolResponse( ( (uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_APP ),
+    726                                            MT_APP_PB_ZCL_IND, len, pData );
+   \   0000DA                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   0000DA   AC..         MOV       R4,?V0
+   \   0000DC   AD..         MOV       R5,?V1
+   \   0000DE   EE           MOV       A,R6
+   \   0000DF   FB           MOV       R3,A
+   \   0000E0   7A82         MOV       R2,#-0x7e
+   \   0000E2   7949         MOV       R1,#0x49
+   \   0000E4   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    727              osal_mem_free( pData );
+   \   0000E7                ; Setup parameters for call to function osal_mem_free
+   \   0000E7   AA..         MOV       R2,?V0
+   \   0000E9   AB..         MOV       R3,?V1
+   \   0000EB   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    728            }
+    729          }
+   \                     ??MT_AppPB_ZCLInd_0:
+   \   0000EE   7F07         MOV       R7,#0x7
+   \   0000F0   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL     ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_21:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   85..82       MOV       DPL,?V2
+   \   000004   85..83       MOV       DPH,?V3
+   \   000007   A3           INC       DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   12....       LCALL     ??Subroutine12_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_24:
+   \   000003   A3           INC       DPTR
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   A3           INC       DPTR
+   \   000001   12....       LCALL     ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   8A82         MOV       DPL,R2
+   \   000003   8B83         MOV       DPH,R3
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   240D         ADD       A,#0xd
+   \   000002   F582         MOV       DPL,A
+   \   000004   E4           CLR       A
+   \   000005   35..         ADDC      A,?V3
+   \   000007   F583         MOV       DPH,A
+   \   000009   E0           MOVX      A,@DPTR
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   8882         MOV       DPL,R0
+   \   000003   8983         MOV       DPH,R1
+   \   000005   12....       LCALL     ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_26:
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   A3           INC       DPTR
+   \   000001                REQUIRE ??Subroutine12_0
+   \   000001                ; // Fall through to label ??Subroutine12_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine12_0:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   8A82         MOV       DPL,R2
+   \   000003   8B83         MOV       DPH,R3
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL     ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   A3           INC       DPTR
+   \   000001   A3           INC       DPTR
+   \   000002   A3           INC       DPTR
+   \   000003   A3           INC       DPTR
+   \   000004   A3           INC       DPTR
+   \   000005   12....       LCALL     ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   000008   A3           INC       DPTR
+   \   000009   A3           INC       DPTR
+   \   00000A   A3           INC       DPTR
+   \   00000B   A3           INC       DPTR
+   \   00000C   A3           INC       DPTR
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   A3           INC       DPTR
+   \   000001   A3           INC       DPTR
+   \   000002   12....       LCALL     ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   F8           MOV       R0,A
+   \   000001   E4           CLR       A
+   \   000002   35..         ADDC      A,?V3
+   \   000004   F9           MOV       R1,A
+   \   000005   8882         MOV       DPL,R0
+   \   000007   F583         MOV       DPH,A
+   \   000009   12....       LCALL     ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   00000C   A3           INC       DPTR
+   \   00000D   22           RET
+    730          
+    731          #endif /* MT_APP_FUNC */
+    732          
+    733          /***************************************************************************************************
+    734           ***************************************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0     10   MT_AppCommandProcessing
+        0     10   -> MT_AppMsg
+        0     10   -> MT_BuildAndSendZToolResponse
+      1     33   MT_AppMsg
+        0     20   -> MT_BuildAndSendZToolResponse
+        0     20   -> afFindEndPointDesc
+        0     23   -> osal_memcpy
+        0     20   -> osal_msg_allocate
+        0     20   -> osal_msg_send
+      1     18   MT_AppPB_ZCLInd
+        0     15   -> MT_BuildAndSendZToolResponse
+        0     15   -> osal_mem_alloc
+        0     15   -> osal_mem_free
+        0     18   -> osal_memcpy
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??Subroutine12_0
+      14  ?Subroutine0
+       8  ?Subroutine1
+       1  ?Subroutine10
+       9  ?Subroutine11
+       4  ?Subroutine2
+       9  ?Subroutine3
+      11  ?Subroutine4
+       5  ?Subroutine5
+       5  ?Subroutine6
+       4  ?Subroutine7
+      14  ?Subroutine8
+       9  ?Subroutine9
+      75  MT_AppCommandProcessing
+     215  MT_AppMsg
+     243  MT_AppPB_ZCLInd
+      18  -- Other
+
+ 
+ 632 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+ 
+  18 bytes of CODE     memory
+ 632 bytes of HUGECODE memory
+
+Errors: none
+Warnings: none

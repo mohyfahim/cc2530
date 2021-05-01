@@ -1,0 +1,1755 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.40.1.7397 for 8051               01/May/2021  14:39:38
+# Copyright 2004-2021 IAR Systems AB.
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        E:\Texas Instruments\Z-Stack 3.0.2\Components\mt\MT_SAPI.c
+#    Command line       =  
+#        -f C:\Users\asus\AppData\Local\Temp\EWD152.tmp ("E:\Texas
+#        Instruments\Z-Stack 3.0.2\Components\mt\MT_SAPI.c" -D
+#        BDB_FINDING_BINDING_CAPABILITY_ENABLED=0 -D HAL_UART_DMA_RX_MAX=128 -D
+#        MAXMEMHEAP=2765 -D TC_LINKKEY_JOIN -D NWK_MAX_DEVICE_LIST=10 -D
+#        ZDSECMGR_TC_DEVICE_MAX=30 -D DISABLE_GREENPOWER_BASIC_PROXY -D
+#        POWER_SAVING -D FEATURE_SYSTEM_STATS -D MT_GP_CB_FUNC -lC "E:\Texas
+#        Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-Debug\List" -lA "E:\Texas
+#        Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-Debug\List" --diag_suppress
+#        Pe001,Pa010 -o "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-Debug\Obj" -e --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+#        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR | DEVICE_BUILD_ROUTER
+#        | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL -DZNP_RUN_WDOG=FALSE
+#        -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO -DZIGBEE_FRAGMENTATION
+#        -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE -DSAPI_CB_FUNC=FALSE
+#        -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT -DNUM_DISC_ATTEMPTS=0
+#        -DMT_UTIL_FUNC -DMT_SYS_FUNC -DMT_AF_FUNC -DMT_SAPI_FUNC
+#        -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC -DMT_ZDO_FUNC -DMT_ZDO_MGMT
+#        -DMT_ZDO_EXTENSIONS -DMT_GP_CB_FUNC -DMT_APP_FUNC -DMT_APP_CNF_FUNC)
+#        -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
+#        -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg" -I
+#        "E:\Texas Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\Source\" -I "E:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\..\Source\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I "E:\Texas
+#        Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I "E:\Texas
+#        Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\gp\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\bdb\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes --no_code_motion)
+#    Locale             =  English_USA.1252
+#    List file          =  
+#        E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-Debug\List\MT_SAPI.lst
+#    Object file        =  
+#        E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-Debug\Obj\MT_SAPI.r51
+#
+###############################################################################
+
+E:\Texas Instruments\Z-Stack 3.0.2\Components\mt\MT_SAPI.c
+      1          /**************************************************************************************************
+      2            Filename:       MT_SAPI.c
+      3            Revised:        $Date: 2015-02-05 17:15:13 -0800 (Thu, 05 Feb 2015) $
+      4            Revision:       $Revision: 42371 $
+      5          
+      6            Description:    MonitorTest functions for the Simple API.
+      7          
+      8            Copyright 2007-2015 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License"). You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product. Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          
+     38          **************************************************************************************************/
+     39          
+     40          /***************************************************************************************************
+     41           * INCLUDES
+     42           ***************************************************************************************************/
+     43          #include "ZComDef.h"
+     44          #include "AddrMgr.h"
+     45          #include "OSAL.h"
+     46          #include "OSAL_Nv.h"
+     47          #include "OnBoard.h"
+     48          #include "MT.h"
+     49          #include "MT_SAPI.h"
+     50          #include "MT_UART.h"
+     51          
+     52          /***************************************************************************************************
+     53           * GLOBAL VARIABLES
+     54           ***************************************************************************************************/
+     55          #if defined ( MT_SAPI_CB_FUNC )
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     56          uint16 _sapiCallbackSub;
+   \                     _sapiCallbackSub:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     57          #endif
+     58          
+     59          #if defined ( MT_SAPI_FUNC )
+     60          /***************************************************************************************************
+     61           * LOCAL FUNCTIONS
+     62           ***************************************************************************************************/
+     63          static void MT_SapiSystemReset(uint8 *pBuf);
+     64          static void MT_SapiStart(uint8* pBuf);
+     65          static void MT_SapiBindDevice(uint8 *pBuf);
+     66          static void MT_SapiAllowBind(uint8 *pBuf);
+     67          static void MT_SapiSendData(uint8 *pBuf);
+     68          static void MT_SapiReadCfg(uint8 *pBuf);
+     69          static void MT_SapiWriteCfg(uint8 *pBuf);
+     70          static void MT_SapiGetDevInfo(uint8 *pBuf);
+     71          static void MT_SapiFindDev(uint8 *pBuf);
+     72          static void MT_SapiPermitJoin(uint8 *pBuf);
+     73          static void MT_SapiAppRegister(uint8 *pBuf);
+     74          
+     75          /***************************************************************************************************
+     76           * @fn      MT_sapiCommandProcessing
+     77           *
+     78           * @brief   Process all the SAPI commands that are issued by test tool
+     79           *
+     80           * @param   pBuf - pointer to received buffer
+     81           *
+     82           * @return  MT_RPC_SUCCESS if command processed, MT_RPC_ERR_COMMAND_ID if not.
+     83           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     84          uint8 MT_SapiCommandProcessing(uint8 *pBuf)
+   \                     MT_SapiCommandProcessing:
+     85          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV       A,#-0xe
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV       A,#-0x1
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+     86            uint8 status = MT_RPC_SUCCESS;
+   \   00000A   75..00       MOV       ?V0,#0x0
+     87          
+     88            switch (pBuf[MT_RPC_POS_CMD1])
+   \   00000D   8A82         MOV       DPL,R2
+   \   00000F   8B83         MOV       DPH,R3
+   \   000011   A3           INC       DPTR
+   \   000012   A3           INC       DPTR
+   \   000013   E0           MOVX      A,@DPTR
+   \   000014   6039         JZ        ??MT_SapiCommandProcessing_0
+   \   000016   14           DEC       A
+   \   000017   6044         JZ        ??MT_SapiCommandProcessing_1
+   \   000019   14           DEC       A
+   \   00001A   607E         JZ        ??MT_SapiCommandProcessing_2
+   \   00001C   14           DEC       A
+   \   00001D   7003         JNZ       $+5
+   \   00001F   02....       LJMP      ??MT_SapiCommandProcessing_3 & 0xFFFF
+   \   000022   14           DEC       A
+   \   000023   7003         JNZ       $+5
+   \   000025   02....       LJMP      ??MT_SapiCommandProcessing_4 & 0xFFFF
+   \   000028   14           DEC       A
+   \   000029   7003         JNZ       $+5
+   \   00002B   02....       LJMP      ??MT_SapiCommandProcessing_5 & 0xFFFF
+   \   00002E   14           DEC       A
+   \   00002F   7003         JNZ       $+5
+   \   000031   02....       LJMP      ??MT_SapiCommandProcessing_6 & 0xFFFF
+   \   000034   14           DEC       A
+   \   000035   7003         JNZ       $+5
+   \   000037   02....       LJMP      ??MT_SapiCommandProcessing_7 & 0xFFFF
+   \   00003A   14           DEC       A
+   \   00003B   7003         JNZ       $+5
+   \   00003D   02....       LJMP      ??MT_SapiCommandProcessing_8 & 0xFFFF
+   \   000040   14           DEC       A
+   \   000041   7003         JNZ       $+5
+   \   000043   02....       LJMP      ??MT_SapiCommandProcessing_9 & 0xFFFF
+   \   000046   14           DEC       A
+   \   000047   7003         JNZ       $+5
+   \   000049   02....       LJMP      ??MT_SapiCommandProcessing_10 & 0xFFFF
+   \   00004C   02....       LJMP      ??MT_SapiCommandProcessing_11 & 0xFFFF
+     89            {
+     90              case MT_SAPI_START_REQ:
+     91                MT_SapiStart(pBuf);
+   \                     ??MT_SapiCommandProcessing_0:
+   \   00004F                ; Setup parameters for call to function zb_StartRequest
+   \   00004F   12....       LCALL     `??zb_StartRequest::?relay`; Banked call to: zb_StartRequest
+   \   000052                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000052   7C00         MOV       R4,#0x0
+   \   000054   7D00         MOV       R5,#0x0
+   \   000056   7B00         MOV       R3,#0x0
+   \   000058   7A00         MOV       R2,#0x0
+   \   00005A   02....       LJMP      ??MT_SapiCommandProcessing_12 & 0xFFFF
+     92                break;
+     93          
+     94              case MT_SAPI_BIND_DEVICE_REQ:
+     95                MT_SapiBindDevice(pBuf);
+   \                     ??MT_SapiCommandProcessing_1:
+   \   00005D   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000060   F9           MOV       R1,A
+   \   000061   E8           MOV       A,R0
+   \   000062   FE           MOV       R6,A
+   \   000063   E9           MOV       A,R1
+   \   000064   FF           MOV       R7,A
+   \   000065                ; Setup parameters for call to function AddrMgrExtAddrValid
+   \   000065   E8           MOV       A,R0
+   \   000066   2403         ADD       A,#0x3
+   \   000068   FA           MOV       R2,A
+   \   000069   E4           CLR       A
+   \   00006A   3F           ADDC      A,R7
+   \   00006B   FB           MOV       R3,A
+   \   00006C   12....       LCALL     `??AddrMgrExtAddrValid::?relay`; Banked call to: AddrMgrExtAddrValid
+   \   00006F   E9           MOV       A,R1
+   \   000070   8E82         MOV       DPL,R6
+   \   000072   8F83         MOV       DPH,R7
+   \   000074   A3           INC       DPTR
+   \   000075   AA82         MOV       R2,DPL
+   \   000077   AB83         MOV       R3,DPH
+   \   000079   600C         JZ        ??MT_SapiCommandProcessing_13
+   \   00007B                ; Setup parameters for call to function osal_build_uint16
+   \   00007B   12....       LCALL     `??osal_build_uint16::?relay`; Banked call to: osal_build_uint16
+   \   00007E                ; Setup parameters for call to function zb_BindDevice
+   \   00007E   EE           MOV       A,R6
+   \   00007F   2403         ADD       A,#0x3
+   \   000081   FC           MOV       R4,A
+   \   000082   E4           CLR       A
+   \   000083   3F           ADDC      A,R7
+   \   000084   FD           MOV       R5,A
+   \   000085   8007         SJMP      ??MT_SapiCommandProcessing_14
+   \                     ??MT_SapiCommandProcessing_13:
+   \   000087                ; Setup parameters for call to function osal_build_uint16
+   \   000087   12....       LCALL     `??osal_build_uint16::?relay`; Banked call to: osal_build_uint16
+   \   00008A                ; Setup parameters for call to function zb_BindDevice
+   \   00008A   7C00         MOV       R4,#0x0
+   \   00008C   7D00         MOV       R5,#0x0
+   \                     ??MT_SapiCommandProcessing_14:
+   \   00008E   8E82         MOV       DPL,R6
+   \   000090   8F83         MOV       DPH,R7
+   \   000092   E0           MOVX      A,@DPTR
+   \   000093   F9           MOV       R1,A
+   \   000094   12....       LCALL     `??zb_BindDevice::?relay`; Banked call to: zb_BindDevice
+   \   000097                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000097   02....       LJMP      ??MT_SapiCommandProcessing_15 & 0xFFFF
+     96                break;
+     97          
+     98              case MT_SAPI_ALLOW_BIND_REQ:
+     99                MT_SapiAllowBind(pBuf);
+   \                     ??MT_SapiCommandProcessing_2:
+   \   00009A   8A82         MOV       DPL,R2
+   \   00009C   8B83         MOV       DPH,R3
+   \   00009E   A3           INC       DPTR
+   \   00009F   A3           INC       DPTR
+   \   0000A0   E0           MOVX      A,@DPTR
+   \   0000A1   FE           MOV       R6,A
+   \   0000A2                ; Setup parameters for call to function zb_AllowBind
+   \   0000A2   8A82         MOV       DPL,R2
+   \   0000A4   8B83         MOV       DPH,R3
+   \   0000A6   A3           INC       DPTR
+   \   0000A7   A3           INC       DPTR
+   \   0000A8   A3           INC       DPTR
+   \   0000A9   E0           MOVX      A,@DPTR
+   \   0000AA   F9           MOV       R1,A
+   \   0000AB   12....       LCALL     `??zb_AllowBind::?relay`; Banked call to: zb_AllowBind
+   \   0000AE                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   0000AE   02....       LJMP      ??MT_SapiCommandProcessing_16 & 0xFFFF
+    100                break;
+    101          
+    102              case MT_SAPI_SEND_DATA_REQ:
+    103                MT_SapiSendData(pBuf);
+   \                     ??MT_SapiCommandProcessing_3:
+   \   0000B1   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   0000B4   8A..         MOV       ?V2,R2
+   \   0000B6   8B..         MOV       ?V3,R3
+   \   0000B8                ; Setup parameters for call to function osal_build_uint16
+   \   0000B8   EE           MOV       A,R6
+   \   0000B9   2402         ADD       A,#0x2
+   \   0000BB   FA           MOV       R2,A
+   \   0000BC   E4           CLR       A
+   \   0000BD   3F           ADDC      A,R7
+   \   0000BE   FB           MOV       R3,A
+   \   0000BF   12....       LCALL     `??osal_build_uint16::?relay`; Banked call to: osal_build_uint16
+   \   0000C2   8A..         MOV       ?V4,R2
+   \   0000C4   8B..         MOV       ?V5,R3
+   \   0000C6   AC..         MOV       R4,?V4
+   \   0000C8   AD..         MOV       R5,?V5
+   \   0000CA                ; Setup parameters for call to function zb_SendDataRequest
+   \   0000CA   8E82         MOV       DPL,R6
+   \   0000CC   8F83         MOV       DPH,R7
+   \   0000CE   A3           INC       DPTR
+   \   0000CF   A3           INC       DPTR
+   \   0000D0   A3           INC       DPTR
+   \   0000D1   A3           INC       DPTR
+   \   0000D2   A3           INC       DPTR
+   \   0000D3   A3           INC       DPTR
+   \   0000D4   E0           MOVX      A,@DPTR
+   \   0000D5   F5..         MOV       ?V4,A
+   \   0000D7   78..         MOV       R0,#?V4
+   \   0000D9   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000DC   8E82         MOV       DPL,R6
+   \   0000DE   8F83         MOV       DPH,R7
+   \   0000E0   A3           INC       DPTR
+   \   0000E1   A3           INC       DPTR
+   \   0000E2   A3           INC       DPTR
+   \   0000E3   A3           INC       DPTR
+   \   0000E4   A3           INC       DPTR
+   \   0000E5   E0           MOVX      A,@DPTR
+   \   0000E6   F5..         MOV       ?V4,A
+   \   0000E8   78..         MOV       R0,#?V4
+   \   0000EA   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000ED   8E82         MOV       DPL,R6
+   \   0000EF   8F83         MOV       DPH,R7
+   \   0000F1   A3           INC       DPTR
+   \   0000F2   A3           INC       DPTR
+   \   0000F3   A3           INC       DPTR
+   \   0000F4   A3           INC       DPTR
+   \   0000F5   E0           MOVX      A,@DPTR
+   \   0000F6   F5..         MOV       ?V4,A
+   \   0000F8   78..         MOV       R0,#?V4
+   \   0000FA   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000FD   EE           MOV       A,R6
+   \   0000FE   2408         ADD       A,#0x8
+   \   000100   F5..         MOV       ?V4,A
+   \   000102   E4           CLR       A
+   \   000103   3F           ADDC      A,R7
+   \   000104   F5..         MOV       ?V5,A
+   \   000106   78..         MOV       R0,#?V4
+   \   000108   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00010B   8E82         MOV       DPL,R6
+   \   00010D   8F83         MOV       DPH,R7
+   \   00010F   A3           INC       DPTR
+   \   000110   A3           INC       DPTR
+   \   000111   A3           INC       DPTR
+   \   000112   A3           INC       DPTR
+   \   000113   A3           INC       DPTR
+   \   000114   A3           INC       DPTR
+   \   000115   A3           INC       DPTR
+   \   000116   E0           MOVX      A,@DPTR
+   \   000117   F9           MOV       R1,A
+   \   000118   AA..         MOV       R2,?V2
+   \   00011A   AB..         MOV       R3,?V3
+   \   00011C   12....       LCALL     `??zb_SendDataRequest::?relay`; Banked call to: zb_SendDataRequest
+   \   00011F   7405         MOV       A,#0x5
+   \   000121   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000124                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \                     ??MT_SapiCommandProcessing_15:
+   \   000124   7C00         MOV       R4,#0x0
+   \   000126   7D00         MOV       R5,#0x0
+   \   000128   7B00         MOV       R3,#0x0
+   \   00012A   02....       LJMP      ??CrossCallReturnLabel_10 & 0xFFFF
+    104                break;
+    105          
+    106              case MT_SAPI_READ_CFG_REQ:
+    107                MT_SapiReadCfg(pBuf);
+   \                     ??MT_SapiCommandProcessing_4:
+   \   00012D                ; Setup parameters for call to function MT_SapiReadCfg
+   \   00012D   12....       LCALL     `??MT_SapiReadCfg::?relay`; Banked call to: MT_SapiReadCfg
+    108                break;
+   \   000130   02....       LJMP      ??MT_SapiCommandProcessing_17 & 0xFFFF
+    109          
+    110              case MT_SAPI_WRITE_CFG_REQ:
+    111                MT_SapiWriteCfg(pBuf);
+   \                     ??MT_SapiCommandProcessing_5:
+   \   000133   8A82         MOV       DPL,R2
+   \   000135   8B83         MOV       DPH,R3
+   \   000137   A3           INC       DPTR
+   \   000138   A3           INC       DPTR
+   \   000139   E0           MOVX      A,@DPTR
+   \   00013A   FE           MOV       R6,A
+   \   00013B   EA           MOV       A,R2
+   \   00013C   2403         ADD       A,#0x3
+   \   00013E   5001         JNC       ??MT_SapiCommandProcessing_18
+   \   000140   0B           INC       R3
+   \                     ??MT_SapiCommandProcessing_18:
+   \   000141   F8           MOV       R0,A
+   \   000142   EB           MOV       A,R3
+   \   000143   F9           MOV       R1,A
+   \   000144   8882         MOV       DPL,R0
+   \   000146   F583         MOV       DPH,A
+   \   000148   E0           MOVX      A,@DPTR
+   \   000149   6421         XRL       A,#0x21
+   \   00014B   6032         JZ        ??MT_SapiCommandProcessing_19
+   \   00014D   E0           MOVX      A,@DPTR
+   \   00014E   6422         XRL       A,#0x22
+   \   000150   602D         JZ        ??MT_SapiCommandProcessing_19
+   \   000152   E0           MOVX      A,@DPTR
+   \   000153   6423         XRL       A,#0x23
+   \   000155   6028         JZ        ??MT_SapiCommandProcessing_19
+   \   000157   E0           MOVX      A,@DPTR
+   \   000158   6482         XRL       A,#0x82
+   \   00015A   6023         JZ        ??MT_SapiCommandProcessing_19
+   \   00015C                ; Setup parameters for call to function zb_WriteConfiguration
+   \   00015C   E8           MOV       A,R0
+   \   00015D   2402         ADD       A,#0x2
+   \   00015F   FC           MOV       R4,A
+   \   000160   E4           CLR       A
+   \   000161   39           ADDC      A,R1
+   \   000162   FD           MOV       R5,A
+   \   000163   A3           INC       DPTR
+   \   000164   E0           MOVX      A,@DPTR
+   \   000165   FA           MOV       R2,A
+   \   000166   8882         MOV       DPL,R0
+   \   000168   8983         MOV       DPH,R1
+   \   00016A   E0           MOVX      A,@DPTR
+   \   00016B   F9           MOV       R1,A
+   \   00016C   12....       LCALL     `??zb_WriteConfiguration::?relay`; Banked call to: zb_WriteConfiguration
+   \   00016F   E9           MOV       A,R1
+   \   000170   85..82       MOV       DPL,?XSP + 0
+   \   000173   85..83       MOV       DPH,?XSP + 1
+   \   000176   7003         JNZ       ??MT_SapiCommandProcessing_20
+   \   000178   E4           CLR       A
+   \   000179   800C         SJMP      ??MT_SapiCommandProcessing_21
+   \                     ??MT_SapiCommandProcessing_20:
+   \   00017B   7401         MOV       A,#0x1
+   \   00017D   8008         SJMP      ??MT_SapiCommandProcessing_21
+   \                     ??MT_SapiCommandProcessing_19:
+   \   00017F   85..82       MOV       DPL,?XSP + 0
+   \   000182   85..83       MOV       DPH,?XSP + 1
+   \   000185   7402         MOV       A,#0x2
+   \                     ??MT_SapiCommandProcessing_21:
+   \   000187   12....       LCALL     ??Subroutine10_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   00018A   8059         SJMP      ??MT_SapiCommandProcessing_22
+    112                break;
+    113          
+    114              case MT_SAPI_GET_DEV_INFO_REQ:
+    115                MT_SapiGetDevInfo(pBuf);
+   \                     ??MT_SapiCommandProcessing_6:
+   \   00018C   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   00018F   88..         MOV       ?V2,R0
+   \   000191   F5..         MOV       ?V3,A
+   \   000193                ; Setup parameters for call to function osal_mem_alloc
+   \   000193   7A09         MOV       R2,#0x9
+   \   000195   7B00         MOV       R3,#0x0
+   \   000197   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   00019A   7003         JNZ       $+5
+   \   00019C   02....       LJMP      ??MT_SapiCommandProcessing_17 & 0xFFFF
+   \   00019F                ; Setup parameters for call to function zb_GetDeviceInfo
+   \   00019F   8A82         MOV       DPL,R2
+   \   0001A1   8B83         MOV       DPH,R3
+   \   0001A3   A3           INC       DPTR
+   \   0001A4   AA82         MOV       R2,DPL
+   \   0001A6   AB83         MOV       R3,DPH
+   \   0001A8   85..82       MOV       DPL,?V2
+   \   0001AB   85..83       MOV       DPH,?V3
+   \   0001AE   E0           MOVX      A,@DPTR
+   \   0001AF   F9           MOV       R1,A
+   \   0001B0   12....       LCALL     `??zb_GetDeviceInfo::?relay`; Banked call to: zb_GetDeviceInfo
+   \   0001B3   85..82       MOV       DPL,?V2
+   \   0001B6   85..83       MOV       DPH,?V3
+   \   0001B9   E0           MOVX      A,@DPTR
+   \   0001BA   8E82         MOV       DPL,R6
+   \   0001BC   8F83         MOV       DPH,R7
+   \   0001BE   F0           MOVX      @DPTR,A
+   \   0001BF                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   0001BF   EE           MOV       A,R6
+   \   0001C0   FC           MOV       R4,A
+   \   0001C1   EF           MOV       A,R7
+   \   0001C2   FD           MOV       R5,A
+   \   0001C3   7B09         MOV       R3,#0x9
+   \   0001C5   12....       LCALL     ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   0001C8   02....       LJMP      ??MT_SapiCommandProcessing_17 & 0xFFFF
+    116                break;
+    117          
+    118              case MT_SAPI_FIND_DEV_REQ:
+    119                MT_SapiFindDev(pBuf);
+   \                     ??MT_SapiCommandProcessing_7:
+   \   0001CB   8A82         MOV       DPL,R2
+   \   0001CD   8B83         MOV       DPH,R3
+   \   0001CF   A3           INC       DPTR
+   \   0001D0   A3           INC       DPTR
+   \   0001D1   E0           MOVX      A,@DPTR
+   \   0001D2   FE           MOV       R6,A
+   \   0001D3                ; Setup parameters for call to function zb_FindDeviceRequest
+   \   0001D3   EA           MOV       A,R2
+   \   0001D4   2403         ADD       A,#0x3
+   \   0001D6   FA           MOV       R2,A
+   \   0001D7   5001         JNC       ??MT_SapiCommandProcessing_23
+   \   0001D9   0B           INC       R3
+   \                     ??MT_SapiCommandProcessing_23:
+   \   0001DA   7901         MOV       R1,#0x1
+   \   0001DC   12....       LCALL     `??zb_FindDeviceRequest::?relay`; Banked call to: zb_FindDeviceRequest
+   \   0001DF                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \                     ??MT_SapiCommandProcessing_16:
+   \   0001DF   7C00         MOV       R4,#0x0
+   \   0001E1   7D00         MOV       R5,#0x0
+   \   0001E3   7B00         MOV       R3,#0x0
+   \                     ??MT_SapiCommandProcessing_22:
+   \   0001E5   EE           MOV       A,R6
+   \   0001E6   FA           MOV       R2,A
+   \   0001E7   807F         SJMP      ??MT_SapiCommandProcessing_12
+    120                break;
+    121          
+    122              case MT_SAPI_PMT_JOIN_REQ:
+    123                MT_SapiPermitJoin(pBuf);
+   \                     ??MT_SapiCommandProcessing_8:
+   \   0001E9   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   0001EC                ; Setup parameters for call to function zb_PermitJoiningRequest
+   \   0001EC   8E82         MOV       DPL,R6
+   \   0001EE   8F83         MOV       DPH,R7
+   \   0001F0   A3           INC       DPTR
+   \   0001F1   A3           INC       DPTR
+   \   0001F2   E0           MOVX      A,@DPTR
+   \   0001F3   F9           MOV       R1,A
+   \   0001F4   12....       LCALL     `??zb_PermitJoiningRequest::?relay`; Banked call to: zb_PermitJoiningRequest
+   \   0001F7   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   0001FA   AA..         MOV       R2,?V1
+   \   0001FC   806A         SJMP      ??MT_SapiCommandProcessing_12
+    124                break;
+    125          
+    126              case MT_SAPI_SYS_RESET:
+    127                MT_SapiSystemReset(pBuf);
+   \                     ??MT_SapiCommandProcessing_9:
+   \   0001FE                ; Setup parameters for call to function zb_SystemReset
+   \   0001FE   12....       LCALL     `??zb_SystemReset::?relay`; Banked call to: zb_SystemReset
+    128                break;
+   \   000201   806F         SJMP      ??MT_SapiCommandProcessing_17
+    129          
+    130              case MT_SAPI_APP_REGISTER_REQ:
+    131                MT_SapiAppRegister(pBuf);
+   \                     ??MT_SapiCommandProcessing_10:
+   \   000203   85..82       MOV       DPL,?XSP + 0
+   \   000206   85..83       MOV       DPH,?XSP + 1
+   \   000209   74B3         MOV       A,#-0x4d
+   \   00020B   F0           MOVX      @DPTR,A
+   \   00020C   90....       MOV       DPTR,#sapi_epDesc
+   \   00020F   E0           MOVX      A,@DPTR
+   \   000210   704E         JNZ       ??MT_SapiCommandProcessing_24
+   \   000212   8A82         MOV       DPL,R2
+   \   000214   8B83         MOV       DPH,R3
+   \   000216   E0           MOVX      A,@DPTR
+   \   000217   6047         JZ        ??MT_SapiCommandProcessing_24
+   \   000219                ; Setup parameters for call to function MT_BuildEndpointDesc
+   \   000219   7C..         MOV       R4,#sapi_epDesc & 0xff
+   \   00021B   7D..         MOV       R5,#(sapi_epDesc >> 8) & 0xff
+   \   00021D   EA           MOV       A,R2
+   \   00021E   2403         ADD       A,#0x3
+   \   000220   FA           MOV       R2,A
+   \   000221   5001         JNC       ??MT_SapiCommandProcessing_25
+   \   000223   0B           INC       R3
+   \                     ??MT_SapiCommandProcessing_25:
+   \   000224   12....       LCALL     `??MT_BuildEndpointDesc::?relay`; Banked call to: MT_BuildEndpointDesc
+   \   000227   E9           MOV       A,R1
+   \   000228   85..82       MOV       DPL,?XSP + 0
+   \   00022B   85..83       MOV       DPH,?XSP + 1
+   \   00022E   F0           MOVX      @DPTR,A
+   \   00022F   7021         JNZ       ??MT_SapiCommandProcessing_26
+   \   000231                ; Setup parameters for call to function afRegister
+   \   000231   7A..         MOV       R2,#sapi_epDesc & 0xff
+   \   000233   7B..         MOV       R3,#(sapi_epDesc >> 8) & 0xff
+   \   000235   12....       LCALL     `??afRegister::?relay`; Banked call to: afRegister
+   \   000238   E9           MOV       A,R1
+   \   000239   85..82       MOV       DPL,?XSP + 0
+   \   00023C   85..83       MOV       DPH,?XSP + 1
+   \   00023F   F0           MOVX      @DPTR,A
+   \   000240                ; Setup parameters for call to function afSetMatch
+   \   000240   7A00         MOV       R2,#0x0
+   \   000242   90....       MOV       DPTR,#sapi_epDesc + 4
+   \   000245   E0           MOVX      A,@DPTR
+   \   000246   F8           MOV       R0,A
+   \   000247   A3           INC       DPTR
+   \   000248   E0           MOVX      A,@DPTR
+   \   000249   F583         MOV       DPH,A
+   \   00024B   8882         MOV       DPL,R0
+   \   00024D   E0           MOVX      A,@DPTR
+   \   00024E   F9           MOV       R1,A
+   \   00024F   12....       LCALL     `??afSetMatch::?relay`; Banked call to: afSetMatch
+   \                     ??MT_SapiCommandProcessing_26:
+   \   000252   85..82       MOV       DPL,?XSP + 0
+   \   000255   85..83       MOV       DPH,?XSP + 1
+   \   000258   E0           MOVX      A,@DPTR
+   \   000259   6005         JZ        ??MT_SapiCommandProcessing_24
+   \   00025B   90....       MOV       DPTR,#sapi_epDesc
+   \   00025E   E4           CLR       A
+   \   00025F   F0           MOVX      @DPTR,A
+   \                     ??MT_SapiCommandProcessing_24:
+   \   000260                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000260   AC..         MOV       R4,?XSP + 0
+   \   000262   AD..         MOV       R5,?XSP + 1
+   \   000264   7B01         MOV       R3,#0x1
+   \   000266   7A0A         MOV       R2,#0xa
+   \                     ??MT_SapiCommandProcessing_12:
+   \   000268   7966         MOV       R1,#0x66
+   \   00026A   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    132                break;
+   \   00026D   8003         SJMP      ??MT_SapiCommandProcessing_17
+    133          
+    134              default:
+    135                status = MT_RPC_ERR_COMMAND_ID;
+   \                     ??MT_SapiCommandProcessing_11:
+   \   00026F   75..02       MOV       ?V0,#0x2
+    136                break;
+    137            }
+    138          
+    139            return status;
+   \                     ??MT_SapiCommandProcessing_17:
+   \   000272   A9..         MOV       R1,?V0
+   \   000274   7401         MOV       A,#0x1
+   \   000276   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000279                REQUIRE ?Subroutine0
+   \   000279                ; // Fall through to label ?Subroutine0
+    140          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F06         MOV       R7,#0x6
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   8A82         MOV       DPL,R2
+   \   000002   8B83         MOV       DPH,R3
+   \   000004   A3           INC       DPTR
+   \   000005   A3           INC       DPTR
+   \   000006   E0           MOVX      A,@DPTR
+   \   000007   F5..         MOV       ?V1,A
+   \   000009   EA           MOV       A,R2
+   \   00000A   2403         ADD       A,#0x3
+   \   00000C   F8           MOV       R0,A
+   \   00000D   E4           CLR       A
+   \   00000E   3B           ADDC      A,R3
+   \   00000F   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   AA..         MOV       R2,?V1
+   \   000002   7966         MOV       R1,#0x66
+   \   000004   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+   \   000007                ; Setup parameters for call to function osal_mem_free
+   \   000007                ; Setup parameters for call to function osal_mem_free
+   \   000007   EE           MOV       A,R6
+   \   000008   FA           MOV       R2,A
+   \   000009   EF           MOV       A,R7
+   \   00000A   FB           MOV       R3,A
+   \   00000B   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000003   8A..         MOV       ?V4,R2
+   \   000005   8B..         MOV       ?V5,R3
+   \   000007   AE..         MOV       R6,?V4
+   \   000009   AF..         MOV       R7,?V5
+   \   00000B   EA           MOV       A,R2
+   \   00000C   4F           ORL       A,R7
+   \   00000D   22           RET
+    141          
+    142          /***************************************************************************************************
+    143           * @fn          MT_SapiSystemReset
+    144           *
+    145           * @brief       Process SAPI System Reset
+    146           *
+    147           * @param       pBuf - pointer to received buffer
+    148           *
+    149           * @return      none
+    150           ***************************************************************************************************/
+    151          static void MT_SapiSystemReset(uint8 *pBuf)
+    152          {
+    153            zb_SystemReset();
+    154          }
+    155          
+    156          /***************************************************************************************************
+    157           * @fn          MT_SapiStart
+    158           *
+    159           * @brief       Process SAPI Start
+    160           *
+    161           * @param       pBuf - pointer to received buffer
+    162           *
+    163           * @return      none
+    164           ***************************************************************************************************/
+    165          static void MT_SapiStart(uint8 *pBuf)
+    166          {
+    167            zb_StartRequest();
+    168          
+    169            /* Build and send back the response */
+    170            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), MT_SAPI_START_REQ, 0, NULL);
+    171          }
+    172          /***************************************************************************************************
+    173           * @fn          MT_SapiAppRegister
+    174           *
+    175           * @brief       Process SAPI App Register
+    176           *
+    177           * @param       pBuf - pointer to received buffer
+    178           *
+    179           * @return      none
+    180           ***************************************************************************************************/
+    181          static void MT_SapiAppRegister(uint8 *pBuf)
+    182          {
+    183            uint8 ret = ZApsIllegalRequest;
+    184          
+    185            /* check if sapi is alredy registered with an endpoint */
+    186            if ( (sapi_epDesc.endPoint == 0) && (*pBuf != 0) )
+    187            {
+    188              ret = MT_BuildEndpointDesc( pBuf+MT_RPC_FRAME_HDR_SZ, &sapi_epDesc );
+    189              if ( ret == ZSuccess )
+    190              {
+    191                ret = afRegister( &sapi_epDesc );
+    192                // Turn off match descriptor response by default
+    193                afSetMatch(sapi_epDesc.simpleDesc->EndPoint, FALSE);
+    194              }
+    195          
+    196              if ( ret != ZSuccess )
+    197              {
+    198                sapi_epDesc.endPoint = 0;
+    199              }
+    200            }
+    201          
+    202            /* Build and send back the response */
+    203            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI),
+    204                                                 MT_SAPI_APP_REGISTER_REQ, 1, &ret);
+    205          }
+    206          /***************************************************************************************************
+    207           * @fn          MT_SapiBindDevice
+    208           *
+    209           * @brief       Process SAPI Bind Device Command
+    210           *
+    211           * @param       pBuf - pointer to received buffer
+    212           *
+    213           * @return      none
+    214           ***************************************************************************************************/
+    215          static void MT_SapiBindDevice(uint8 *pBuf)
+    216          {
+    217            uint8 cmdId;
+    218          
+    219            /* parse header */
+    220            cmdId = pBuf[MT_RPC_POS_CMD1];
+    221            pBuf += MT_RPC_FRAME_HDR_SZ;
+    222          
+    223            if (AddrMgrExtAddrValid(pBuf+3))
+    224            {
+    225              zb_BindDevice(pBuf[0], osal_build_uint16( &pBuf[1] ), &pBuf[3]);
+    226            }
+    227            else
+    228            {
+    229              zb_BindDevice(pBuf[0], osal_build_uint16( &pBuf[1] ), (uint8 *)NULL);
+    230            }
+    231          
+    232            /* Build and send back the response */
+    233            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), cmdId, 0, NULL);
+    234          }
+    235          
+    236          /***************************************************************************************************
+    237           * @fn          MT_SapiAllowBind
+    238           *
+    239           * @brief       Process SAPI Allow Bind
+    240           *
+    241           * @param       pBuf - pointer to received buffer
+    242           *
+    243           * @return      none
+    244           ***************************************************************************************************/
+    245          static void MT_SapiAllowBind(uint8 *pBuf)
+    246          {
+    247            uint8 cmdId;
+    248          
+    249            /* parse header */
+    250            cmdId = pBuf[MT_RPC_POS_CMD1];
+    251            pBuf += MT_RPC_FRAME_HDR_SZ;
+    252          
+    253            zb_AllowBind(pBuf[0]);
+    254          
+    255            /* Build and send back the response */
+    256            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), cmdId, 0, NULL);
+    257          }
+    258          
+    259          /***************************************************************************************************
+    260           * @fn          MT_SapiSendData
+    261           *
+    262           * @brief       Process SAPI Send Data Command
+    263           *
+    264           * @param       pBuf - pointer to received buffer
+    265           *
+    266           * @return      none
+    267           ***************************************************************************************************/
+    268          static void MT_SapiSendData(uint8 *pBuf)
+    269          {
+    270            uint8 cmdId;
+    271            uint16 destination, command;
+    272            uint8 len, handle, txOption, radius;
+    273          
+    274            /* parse header */
+    275            cmdId = pBuf[MT_RPC_POS_CMD1];
+    276            pBuf += MT_RPC_FRAME_HDR_SZ;
+    277          
+    278            /* Destination */
+    279            destination = osal_build_uint16( &pBuf[0] );
+    280            /* Command */
+    281            command = osal_build_uint16( &pBuf[2] );
+    282            /* Handle */
+    283            handle = pBuf[4];
+    284            /* txOption */
+    285            txOption = pBuf[5];
+    286            /* Radius */
+    287            radius = pBuf[6];
+    288            /* Length */
+    289            len = pBuf[7];
+    290          
+    291            zb_SendDataRequest(destination, command, len, &pBuf[8], handle, txOption, radius);
+    292          
+    293            /* Build and send back the response */
+    294            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), cmdId, 0, NULL);
+    295          }
+    296          
+    297          /***************************************************************************************************
+    298           * @fn          MT_SapiReadCfg
+    299           *
+    300           * @brief       Process SAPI Read Config Commands
+    301           *
+    302           * @param       pBuf - pointer to received buffer
+    303           *
+    304           * @return      none
+    305           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    306          static void MT_SapiReadCfg(uint8 *pBuf)
+   \                     MT_SapiReadCfg:
+    307          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV       A,#-0xe
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+    308            uint8 len, retStatus;
+    309            uint8 cfgId, cmdId;
+    310            uint8 *pRetBuf;
+    311          
+    312            /* Parse header */
+    313            cmdId = pBuf[MT_RPC_POS_CMD1];
+   \   000005   8A82         MOV       DPL,R2
+   \   000007   8B83         MOV       DPH,R3
+   \   000009   A3           INC       DPTR
+   \   00000A   A3           INC       DPTR
+   \   00000B   E0           MOVX      A,@DPTR
+   \   00000C   F5..         MOV       ?V1,A
+    314            cfgId = pBuf[MT_RPC_POS_DAT0];
+   \   00000E   8A82         MOV       DPL,R2
+   \   000010   8B83         MOV       DPH,R3
+   \   000012   A3           INC       DPTR
+   \   000013   A3           INC       DPTR
+   \   000014   A3           INC       DPTR
+   \   000015   E0           MOVX      A,@DPTR
+   \   000016   F5..         MOV       ?V2,A
+    315          
+    316            /* Length of item in NV memory */
+    317            len = (uint8)osal_nv_item_len(cfgId);
+   \   000018                ; Setup parameters for call to function osal_nv_item_len
+   \   000018   FA           MOV       R2,A
+   \   000019   7B00         MOV       R3,#0x0
+   \   00001B   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
+   \   00001E   EA           MOV       A,R2
+   \   00001F   F5..         MOV       ?V0,A
+    318          
+    319            pRetBuf = osal_mem_alloc(len+3);
+   \   000021                ; Setup parameters for call to function osal_mem_alloc
+   \   000021   2403         ADD       A,#0x3
+   \   000023   FA           MOV       R2,A
+   \   000024   E4           CLR       A
+   \   000025   3400         ADDC      A,#0x0
+   \   000027   FB           MOV       R3,A
+   \   000028   12....       LCALL     ?Subroutine4 & 0xFFFF
+    320            if (pRetBuf != NULL)
+   \                     ??CrossCallReturnLabel_2:
+   \   00002B   6058         JZ        ??CrossCallReturnLabel_8
+    321            {
+    322              if (len && ((cfgId != ZCD_NV_NIB) && (cfgId != ZCD_NV_DEVICE_LIST) &&
+    323                          (cfgId != ZCD_NV_ADDRMGR) && (cfgId != ZCD_NV_NWKKEY)))
+   \   00002D   E5..         MOV       A,?V0
+   \   00002F   6031         JZ        ??MT_SapiReadCfg_0
+   \   000031   7421         MOV       A,#0x21
+   \   000033   65..         XRL       A,?V2
+   \   000035   602B         JZ        ??MT_SapiReadCfg_0
+   \   000037   7422         MOV       A,#0x22
+   \   000039   65..         XRL       A,?V2
+   \   00003B   6025         JZ        ??MT_SapiReadCfg_0
+   \   00003D   7423         MOV       A,#0x23
+   \   00003F   65..         XRL       A,?V2
+   \   000041   601F         JZ        ??MT_SapiReadCfg_0
+   \   000043   7482         MOV       A,#-0x7e
+   \   000045   65..         XRL       A,?V2
+   \   000047   6019         JZ        ??MT_SapiReadCfg_0
+    324              {
+    325                if ((zb_ReadConfiguration(cfgId, len, pRetBuf+3)) == ZSUCCESS)
+   \   000049                ; Setup parameters for call to function zb_ReadConfiguration
+   \   000049   EA           MOV       A,R2
+   \   00004A   2403         ADD       A,#0x3
+   \   00004C   FC           MOV       R4,A
+   \   00004D   E4           CLR       A
+   \   00004E   3F           ADDC      A,R7
+   \   00004F   FD           MOV       R5,A
+   \   000050   AA..         MOV       R2,?V0
+   \   000052   A9..         MOV       R1,?V2
+   \   000054   12....       LCALL     `??zb_ReadConfiguration::?relay`; Banked call to: zb_ReadConfiguration
+   \   000057   E9           MOV       A,R1
+   \   000058   7004         JNZ       ??MT_SapiReadCfg_1
+    326                {
+    327                  retStatus = ZSuccess;
+   \   00005A   7400         MOV       A,#0x0
+   \   00005C   8009         SJMP      ??MT_SapiReadCfg_2
+    328                }
+    329                else
+    330                {
+    331                  retStatus = ZFailure;
+   \                     ??MT_SapiReadCfg_1:
+   \   00005E   7401         MOV       A,#0x1
+   \   000060   8002         SJMP      ??MT_SapiReadCfg_3
+    332                }
+    333              }
+    334              else
+    335              {
+    336                retStatus = ZInvalidParameter;
+   \                     ??MT_SapiReadCfg_0:
+   \   000062   7402         MOV       A,#0x2
+    337              }
+    338          
+    339              if (retStatus != ZSuccess)
+    340              {
+    341                 /* Don't return garbage with error */
+    342                 len = 0;
+   \                     ??MT_SapiReadCfg_3:
+   \   000064   75..00       MOV       ?V0,#0x0
+    343              }
+    344          
+    345              /* Status */
+    346              pRetBuf[0] = retStatus;
+   \                     ??MT_SapiReadCfg_2:
+   \   000067   8E82         MOV       DPL,R6
+   \   000069   8F83         MOV       DPH,R7
+   \   00006B   F0           MOVX      @DPTR,A
+    347              /* Config ID */
+    348              pRetBuf[1] = cfgId;
+   \   00006C   A3           INC       DPTR
+   \   00006D   E5..         MOV       A,?V2
+   \   00006F   F0           MOVX      @DPTR,A
+    349              /* NV item length */
+    350              pRetBuf[2] = len;
+   \   000070   8E82         MOV       DPL,R6
+   \   000072   8F83         MOV       DPH,R7
+   \   000074   A3           INC       DPTR
+   \   000075   A3           INC       DPTR
+   \   000076   E5..         MOV       A,?V0
+   \   000078   F0           MOVX      @DPTR,A
+    351          
+    352              /* Build and send back the response */
+    353              MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), cmdId, len+3, pRetBuf );
+   \   000079                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000079   EE           MOV       A,R6
+   \   00007A   FC           MOV       R4,A
+   \   00007B   EF           MOV       A,R7
+   \   00007C   FD           MOV       R5,A
+   \   00007D   7403         MOV       A,#0x3
+   \   00007F   25..         ADD       A,?V0
+   \   000081   FB           MOV       R3,A
+   \   000082   12....       LCALL     ?Subroutine8 & 0xFFFF
+    354          
+    355              osal_mem_free(pRetBuf);
+    356            }
+    357          }
+   \                     ??CrossCallReturnLabel_8:
+   \   000085   02....       LJMP      ?Subroutine0 & 0xFFFF
+    358          
+    359          /***************************************************************************************************
+    360           * @fn          MT_SpiWriteCfg
+    361           *
+    362           * @brief       Process Write Configuration Command
+    363           *
+    364           * @param       pBuf - pointer to received buffer
+    365           *
+    366           * @return      none
+    367           ***************************************************************************************************/
+    368          static void MT_SapiWriteCfg(uint8 *pBuf)
+    369          {
+    370            uint8 retValue, cmdId;
+    371          
+    372            /* Parse header */
+    373            cmdId = pBuf[MT_RPC_POS_CMD1];
+    374            pBuf += MT_RPC_FRAME_HDR_SZ;
+    375          
+    376            if ((pBuf[0] != ZCD_NV_NIB) && (pBuf[0] != ZCD_NV_DEVICE_LIST) &&
+    377                (pBuf[0] != ZCD_NV_ADDRMGR) && (pBuf[0] != ZCD_NV_NWKKEY))
+    378            {
+    379              if ((zb_WriteConfiguration(pBuf[0], pBuf[1], &pBuf[2])) == ZSUCCESS)
+    380              {
+    381                retValue = ZSuccess;
+    382              }
+    383              else
+    384              {
+    385                retValue = ZFailure;
+    386              }
+    387            }
+    388            else
+    389            {
+    390              retValue = ZInvalidParameter;
+    391            }
+    392          
+    393            /* Build and send back the response */
+    394            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), cmdId, 1, &retValue );
+    395          }
+    396          
+    397          /***************************************************************************************************
+    398           * @fn          MT_SapiGetDevInfo
+    399           *
+    400           * @brief       Process Get Device Info command
+    401           *
+    402           * @param       pBuf - pointer to received buffer
+    403           *
+    404           * @return      none
+    405           ***************************************************************************************************/
+    406          static void MT_SapiGetDevInfo(uint8 *pBuf)
+    407          {
+    408            uint8 *pRetBuf;
+    409            uint8 cmdId;
+    410          
+    411            /* parse header */
+    412            cmdId = pBuf[MT_RPC_POS_CMD1];
+    413            pBuf += MT_RPC_FRAME_HDR_SZ;
+    414          
+    415            pRetBuf = osal_mem_alloc(Z_EXTADDR_LEN+1);
+    416            if (pRetBuf)
+    417            {
+    418              zb_GetDeviceInfo(pBuf[0], pRetBuf+1);
+    419              pRetBuf[0] = pBuf[0];
+    420          
+    421              /* Build and send back the response */
+    422              MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), cmdId, Z_EXTADDR_LEN+1, pRetBuf );
+    423          
+    424              osal_mem_free(pRetBuf);
+    425            }
+    426          }
+    427          
+    428          /***************************************************************************************************
+    429           * @fn          MT_SapiFindDev
+    430           *
+    431           * @brief       Process Find Device Command
+    432           *
+    433           * @param       pBuf - pointer to received buffer
+    434           *
+    435           * @return      none
+    436           ***************************************************************************************************/
+    437          static void MT_SapiFindDev(uint8 *pBuf)
+    438          {
+    439            uint8 cmdId;
+    440          
+    441            /* parse header */
+    442            cmdId = pBuf[MT_RPC_POS_CMD1];
+    443            pBuf += MT_RPC_FRAME_HDR_SZ;
+    444          
+    445            /* Currently only supports IEEE search */
+    446            zb_FindDeviceRequest(ZB_IEEE_SEARCH, pBuf);
+    447          
+    448            /* Build and send back the response */
+    449            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), cmdId, 0, NULL );
+    450          }
+    451          
+    452          /***************************************************************************************************
+    453           * @fn          MT_SapiPermitJoin
+    454           *
+    455           * @brief       Process Permit Join Command
+    456           *
+    457           * @param       pBuf - pointer to received buffer
+    458           *
+    459           * @return      none
+    460           ***************************************************************************************************/
+    461          static void MT_SapiPermitJoin(uint8 *pBuf)
+    462          {
+    463            uint8 retValue, cmdId;
+    464          
+    465            /* parse header */
+    466            cmdId = pBuf[MT_RPC_POS_CMD1];
+    467            pBuf += MT_RPC_FRAME_HDR_SZ;
+    468          
+    469            retValue = (zb_PermitJoiningRequest(osal_build_uint16( pBuf ), pBuf[2]));
+    470          
+    471            /* Build and send back the response */
+    472            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_SAPI), cmdId, 1, &retValue );
+    473          
+    474          }
+    475          #endif  /* MT_SAPI_FUNC */
+    476          
+    477          #if defined ( MT_SAPI_CB_FUNC )
+    478          /***************************************************************************************************
+    479           * @fn          zb_MTCallbackStartConfirm
+    480           *
+    481           * @brief       Process the callback subscription for zb_StartConfirm
+    482           *
+    483           * @param       Status - status
+    484           *
+    485           * @return      none
+    486           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    487          void zb_MTCallbackStartConfirm( uint8 status )
+   \                     zb_MTCallbackStartConfirm:
+    488          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 1
+   \   000004   74FF         MOV       A,#-0x1
+   \   000006   12....       LCALL     ?ALLOC_XSTACK8
+   \   000009   12....       LCALL     ?Subroutine5 & 0xFFFF
+    489            /* Build and send back the response */
+    490            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_SAPI), MT_SAPI_START_CNF, 1, &status);
+   \                     ??CrossCallReturnLabel_11:
+   \   00000C   7A80         MOV       R2,#-0x80
+   \   00000E   7946         MOV       R1,#0x46
+   \   000010   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    491          }
+   \   000013   7401         MOV       A,#0x1
+   \   000015                REQUIRE ?Subroutine1
+   \   000015                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003   D083         POP       DPH
+   \   000005   D082         POP       DPL
+   \   000007   02....       LJMP      ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   E9           MOV       A,R1
+   \   000001   85..82       MOV       DPL,?XSP + 0
+   \   000004   85..83       MOV       DPH,?XSP + 1
+   \   000007                REQUIRE ??Subroutine10_0
+   \   000007                ; // Fall through to label ??Subroutine10_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine10_0:
+   \   000000   12....       LCALL     ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000003   7B01         MOV       R3,#0x1
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000001                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000001                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000001                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000001                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000001                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000001   AC..         MOV       R4,?XSP + 0
+   \   000003   AD..         MOV       R5,?XSP + 1
+   \   000005   22           RET
+    492          
+    493          /***************************************************************************************************
+    494           * @fn          zb_MTCallbackSendDataConfirm
+    495           *
+    496           * @brief       Process the callback subscription for zb_SendDataConfirm
+    497           *
+    498           * @param
+    499           *
+    500           * @return      none
+    501           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    502          void zb_MTCallbackSendDataConfirm(uint8 handle, uint8 status)
+   \                     zb_MTCallbackSendDataConfirm:
+    503          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV       A,#-0x2
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    504            uint8 retArray[2];
+    505          
+    506            retArray[0] = handle;
+   \   00000A   E9           MOV       A,R1
+   \   00000B   85..82       MOV       DPL,?XSP + 0
+   \   00000E   85..83       MOV       DPH,?XSP + 1
+   \   000011   F0           MOVX      @DPTR,A
+    507            retArray[1] = status;
+   \   000012   7401         MOV       A,#0x1
+   \   000014   12....       LCALL     ?XSTACK_DISP0_8
+   \   000017   EA           MOV       A,R2
+   \   000018   12....       LCALL     ?Subroutine9 & 0xFFFF
+    508          
+    509            /* Build and send back the response */
+    510            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_SAPI), MT_SAPI_SEND_DATA_CNF, 2, retArray);
+   \                     ??CrossCallReturnLabel_14:
+   \   00001B   7B02         MOV       R3,#0x2
+   \   00001D   7A83         MOV       R2,#-0x7d
+   \   00001F   7946         MOV       R1,#0x46
+   \   000021   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    511          
+    512          }
+   \   000024   7402         MOV       A,#0x2
+   \   000026                REQUIRE ?Subroutine2
+   \   000026                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003   7F01         MOV       R7,#0x1
+   \   000005   02....       LJMP      ?BANKED_LEAVE_XDATA
+    513          
+    514          /***************************************************************************************************
+    515           * @fn          zb_MTCallbackBindConfirm
+    516           *
+    517           * @brief       Process the callback subscription for zb_BindConfirm
+    518           *
+    519           * @param
+    520           *
+    521           * @return      none
+    522           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    523          void zb_MTCallbackBindConfirm( uint16 commandId, uint8 status )
+   \                     zb_MTCallbackBindConfirm:
+    524          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV       A,#-0x3
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    525            uint8 retArray[3];
+    526          
+    527            retArray[0] = LO_UINT16(commandId);
+   \   00000A   EA           MOV       A,R2
+   \   00000B   85..82       MOV       DPL,?XSP + 0
+   \   00000E   85..83       MOV       DPH,?XSP + 1
+   \   000011   F0           MOVX      @DPTR,A
+    528            retArray[1] = HI_UINT16(commandId);
+   \   000012   7401         MOV       A,#0x1
+   \   000014   12....       LCALL     ?XSTACK_DISP0_8
+   \   000017   EB           MOV       A,R3
+   \   000018   F0           MOVX      @DPTR,A
+    529            retArray[2] = status;
+   \   000019   7402         MOV       A,#0x2
+   \   00001B   12....       LCALL     ?XSTACK_DISP0_8
+   \   00001E   E9           MOV       A,R1
+   \   00001F   12....       LCALL     ?Subroutine9 & 0xFFFF
+    530          
+    531            /* Build and send back the response */
+    532            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_SAPI), MT_SAPI_BIND_CNF, 3, retArray);
+   \                     ??CrossCallReturnLabel_15:
+   \   000022   7B03         MOV       R3,#0x3
+   \   000024   7A81         MOV       R2,#-0x7f
+   \   000026   7946         MOV       R1,#0x46
+   \   000028   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    533          
+    534          }
+   \   00002B   7403         MOV       A,#0x3
+   \   00002D   80..         SJMP      ?Subroutine2
+    535          /***************************************************************************************************
+    536           * @fn          zb_MTCallbackAllowBindConfirm
+    537           *
+    538           * @brief       Indicates when another device attempted to bind to this device
+    539           *
+    540           * @param
+    541           *
+    542           * @return      none
+    543           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    544          void zb_MTCallbackAllowBindConfirm( uint16 source )
+   \                     zb_MTCallbackAllowBindConfirm:
+    545          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 2
+   \   000004   74FE         MOV       A,#-0x2
+   \   000006   12....       LCALL     ?ALLOC_XSTACK8
+    546            uint8 retArray[2];
+    547          
+    548            retArray[0] = LO_UINT16(source);
+   \   000009   EA           MOV       A,R2
+   \   00000A   85..82       MOV       DPL,?XSP + 0
+   \   00000D   85..83       MOV       DPH,?XSP + 1
+   \   000010   F0           MOVX      @DPTR,A
+    549            retArray[1] = HI_UINT16(source);
+   \   000011   7401         MOV       A,#0x1
+   \   000013   12....       LCALL     ?XSTACK_DISP0_8
+   \   000016   EB           MOV       A,R3
+   \   000017   12....       LCALL     ?Subroutine9 & 0xFFFF
+    550          
+    551            /* Build and send back the response */
+    552            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_SAPI), MT_SAPI_ALLOW_BIND_CNF, 2, retArray);
+   \                     ??CrossCallReturnLabel_16:
+   \   00001A   7B02         MOV       R3,#0x2
+   \   00001C   7A82         MOV       R2,#-0x7e
+   \   00001E   7946         MOV       R1,#0x46
+   \   000020   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    553          
+    554          }
+   \   000023   7402         MOV       A,#0x2
+   \   000025   02....       LJMP      ?Subroutine1 & 0xFFFF
+    555          /***************************************************************************************************
+    556           * @fn          zb_MTCallbackFindDeviceConfirm
+    557           *
+    558           * @brief       Process the callback subscription for zb_FindDeviceConfirm
+    559           *
+    560           * @param
+    561           *
+    562           * @return      none
+    563           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    564          void zb_MTCallbackFindDeviceConfirm( uint8 searchType, uint8 *searchKey, uint8 *result )
+   \                     zb_MTCallbackFindDeviceConfirm:
+    565          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000   74F5         MOV       A,#-0xb
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 11
+   \   000005   74F5         MOV       A,#-0xb
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    566            uint8 retArray[SPI_CB_SAPI_FIND_DEV_CNF_LEN];
+    567            uint16 addr = *((uint16*)searchKey);
+   \   00000A   8A82         MOV       DPL,R2
+   \   00000C   8B83         MOV       DPH,R3
+   \   00000E   E0           MOVX      A,@DPTR
+   \   00000F   F8           MOV       R0,A
+   \   000010   A3           INC       DPTR
+   \   000011   E0           MOVX      A,@DPTR
+   \   000012   F9           MOV       R1,A
+    568          
+    569            // Currently only supports IEEE Addr Search
+    570            retArray[0] = ZB_IEEE_SEARCH;
+   \   000013   85..82       MOV       DPL,?XSP + 0
+   \   000016   85..83       MOV       DPH,?XSP + 1
+   \   000019   7401         MOV       A,#0x1
+   \   00001B   F0           MOVX      @DPTR,A
+    571            retArray[1] = LO_UINT16(addr);
+   \   00001C   12....       LCALL     ?XSTACK_DISP0_8
+   \   00001F   E8           MOV       A,R0
+   \   000020   F0           MOVX      @DPTR,A
+    572            retArray[2] = HI_UINT16(addr);
+   \   000021   7402         MOV       A,#0x2
+   \   000023   12....       LCALL     ?XSTACK_DISP0_8
+   \   000026   E9           MOV       A,R1
+   \   000027   F0           MOVX      @DPTR,A
+    573            osal_memcpy(&retArray[3], result, Z_EXTADDR_LEN);
+   \   000028                ; Setup parameters for call to function osal_memcpy
+   \   000028   8C..         MOV       ?V0,R4
+   \   00002A   8D..         MOV       ?V1,R5
+   \   00002C   75..00       MOV       ?V2,#0x0
+   \   00002F   78..         MOV       R0,#?V0
+   \   000031   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   000034   7C08         MOV       R4,#0x8
+   \   000036   7D00         MOV       R5,#0x0
+   \   000038   7406         MOV       A,#0x6
+   \   00003A   12....       LCALL     ?XSTACK_DISP0_8
+   \   00003D   AA82         MOV       R2,DPL
+   \   00003F   AB83         MOV       R3,DPH
+   \   000041   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000044   7403         MOV       A,#0x3
+   \   000046   12....       LCALL     ?DEALLOC_XSTACK8
+    574          
+    575            /* Build and send back the response */
+    576            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_SAPI), MT_SAPI_FIND_DEV_CNF, 11, retArray);
+   \   000049                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000049   AC..         MOV       R4,?XSP + 0
+   \   00004B   AD..         MOV       R5,?XSP + 1
+   \   00004D   7B0B         MOV       R3,#0xb
+   \   00004F   7A85         MOV       R2,#-0x7b
+   \   000051   7946         MOV       R1,#0x46
+   \   000053   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    577          
+    578          }
+   \   000056   740B         MOV       A,#0xb
+   \   000058   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00005B   7F03         MOV       R7,#0x3
+   \   00005D   02....       LJMP      ?BANKED_LEAVE_XDATA
+    579          
+    580          /***************************************************************************************************
+    581           * @fn          zb_MTCallbackReceiveDataIndication
+    582           *
+    583           * @brief       Process the callback subscription for zb_ReceiveDataIndication
+    584           *
+    585           * @param
+    586           *
+    587           * @return      none
+    588           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    589          void zb_MTCallbackReceiveDataIndication( uint16 source, uint16 command, uint16 len, uint8 *pData  )
+   \                     zb_MTCallbackReceiveDataIndication:
+    590          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000   74EE         MOV       A,#-0x12
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V2,R2
+   \   000007   8B..         MOV       ?V3,R3
+   \   000009   EC           MOV       A,R4
+   \   00000A   FE           MOV       R6,A
+   \   00000B   ED           MOV       A,R5
+   \   00000C   FF           MOV       R7,A
+   \   00000D   7412         MOV       A,#0x12
+   \   00000F   12....       LCALL     ?XSTACK_DISP0_8
+   \   000012   E0           MOVX      A,@DPTR
+   \   000013   F5..         MOV       ?V6,A
+   \   000015   A3           INC       DPTR
+   \   000016   E0           MOVX      A,@DPTR
+   \   000017   F5..         MOV       ?V7,A
+    591            uint8 *memPtr;
+    592            int8 i;
+    593            uint8 msgLen = 6 + len;
+   \   000019   E5..         MOV       A,?V6
+   \   00001B   2406         ADD       A,#0x6
+   \   00001D   F5..         MOV       ?V4,A
+    594          
+    595            memPtr = osal_mem_alloc(msgLen);
+   \   00001F                ; Setup parameters for call to function osal_mem_alloc
+   \   00001F   FA           MOV       R2,A
+   \   000020   7B00         MOV       R3,#0x0
+   \   000022   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000025   8A..         MOV       ?V0,R2
+   \   000027   8B..         MOV       ?V1,R3
+    596          
+    597            if (memPtr)
+   \   000029   EA           MOV       A,R2
+   \   00002A   4B           ORL       A,R3
+   \   00002B   6077         JZ        ??zb_MTCallbackReceiveDataIndication_0
+    598            {
+    599              memPtr[0] = LO_UINT16(source);
+   \   00002D   8A82         MOV       DPL,R2
+   \   00002F   8B83         MOV       DPH,R3
+   \   000031   E5..         MOV       A,?V2
+   \   000033   F0           MOVX      @DPTR,A
+    600              memPtr[1] = HI_UINT16(source);
+   \   000034   E5..         MOV       A,?V3
+   \   000036   A3           INC       DPTR
+   \   000037   F0           MOVX      @DPTR,A
+    601              memPtr[2] = LO_UINT16(command);
+   \   000038   EE           MOV       A,R6
+   \   000039   8A82         MOV       DPL,R2
+   \   00003B   8B83         MOV       DPH,R3
+   \   00003D   A3           INC       DPTR
+   \   00003E   A3           INC       DPTR
+   \   00003F   F0           MOVX      @DPTR,A
+    602              memPtr[3] = HI_UINT16(command);
+   \   000040   EF           MOV       A,R7
+   \   000041   8A82         MOV       DPL,R2
+   \   000043   8B83         MOV       DPH,R3
+   \   000045   A3           INC       DPTR
+   \   000046   A3           INC       DPTR
+   \   000047   A3           INC       DPTR
+   \   000048   12....       LCALL     ?Subroutine7 & 0xFFFF
+    603              memPtr[4] = LO_UINT16(len);
+   \                     ??CrossCallReturnLabel_6:
+   \   00004B   E5..         MOV       A,?V6
+   \   00004D   12....       LCALL     ?Subroutine7 & 0xFFFF
+    604              memPtr[5] = HI_UINT16(len);
+   \                     ??CrossCallReturnLabel_7:
+   \   000050   A3           INC       DPTR
+   \   000051   E5..         MOV       A,?V7
+   \   000053   F0           MOVX      @DPTR,A
+    605          
+    606              for (i=0; i<len; i++)
+   \   000054   7C00         MOV       R4,#0x0
+   \   000056   7414         MOV       A,#0x14
+   \   000058   12....       LCALL     ?XSTACK_DISP0_8
+   \   00005B   E0           MOVX      A,@DPTR
+   \   00005C   F8           MOV       R0,A
+   \   00005D   A3           INC       DPTR
+   \   00005E   E0           MOVX      A,@DPTR
+   \   00005F   F9           MOV       R1,A
+   \   000060   801F         SJMP      ??zb_MTCallbackReceiveDataIndication_1
+    607              {
+    608                memPtr[6+i] = pData[i];
+   \                     ??zb_MTCallbackReceiveDataIndication_2:
+   \   000062   E8           MOV       A,R0
+   \   000063   2A           ADD       A,R2
+   \   000064   F582         MOV       DPL,A
+   \   000066   E9           MOV       A,R1
+   \   000067   3B           ADDC      A,R3
+   \   000068   F583         MOV       DPH,A
+   \   00006A   E0           MOVX      A,@DPTR
+   \   00006B   C0E0         PUSH      A
+   \   00006D   E5..         MOV       A,?V0
+   \   00006F   2A           ADD       A,R2
+   \   000070   F582         MOV       DPL,A
+   \   000072   E5..         MOV       A,?V1
+   \   000074   3B           ADDC      A,R3
+   \   000075   F583         MOV       DPH,A
+   \   000077   A3           INC       DPTR
+   \   000078   A3           INC       DPTR
+   \   000079   A3           INC       DPTR
+   \   00007A   A3           INC       DPTR
+   \   00007B   A3           INC       DPTR
+   \   00007C   A3           INC       DPTR
+   \   00007D   D0E0         POP       A
+   \   00007F   F0           MOVX      @DPTR,A
+    609              }
+   \   000080   0C           INC       R4
+   \                     ??zb_MTCallbackReceiveDataIndication_1:
+   \   000081   EC           MOV       A,R4
+   \   000082   FA           MOV       R2,A
+   \   000083   33           RLC       A
+   \   000084   95E0         SUBB      A,0xE0 /* A   */
+   \   000086   FB           MOV       R3,A
+   \   000087   C3           CLR       C
+   \   000088   EA           MOV       A,R2
+   \   000089   95..         SUBB      A,?V6
+   \   00008B   EB           MOV       A,R3
+   \   00008C   95..         SUBB      A,?V7
+   \   00008E   40D2         JC        ??zb_MTCallbackReceiveDataIndication_2
+    610          
+    611              /* Build and send back the response */
+    612              MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_SAPI), MT_SAPI_RCV_DATA_IND, msgLen, memPtr);
+   \   000090                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000090   AC..         MOV       R4,?V0
+   \   000092   AD..         MOV       R5,?V1
+   \   000094   AB..         MOV       R3,?V4
+   \   000096   7A87         MOV       R2,#-0x79
+   \   000098   7946         MOV       R1,#0x46
+   \   00009A   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    613          
+    614              osal_mem_free( memPtr );
+   \   00009D                ; Setup parameters for call to function osal_mem_free
+   \   00009D   AA..         MOV       R2,?V0
+   \   00009F   AB..         MOV       R3,?V1
+   \   0000A1   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    615            }
+    616          }
+   \                     ??zb_MTCallbackReceiveDataIndication_0:
+   \   0000A4   7F0A         MOV       R7,#0xa
+   \   0000A6   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   8A82         MOV       DPL,R2
+   \   000003   8B83         MOV       DPH,R3
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008   A3           INC       DPTR
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   8A82         MOV       DPL,R2
+   \   000002   8B83         MOV       DPH,R3
+   \   000004   A3           INC       DPTR
+   \   000005   A3           INC       DPTR
+   \   000006   E0           MOVX      A,@DPTR
+   \   000007   F5..         MOV       ?V1,A
+   \   000009   EA           MOV       A,R2
+   \   00000A   2403         ADD       A,#0x3
+   \   00000C   FE           MOV       R6,A
+   \   00000D   E4           CLR       A
+   \   00000E   3B           ADDC      A,R3
+   \   00000F   FF           MOV       R7,A
+   \   000010                ; Setup parameters for call to function osal_build_uint16
+   \   000010                ; Setup parameters for call to function osal_build_uint16
+   \   000010   0A           INC       R2
+   \   000011   0A           INC       R2
+   \   000012   0A           INC       R2
+   \   000013   FB           MOV       R3,A
+   \   000014   12....       LCALL     `??osal_build_uint16::?relay`; Banked call to: osal_build_uint16
+   \   000017   22           RET
+    617          #endif  /* MT_SAPI_CB_FUNC */
+    618          
+    619          /***************************************************************************************************
+    620           ***************************************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      1     20   MT_SapiCommandProcessing
+        0     15   -> AddrMgrExtAddrValid
+        0     15   -> MT_BuildAndSendZToolResponse
+        0     15   -> MT_BuildEndpointDesc
+        0     15   -> MT_SapiReadCfg
+        0     15   -> afRegister
+        0     15   -> afSetMatch
+        0     15   -> osal_build_uint16
+        0     15   -> osal_mem_alloc
+        0     15   -> osal_mem_free
+        0     15   -> zb_AllowBind
+        0     15   -> zb_BindDevice
+        0     15   -> zb_FindDeviceRequest
+        0     15   -> zb_GetDeviceInfo
+        0     15   -> zb_PermitJoiningRequest
+        0     20   -> zb_SendDataRequest
+        0     15   -> zb_StartRequest
+        0     15   -> zb_SystemReset
+        0     15   -> zb_WriteConfiguration
+      1     29   MT_SapiReadCfg
+        0     14   -> MT_BuildAndSendZToolResponse
+        0     14   -> osal_mem_alloc
+        0     14   -> osal_mem_free
+        0     14   -> osal_nv_item_len
+        0     14   -> zb_ReadConfiguration
+      3      2   zb_MTCallbackAllowBindConfirm
+        2      2   -> MT_BuildAndSendZToolResponse
+      1     12   zb_MTCallbackBindConfirm
+        0     12   -> MT_BuildAndSendZToolResponse
+      1     25   zb_MTCallbackFindDeviceConfirm
+        0     22   -> MT_BuildAndSendZToolResponse
+        0     25   -> osal_memcpy
+      1     22   zb_MTCallbackReceiveDataIndication
+        0     18   -> MT_BuildAndSendZToolResponse
+        0     18   -> osal_mem_alloc
+        0     18   -> osal_mem_free
+      1     11   zb_MTCallbackSendDataConfirm
+        0     11   -> MT_BuildAndSendZToolResponse
+      3      1   zb_MTCallbackStartConfirm
+        2      1   -> MT_BuildAndSendZToolResponse
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??Subroutine10_0
+       5  ?Subroutine0
+      10  ?Subroutine1
+       8  ?Subroutine2
+      24  ?Subroutine3
+      14  ?Subroutine4
+       7  ?Subroutine5
+      16  ?Subroutine6
+      10  ?Subroutine7
+      15  ?Subroutine8
+       6  ?Subroutine9
+     633  MT_SapiCommandProcessing
+     136  MT_SapiReadCfg
+       2  _sapiCallbackSub
+      40  zb_MTCallbackAllowBindConfirm
+      47  zb_MTCallbackBindConfirm
+      96  zb_MTCallbackFindDeviceConfirm
+     169  zb_MTCallbackReceiveDataIndication
+      38  zb_MTCallbackSendDataConfirm
+      21  zb_MTCallbackStartConfirm
+      48  -- Other
+
+ 
+ 1 301 bytes in segment BANKED_CODE
+    48 bytes in segment BANK_RELAYS
+     2 bytes in segment XDATA_Z
+ 
+    48 bytes of CODE     memory
+ 1 301 bytes of HUGECODE memory
+     2 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

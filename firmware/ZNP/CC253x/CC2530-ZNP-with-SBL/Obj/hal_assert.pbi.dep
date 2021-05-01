@@ -1,0 +1,17 @@
+hal_assert.pbi: \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Components\hal\common\hal_assert.c \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_assert.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_types.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_board.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_board_cfg.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP/hal_mcu.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_defs.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP/hal_types.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\ioCC2530.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_mcu.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\mac_rx.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\mac_high_level.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\mac_api.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\saddr.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\sdata.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\mac_tx.h

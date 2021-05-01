@@ -1,0 +1,1180 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.40.1.7397 for 8051              01/May/2021  16:39:55
+// Copyright 2004-2021 IAR Systems AB.
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        E:\Texas Instruments\Z-Stack
+//        3.0.2\Components\hal\target\CC2530ZNP\hal_lcd.c
+//    Command line       =  
+//        -f C:\Users\asus\AppData\Local\Temp\EWF16B.tmp ("E:\Texas
+//        Instruments\Z-Stack 3.0.2\Components\hal\target\CC2530ZNP\hal_lcd.c"
+//        -D BDB_FINDING_BINDING_CAPABILITY_ENABLED=0 -D TC_LINKKEY_JOIN -D
+//        HAL_UART_DMA_RX_MAX=128 -D MAXMEMHEAP=2765 -D NWK_MAX_DEVICE_LIST=10
+//        -D ZDSECMGR_TC_DEVICE_MAX=30 -D DISABLE_GREENPOWER_BASIC_PROXY -D
+//        FEATURE_SYSTEM_STATS -D MT_GP_CB_FUNC -D ASSERT_RESET -D
+//        FAKE_CRC_SHDW -lC "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List" -lA
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List"
+//        --diag_suppress Pe001,Pa010 -o "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\Obj" -e --debug
+//        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+//        --calling_convention=xdata_reentrant --place_constants=data_rom
+//        --nr_virtual_regs 16 -f "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+//        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR |
+//        DEVICE_BUILD_ROUTER | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL
+//        -DZNP_RUN_WDOG=FALSE -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO
+//        -DZIGBEE_FRAGMENTATION -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE
+//        -DSAPI_CB_FUNC=FALSE -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT
+//        -DNUM_DISC_ATTEMPTS=0 -DMT_UTIL_FUNC -DMT_SYS_FUNC -DMT_AF_FUNC
+//        -DMT_SAPI_FUNC -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC -DMT_ZDO_FUNC
+//        -DMT_ZDO_MGMT -DMT_ZDO_EXTENSIONS -DMT_GP_CB_FUNC -DMT_APP_FUNC
+//        -DMT_APP_CNF_FUNC -DZNP_ALT) -f "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0}
+//        -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg" -I
+//        "E:\Texas Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\Source\" -I "E:\Texas
+//        Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\..\Source\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I "E:\Texas
+//        Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Utilities\BootLoad\Source\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I "E:\Texas
+//        Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\gp\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\bdb\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+//        -Ohz --require_prototypes --no_code_motion)
+//    Locale             =  English_USA.1252
+//    List file          =  
+//        E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List\hal_lcd.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_lcd
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+
+        PUBLIC `??HalLcdDisplayPercentBar::?relay`
+        FUNCTION `??HalLcdDisplayPercentBar::?relay`,0203H
+        PUBLIC `??HalLcdInit::?relay`
+        FUNCTION `??HalLcdInit::?relay`,0203H
+        PUBLIC `??HalLcdWriteScreen::?relay`
+        FUNCTION `??HalLcdWriteScreen::?relay`,0203H
+        PUBLIC `??HalLcdWriteString::?relay`
+        FUNCTION `??HalLcdWriteString::?relay`,0203H
+        PUBLIC `??HalLcdWriteStringValue::?relay`
+        FUNCTION `??HalLcdWriteStringValue::?relay`,0203H
+        PUBLIC `??HalLcdWriteStringValueValue::?relay`
+        FUNCTION `??HalLcdWriteStringValueValue::?relay`,0203H
+        PUBLIC `??HalLcdWriteValue::?relay`
+        FUNCTION `??HalLcdWriteValue::?relay`,0203H
+        PUBLIC HalLcdDisplayPercentBar
+        FUNCTION HalLcdDisplayPercentBar,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdInit
+        FUNCTION HalLcdInit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdWriteScreen
+        FUNCTION HalLcdWriteScreen,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdWriteString
+        FUNCTION HalLcdWriteString,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdWriteStringValue
+        FUNCTION HalLcdWriteStringValue,0203H
+        ARGFRAME XSTACK, 1, STACK
+        PUBLIC HalLcdWriteStringValueValue
+        FUNCTION HalLcdWriteStringValueValue,0203H
+        ARGFRAME XSTACK, 4, STACK
+        PUBLIC HalLcdWriteValue
+        FUNCTION HalLcdWriteValue,0203H
+        ARGFRAME XSTACK, 1, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+          CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI V8 SameValue
+          CFI V9 SameValue
+          CFI V10 SameValue
+          CFI V11 SameValue
+          CFI V12 SameValue
+          CFI V13 SameValue
+          CFI V14 SameValue
+          CFI V15 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+HalLcdDisplayPercentBar SYMBOL "HalLcdDisplayPercentBar"
+`??HalLcdDisplayPercentBar::?relay` SYMBOL "?relay", HalLcdDisplayPercentBar
+HalLcdInit          SYMBOL "HalLcdInit"
+`??HalLcdInit::?relay` SYMBOL "?relay", HalLcdInit
+HalLcdWriteScreen   SYMBOL "HalLcdWriteScreen"
+`??HalLcdWriteScreen::?relay` SYMBOL "?relay", HalLcdWriteScreen
+HalLcdWriteString   SYMBOL "HalLcdWriteString"
+`??HalLcdWriteString::?relay` SYMBOL "?relay", HalLcdWriteString
+HalLcdWriteStringValue SYMBOL "HalLcdWriteStringValue"
+`??HalLcdWriteStringValue::?relay` SYMBOL "?relay", HalLcdWriteStringValue
+HalLcdWriteStringValueValue SYMBOL "HalLcdWriteStringValueValue"
+`??HalLcdWriteStringValueValue::?relay` SYMBOL "?relay", HalLcdWriteStringValueValue
+HalLcdWriteValue    SYMBOL "HalLcdWriteValue"
+`??HalLcdWriteValue::?relay` SYMBOL "?relay", HalLcdWriteValue
+
+// E:\Texas Instruments\Z-Stack 3.0.2\Components\hal\target\CC2530ZNP\hal_lcd.c
+//    1 /**************************************************************************************************
+//    2   Filename:       hal_lcd.c
+//    3   Revised:        $Date: 2012-08-03 14:28:46 -0700 (Fri, 03 Aug 2012) $
+//    4   Revision:       $Revision: 31092 $
+//    5 
+//    6   Description:    This file contains the interface to the HAL LCD Service.
+//    7 
+//    8 
+//    9   Copyright 2007-2010 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /**************************************************************************************************
+//   41  *                                           INCLUDES
+//   42  **************************************************************************************************/
+//   43 #include "hal_types.h"
+//   44 #include "hal_lcd.h"
+//   45 #include "OSAL.h"
+//   46 #include "OnBoard.h"
+//   47 #include "hal_assert.h"
+//   48 
+//   49 #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
+//   50   #include "DebugTrace.h"
+//   51 #endif
+//   52 
+//   53 /**************************************************************************************************
+//   54  *                                          CONSTANTS
+//   55  **************************************************************************************************/
+//   56 /*
+//   57   LCD pins
+//   58 
+//   59   //control
+//   60   P0.0 - LCD_MODE
+//   61   P1.1 - LCD_FLASH_RESET
+//   62   P1.2 - LCD_CS
+//   63 
+//   64   //spi
+//   65   P1.5 - CLK
+//   66   P1.6 - MOSI
+//   67   P1.7 - MISO
+//   68 */
+//   69 
+//   70 /* LCD Max Chars and Buffer */
+//   71 #define HAL_LCD_MAX_CHARS   16
+//   72 #define HAL_LCD_MAX_BUFF    25
+//   73 
+//   74 /* LCD Control lines */
+//   75 #define HAL_LCD_MODE_PORT 0
+//   76 #define HAL_LCD_MODE_PIN  0
+//   77 
+//   78 #define HAL_LCD_RESET_PORT 1
+//   79 #define HAL_LCD_RESET_PIN  1
+//   80 
+//   81 #define HAL_LCD_CS_PORT 1
+//   82 #define HAL_LCD_CS_PIN  2
+//   83 
+//   84 /* LCD SPI lines */
+//   85 #define HAL_LCD_CLK_PORT 1
+//   86 #define HAL_LCD_CLK_PIN  5
+//   87 
+//   88 #define HAL_LCD_MOSI_PORT 1
+//   89 #define HAL_LCD_MOSI_PIN  6
+//   90 
+//   91 #define HAL_LCD_MISO_PORT 1
+//   92 #define HAL_LCD_MISO_PIN  7
+//   93 
+//   94 /* SPI settings */
+//   95 #define HAL_SPI_CLOCK_POL_LO       0x00
+//   96 #define HAL_SPI_CLOCK_PHA_0        0x00
+//   97 #define HAL_SPI_TRANSFER_MSB_FIRST 0x20
+//   98 
+//   99 /* LCD lines */
+//  100 #define LCD_MAX_LINE_COUNT              3
+//  101 
+//  102 /* Defines for HW LCD */
+//  103 
+//  104 /* Set power save mode */
+//  105 #define OSC_OFF                         0x00
+//  106 #define OSC_ON                          0x01
+//  107 #define POWER_SAVE_OFF                  0x00
+//  108 #define POWER_SAVE_ON                   0x02
+//  109 #define SET_POWER_SAVE_MODE(options)    HalLcd_HW_Control(0x0C | (options))
+//  110 
+//  111 /* Function Set */
+//  112 #define CGROM                           0x00
+//  113 #define CGRAM                           0x01
+//  114 #define COM_FORWARD                     0x00
+//  115 #define COM_BACKWARD                    0x02
+//  116 #define TWO_LINE                        0x00
+//  117 #define THREE_LINE                      0x04
+//  118 #define FUNCTION_SET(options)           HalLcd_HW_Control(0x10 | (options))
+//  119 
+//  120 /* Set Display Start Line */
+//  121 #define LINE1                           0x00
+//  122 #define LINE2                           0x01
+//  123 #define LINE3                           0x02
+//  124 #define LINE4                           0x03
+//  125 #define SET_DISPLAY_START_LINE(line)    HalLcd_HW_Control(0x18 | (line))
+//  126 
+//  127 /* Bias control */
+//  128 #define BIAS_1_5                        0x00
+//  129 #define BIAS_1_4                        0x01
+//  130 #define SET_BIAS_CTRL(bias)             HalLcd_HW_Control(0x1C | (bias))
+//  131 
+//  132 /* Power control */
+//  133 #define VOLTAGE_DIVIDER_OFF             0x00
+//  134 #define VOLTAGE_DIVIDER_ON              0x01
+//  135 #define CONVERTER_AND_REG_OFF           0x00
+//  136 #define CONVERTER_AND_REG_ON            0x04
+//  137 #define SET_POWER_CTRL(options)         HalLcd_HW_Control(0x20 | (options))
+//  138 
+//  139 // Set display control
+//  140 #define DISPLAY_CTRL_ON                 0x01
+//  141 #define DISPLAY_CTRL_OFF                0x00
+//  142 #define DISPLAY_CTRL_BLINK_ON           0x02
+//  143 #define DISPLAY_CTRL_BLINK_OFF          0x00
+//  144 #define DISPLAY_CTRL_CURSOR_ON          0x04
+//  145 #define DISPLAY_CTRL_CURSOR_OFF         0x00
+//  146 #define SET_DISPLAY_CTRL(options)       HalLcd_HW_Control(0x28 | (options))
+//  147 
+//  148 /* Set DD/ CGRAM address */
+//  149 #define SET_DDRAM_ADDR(charIndex)       HalLcd_HW_Control(0x80 | (charIndex))
+//  150 #define SET_GCRAM_CHAR(specIndex)       HalLcd_HW_Control(0xC0 | (specIndex))
+//  151 
+//  152 /* Set ICONRAM address */
+//  153 #define CONTRAST_CTRL_REGISTER          0x10
+//  154 #define SET_ICONRAM_ADDR(addr)          HalLcd_HW_Control(0x40 | (addr))
+//  155 
+//  156 /* Set double height */
+//  157 #define LINE_1_AND_2                    0x01
+//  158 #define LINE_2_AND_3                    0x02
+//  159 #define NORMAL_DISPLAY                  0x00
+//  160 #define SET_DOUBLE_HEIGHT(options)      HalLcd_HW_Control(0x08 | (options))
+//  161 
+//  162 /**************************************************************************************************
+//  163  *                                           MACROS
+//  164  **************************************************************************************************/
+//  165 
+//  166 #define HAL_IO_SET(port, pin, val)        HAL_IO_SET_PREP(port, pin, val)
+//  167 #define HAL_IO_SET_PREP(port, pin, val)   st( P##port##_##pin = val; )
+//  168 
+//  169 #define HAL_CONFIG_IO_OUTPUT(port, pin, val)      HAL_CONFIG_IO_OUTPUT_PREP(port, pin, val)
+//  170 #define HAL_CONFIG_IO_OUTPUT_PREP(port, pin, val) st( P##port##SEL &= ~BV(pin); \ 
+//  171                                                       P##port##_##pin = val; \ 
+//  172                                                       P##port##DIR |= BV(pin); )
+//  173 
+//  174 #define HAL_CONFIG_IO_PERIPHERAL(port, pin)      HAL_CONFIG_IO_PERIPHERAL_PREP(port, pin)
+//  175 #define HAL_CONFIG_IO_PERIPHERAL_PREP(port, pin) st( P##port##SEL |= BV(pin); )
+//  176 
+//  177 
+//  178 
+//  179 /* SPI interface control */
+//  180 #define LCD_SPI_BEGIN()     HAL_IO_SET(HAL_LCD_CS_PORT,  HAL_LCD_CS_PIN,  0); /* chip select */
+//  181 #define LCD_SPI_END()                                                         \ 
+//  182 {                                                                             \ 
+//  183   asm("NOP");                                                                 \ 
+//  184   asm("NOP");                                                                 \ 
+//  185   asm("NOP");                                                                 \ 
+//  186   asm("NOP");                                                                 \ 
+//  187   HAL_IO_SET(HAL_LCD_CS_PORT,  HAL_LCD_CS_PIN,  1); /* chip select */         \ 
+//  188 }
+//  189 /* clear the received and transmit byte status, write tx data to buffer, wait till transmit done */
+//  190 #define LCD_SPI_TX(x)                   { U1CSR &= ~(BV(2) | BV(1)); U1DBUF = x; while( !(U1CSR & BV(1)) ); }
+//  191 #define LCD_SPI_WAIT_RXRDY()            { while(!(U1CSR & BV(1))); }
+//  192 
+//  193 
+//  194 /* Control macros */
+//  195 #define LCD_DO_WRITE()        HAL_IO_SET(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  1);
+//  196 #define LCD_DO_CONTROL()      HAL_IO_SET(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  0);
+//  197 
+//  198 #define LCD_ACTIVATE_RESET()  HAL_IO_SET(HAL_LCD_RESET_PORT, HAL_LCD_RESET_PIN, 0);
+//  199 #define LCD_RELEASE_RESET()   HAL_IO_SET(HAL_LCD_RESET_PORT, HAL_LCD_RESET_PIN, 1);
+//  200 
+//  201 #if (HAL_LCD == TRUE)
+//  202 /**************************************************************************************************
+//  203  *                                       LOCAL VARIABLES
+//  204  **************************************************************************************************/
+//  205 
+//  206 static uint8 *Lcd_Line1;
+//  207 
+//  208 /**************************************************************************************************
+//  209  *                                       FUNCTIONS - API
+//  210  **************************************************************************************************/
+//  211 
+//  212 void HalLcd_HW_Init(void);
+//  213 void HalLcd_HW_WaitUs(uint16 i);
+//  214 void HalLcd_HW_ClearAllSpecChars(void);
+//  215 void HalLcd_HW_Control(uint8 cmd);
+//  216 void HalLcd_HW_Write(uint8 data);
+//  217 void HalLcd_HW_SetContrast(uint8 value);
+//  218 void HalLcd_HW_WriteChar(uint8 line, uint8 col, char text);
+//  219 void HalLcd_HW_WriteLine(uint8 line, const char *pText);
+//  220 #endif //LCD
+//  221 
+//  222 /**************************************************************************************************
+//  223  * @fn      HalLcdInit
+//  224  *
+//  225  * @brief   Initilize LCD Service
+//  226  *
+//  227  * @param   init - pointer to void that contains the initialized value
+//  228  *
+//  229  * @return  None
+//  230  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  231 void HalLcdInit(void)
+HalLcdInit:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function HalLcdInit
+        CODE
+//  232 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  233 #if (HAL_LCD == TRUE)
+//  234   Lcd_Line1 = NULL;
+//  235   HalLcd_HW_Init();
+//  236 #endif
+//  237 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock0
+//  238 
+//  239 /*************************************************************************************************
+//  240  *                    LCD EMULATION FUNCTIONS
+//  241  *
+//  242  * Some evaluation boards are equipped with Liquid Crystal Displays
+//  243  * (LCD) which may be used to display diagnostic information. These
+//  244  * functions provide LCD emulation, sending the diagnostic strings
+//  245  * to Z-Tool via the RS232 serial port. These functions are enabled
+//  246  * when the "LCD_SUPPORTED" compiler flag is placed in the makefile.
+//  247  *
+//  248  * Most applications update both lines (1 and 2) of the LCD whenever
+//  249  * text is posted to the device. This emulator assumes that line 1 is
+//  250  * updated first (saved locally) and the formatting and send operation
+//  251  * is triggered by receipt of line 2. Nothing will be transmitted if
+//  252  * only line 1 is updated.
+//  253  *
+//  254  *************************************************************************************************/
+//  255 
+//  256 
+//  257 /**************************************************************************************************
+//  258  * @fn      HalLcdWriteString
+//  259  *
+//  260  * @brief   Write a string to the LCD
+//  261  *
+//  262  * @param   str    - pointer to the string that will be displayed
+//  263  *          option - display options
+//  264  *
+//  265  * @return  None
+//  266  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  267 void HalLcdWriteString ( char *str, uint8 option)
+HalLcdWriteString:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function HalLcdWriteString
+        CODE
+//  268 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  269 #if (HAL_LCD == TRUE)
+//  270 
+//  271   uint8 strLen = 0;
+//  272   uint8 totalLen = 0;
+//  273   uint8 *buf;
+//  274   uint8 tmpLen;
+//  275 
+//  276   if ( Lcd_Line1 == NULL )
+//  277   {
+//  278     Lcd_Line1 = osal_mem_alloc( HAL_LCD_MAX_CHARS+1 );
+//  279     HalLcdWriteString( "TexasInstruments", 1 );
+//  280   }
+//  281 
+//  282   strLen = (uint8)osal_strlen( (char*)str );
+//  283 
+//  284   /* Check boundries */
+//  285   if ( strLen > HAL_LCD_MAX_CHARS )
+//  286     strLen = HAL_LCD_MAX_CHARS;
+//  287 
+//  288   if ( option == HAL_LCD_LINE_1 )
+//  289   {
+//  290     /* Line 1 gets saved for later */
+//  291     osal_memcpy( Lcd_Line1, str, strLen );
+//  292     Lcd_Line1[strLen] = '\0';
+//  293   }
+//  294   else
+//  295   {
+//  296     /* Line 2 triggers action */
+//  297     tmpLen = (uint8)osal_strlen( (char*)Lcd_Line1 );
+//  298     totalLen =  tmpLen + 1 + strLen + 1;
+//  299     buf = osal_mem_alloc( totalLen );
+//  300     if ( buf != NULL )
+//  301     {
+//  302       /* Concatenate strings */
+//  303       osal_memcpy( buf, Lcd_Line1, tmpLen );
+//  304       buf[tmpLen++] = ' ';
+//  305       osal_memcpy( &buf[tmpLen], str, strLen );
+//  306       buf[tmpLen+strLen] = '\0';
+//  307 
+//  308       /* Send it out */
+//  309 #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
+//  310 
+//  311 #if defined(SERIAL_DEBUG_SUPPORTED)
+//  312       debug_str( (uint8*)buf );
+//  313 #endif //LCD_SUPPORTED
+//  314 
+//  315 #endif //ZTOOL_P1
+//  316 
+//  317       /* Free mem */
+//  318       osal_mem_free( buf );
+//  319     }
+//  320   }
+//  321 
+//  322   /* Display the string */
+//  323   HalLcd_HW_WriteLine (option, str);
+//  324 
+//  325 #endif //HAL_LCD
+//  326 
+//  327 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock1
+//  328 
+//  329 /**************************************************************************************************
+//  330  * @fn      HalLcdWriteValue
+//  331  *
+//  332  * @brief   Write a value to the LCD
+//  333  *
+//  334  * @param   value  - value that will be displayed
+//  335  *          radix  - 8, 10, 16
+//  336  *          option - display options
+//  337  *
+//  338  * @return  None
+//  339  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  340 void HalLcdWriteValue ( uint32 value, const uint8 radix, uint8 option)
+HalLcdWriteValue:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function HalLcdWriteValue
+        CODE
+//  341 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  342 #if (HAL_LCD == TRUE)
+//  343   uint8 buf[HAL_LCD_MAX_BUFF];
+//  344 
+//  345   _ltoa( value, &buf[0], radix );
+//  346   HalLcdWriteString( (char*)buf, option );
+//  347 #endif
+//  348 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock2
+//  349 
+//  350 /**************************************************************************************************
+//  351  * @fn      HalLcdWriteScreen
+//  352  *
+//  353  * @brief   Write a value to the LCD
+//  354  *
+//  355  * @param   line1  - string that will be displayed on line 1
+//  356  *          line2  - string that will be displayed on line 2
+//  357  *
+//  358  * @return  None
+//  359  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  360 void HalLcdWriteScreen( char *line1, char *line2 )
+HalLcdWriteScreen:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function HalLcdWriteScreen
+        CODE
+//  361 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  362 #if (HAL_LCD == TRUE)
+//  363   HalLcdWriteString( line1, 1 );
+//  364   HalLcdWriteString( line2, 2 );
+//  365 #endif
+//  366 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock3
+//  367 
+//  368 /**************************************************************************************************
+//  369  * @fn      HalLcdWriteStringValue
+//  370  *
+//  371  * @brief   Write a string followed by a value to the LCD
+//  372  *
+//  373  * @param   title  - Title that will be displayed before the value
+//  374  *          value  - value
+//  375  *          format - redix
+//  376  *          line   - line number
+//  377  *
+//  378  * @return  None
+//  379  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  380 void HalLcdWriteStringValue( char *title, uint16 value, uint8 format, uint8 line )
+HalLcdWriteStringValue:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function HalLcdWriteStringValue
+        CODE
+//  381 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  382 #if (HAL_LCD == TRUE)
+//  383   uint8 tmpLen;
+//  384   uint8 buf[HAL_LCD_MAX_BUFF];
+//  385   uint32 err;
+//  386 
+//  387   tmpLen = (uint8)osal_strlen( (char*)title );
+//  388   osal_memcpy( buf, title, tmpLen );
+//  389   buf[tmpLen] = ' ';
+//  390   err = (uint32)(value);
+//  391   _ltoa( err, &buf[tmpLen+1], format );
+//  392   HalLcdWriteString( (char*)buf, line );		
+//  393 #endif
+//  394 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock4
+//  395 
+//  396 /**************************************************************************************************
+//  397  * @fn      HalLcdWriteStringValue
+//  398  *
+//  399  * @brief   Write a string followed by a value to the LCD
+//  400  *
+//  401  * @param   title   - Title that will be displayed before the value
+//  402  *          value1  - value #1
+//  403  *          format1 - redix of value #1
+//  404  *          value2  - value #2
+//  405  *          format2 - redix of value #2
+//  406  *          line    - line number
+//  407  *
+//  408  * @return  None
+//  409  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  410 void HalLcdWriteStringValueValue( char *title, uint16 value1, uint8 format1,
+HalLcdWriteStringValueValue:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function HalLcdWriteStringValueValue
+        CODE
+//  411                                   uint16 value2, uint8 format2, uint8 line )
+//  412 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  413 
+//  414 #if (HAL_LCD == TRUE)
+//  415 
+//  416   uint8 tmpLen;
+//  417   uint8 buf[HAL_LCD_MAX_BUFF];
+//  418   uint32 err;
+//  419 
+//  420   tmpLen = (uint8)osal_strlen( (char*)title );
+//  421   if ( tmpLen )
+//  422   {
+//  423     osal_memcpy( buf, title, tmpLen );
+//  424     buf[tmpLen++] = ' ';
+//  425   }
+//  426 
+//  427   err = (uint32)(value1);
+//  428   _ltoa( err, &buf[tmpLen], format1 );
+//  429   tmpLen = (uint8)osal_strlen( (char*)buf );
+//  430 
+//  431   buf[tmpLen++] = ',';
+//  432   buf[tmpLen++] = ' ';
+//  433   err = (uint32)(value2);
+//  434   _ltoa( err, &buf[tmpLen], format2 );
+//  435 
+//  436   HalLcdWriteString( (char *)buf, line );		
+//  437 
+//  438 #endif
+//  439 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock5
+//  440 
+//  441 /**************************************************************************************************
+//  442  * @fn      HalLcdDisplayPercentBar
+//  443  *
+//  444  * @brief   Display percentage bar on the LCD
+//  445  *
+//  446  * @param   title   -
+//  447  *          value   -
+//  448  *
+//  449  * @return  None
+//  450  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  451 void HalLcdDisplayPercentBar( char *title, uint8 value )
+HalLcdDisplayPercentBar:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function HalLcdDisplayPercentBar
+        CODE
+//  452 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  453 #if (HAL_LCD == TRUE)
+//  454 
+//  455   uint8 percent;
+//  456   uint8 leftOver;
+//  457   uint8 buf[17];
+//  458   uint32 err;
+//  459   uint8 x;
+//  460 
+//  461   /* Write the title: */
+//  462   HalLcdWriteString( title, HAL_LCD_LINE_1 );
+//  463 
+//  464   if ( value > 100 )
+//  465     value = 100;
+//  466 
+//  467   /* convert to blocks */
+//  468   percent = (uint8)(value / 10);
+//  469   leftOver = (uint8)(value % 10);
+//  470 
+//  471   /* Make window */
+//  472   osal_memcpy( buf, "[          ]  ", 15 );
+//  473 
+//  474   for ( x = 0; x < percent; x ++ )
+//  475   {
+//  476     buf[1+x] = '>';
+//  477   }
+//  478 
+//  479   if ( leftOver >= 5 )
+//  480     buf[1+x] = '+';
+//  481 
+//  482   err = (uint32)value;
+//  483   _ltoa( err, (uint8*)&buf[13], 10 );
+//  484 
+//  485   HalLcdWriteString( (char*)buf, HAL_LCD_LINE_2 );
+//  486 
+//  487 #endif
+//  488 
+//  489 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock6
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdInit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteString::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteString
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteValue::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteValue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteScreen::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteScreen
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteStringValue::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteStringValue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteStringValueValue::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteStringValueValue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdDisplayPercentBar::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdDisplayPercentBar
+
+        END
+//  490 
+//  491 #if (HAL_LCD == TRUE)
+//  492 /**************************************************************************************************
+//  493  *                                    HARDWARE LCD
+//  494  **************************************************************************************************/
+//  495 
+//  496 /**************************************************************************************************
+//  497  * @fn      halLcd_ConfigIO
+//  498  *
+//  499  * @brief   Configure IO lines needed for LCD control.
+//  500  *
+//  501  * @param   None
+//  502  *
+//  503  * @return  None
+//  504  **************************************************************************************************/
+//  505 static void halLcd_ConfigIO(void)
+//  506 {
+//  507   /* GPIO configuration */
+//  508   HAL_CONFIG_IO_OUTPUT(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  1);
+//  509   HAL_CONFIG_IO_OUTPUT(HAL_LCD_RESET_PORT, HAL_LCD_RESET_PIN, 1);
+//  510   HAL_CONFIG_IO_OUTPUT(HAL_LCD_CS_PORT,    HAL_LCD_CS_PIN,    1);
+//  511 }
+//  512 
+//  513 /**************************************************************************************************
+//  514  * @fn      halLcd_ConfigSPI
+//  515  *
+//  516  * @brief   Configure SPI lines needed for talking to LCD.
+//  517  *
+//  518  * @param   None
+//  519  *
+//  520  * @return  None
+//  521  **************************************************************************************************/
+//  522 static void halLcd_ConfigSPI(void)
+//  523 {
+//  524   /* UART/SPI Peripheral configuration */
+//  525 
+//  526    uint8 baud_exponent;
+//  527    uint8 baud_mantissa;
+//  528 
+//  529   /* Set SPI on UART 1 alternative 2 */
+//  530   PERCFG |= 0x02;
+//  531 
+//  532   /* Configure clk, master out and master in lines */
+//  533   HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_CLK_PORT,  HAL_LCD_CLK_PIN);
+//  534   HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_MOSI_PORT, HAL_LCD_MOSI_PIN);
+//  535   HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_MISO_PORT, HAL_LCD_MISO_PIN);
+//  536 
+//  537 
+//  538   /* Set SPI speed to 1 MHz (the values assume system clk of 32MHz)
+//  539    * Confirm on board that this results in 1MHz spi clk.
+//  540    */
+//  541   baud_exponent = 15;
+//  542   baud_mantissa =  0;
+//  543 
+//  544   /* Configure SPI */
+//  545   U1UCR  = 0x80;      /* Flush and goto IDLE state. 8-N-1. */
+//  546   U1CSR  = 0x00;      /* SPI mode, master. */
+//  547   U1GCR  = HAL_SPI_TRANSFER_MSB_FIRST | HAL_SPI_CLOCK_PHA_0 | HAL_SPI_CLOCK_POL_LO | baud_exponent;
+//  548   U1BAUD = baud_mantissa;
+//  549 }
+//  550 
+//  551 /**************************************************************************************************
+//  552  * @fn      HalLcd_HW_Init
+//  553  *
+//  554  * @brief   Initilize HW LCD Driver.
+//  555  *
+//  556  * @param   None
+//  557  *
+//  558  * @return  None
+//  559  **************************************************************************************************/
+//  560 void HalLcd_HW_Init(void)
+//  561 {
+//  562   /* Initialize LCD IO lines */
+//  563   halLcd_ConfigIO();
+//  564 
+//  565   /* Initialize SPI */
+//  566   halLcd_ConfigSPI();
+//  567 
+//  568   /* Perform reset */
+//  569   LCD_ACTIVATE_RESET();
+//  570   HalLcd_HW_WaitUs(15000); // 15 ms
+//  571   LCD_RELEASE_RESET();
+//  572   HalLcd_HW_WaitUs(15); // 15 us
+//  573 
+//  574   /* Perform the initialization sequence */
+//  575   FUNCTION_SET(CGRAM | COM_FORWARD | THREE_LINE);
+//  576 
+//  577   /* Set contrast */
+//  578   HalLcd_HW_SetContrast(15);
+//  579 
+//  580   /* Set power */
+//  581   SET_POWER_SAVE_MODE(OSC_OFF | POWER_SAVE_ON);
+//  582   SET_POWER_CTRL(VOLTAGE_DIVIDER_ON | CONVERTER_AND_REG_ON);
+//  583   SET_BIAS_CTRL(BIAS_1_5);
+//  584   HalLcd_HW_WaitUs(21000);// 21 ms
+//  585 
+//  586   /* Clear the display */
+//  587   HalLcd_HW_Clear();
+//  588   HalLcd_HW_ClearAllSpecChars();
+//  589   SET_DISPLAY_CTRL(DISPLAY_CTRL_ON | DISPLAY_CTRL_BLINK_OFF | DISPLAY_CTRL_CURSOR_OFF);
+//  590 }
+//  591 
+//  592 /**************************************************************************************************
+//  593  * @fn      HalLcd_HW_Control
+//  594  *
+//  595  * @brief   Write 1 command to the LCD
+//  596  *
+//  597  * @param   uint8 cmd - command to be written to the LCD
+//  598  *
+//  599  * @return  None
+//  600  **************************************************************************************************/
+//  601 void HalLcd_HW_Control(uint8 cmd)
+//  602 {
+//  603   LCD_SPI_BEGIN();
+//  604   LCD_DO_CONTROL();
+//  605   LCD_SPI_TX(cmd);
+//  606   LCD_SPI_WAIT_RXRDY();
+//  607   LCD_SPI_END();
+//  608 }
+//  609 
+//  610 /**************************************************************************************************
+//  611  * @fn      HalLcd_HW_Write
+//  612  *
+//  613  * @brief   Write 1 byte to the LCD
+//  614  *
+//  615  * @param   uint8 data - data to be written to the LCD
+//  616  *
+//  617  * @return  None
+//  618  **************************************************************************************************/
+//  619 void HalLcd_HW_Write(uint8 data)
+//  620 {
+//  621   LCD_SPI_BEGIN();
+//  622   LCD_DO_WRITE();
+//  623   LCD_SPI_TX(data);
+//  624   LCD_SPI_WAIT_RXRDY();
+//  625   LCD_SPI_END();
+//  626 }
+//  627 
+//  628 /**************************************************************************************************
+//  629  * @fn          HalLcd_HW_SetContrast
+//  630  *
+//  631  * @brief       Set display contrast
+//  632  *
+//  633  * @param       uint8 value - contrast value
+//  634  *
+//  635  * @return      none
+//  636  **************************************************************************************************/
+//  637 void HalLcd_HW_SetContrast(uint8 value)
+//  638 {
+//  639   SET_ICONRAM_ADDR(CONTRAST_CTRL_REGISTER);
+//  640   HalLcd_HW_Write(value);
+//  641 }
+//  642 
+//  643 /**************************************************************************************************
+//  644  * @fn      HalLcd_HW_Clear
+//  645  *
+//  646  * @brief   Clear the HW LCD
+//  647  *
+//  648  * @param   None
+//  649  *
+//  650  * @return  None
+//  651  **************************************************************************************************/
+//  652 void HalLcd_HW_Clear(void)
+//  653 {
+//  654   uint8 n;
+//  655 
+//  656   SET_DDRAM_ADDR(0x00);
+//  657   for (n = 0; n < (LCD_MAX_LINE_COUNT * HAL_LCD_MAX_CHARS); n++)
+//  658   {
+//  659     HalLcd_HW_Write(' ');
+//  660   }
+//  661 }
+//  662 
+//  663 /**************************************************************************************************
+//  664  * @fn      HalLcd_HW_ClearAllSpecChars
+//  665  *
+//  666  * @brief   Clear all special chars
+//  667  *
+//  668  * @param   None
+//  669  *
+//  670  * @return  None
+//  671  **************************************************************************************************/
+//  672 void HalLcd_HW_ClearAllSpecChars(void)
+//  673 {
+//  674   uint8 n = 0;
+//  675 
+//  676   SET_GCRAM_CHAR(0);
+//  677   for (n = 0; n < (8 * 8); n++)
+//  678   {
+//  679     HalLcd_HW_Write(0x00);
+//  680   }
+//  681 }
+//  682 
+//  683 /**************************************************************************************************
+//  684  * @fn      HalLcd_HW_WriteChar
+//  685  *
+//  686  * @brief   Write one char to the display
+//  687  *
+//  688  * @param   uint8 line - line number that the char will be displayed
+//  689  *          uint8 col - colum where the char will be displayed
+//  690  *
+//  691  * @return  None
+//  692  **************************************************************************************************/
+//  693 void HalLcd_HW_WriteChar(uint8 line, uint8 col, char text)
+//  694 {
+//  695   if (col < HAL_LCD_MAX_CHARS)
+//  696   {
+//  697     SET_DDRAM_ADDR((line - 1) * HAL_LCD_MAX_CHARS + col);
+//  698     HalLcd_HW_Write(text);
+//  699   }
+//  700   else
+//  701   {
+//  702     return;
+//  703   }
+//  704 }
+//  705 
+//  706 /**************************************************************************************************
+//  707  * @fn          halLcdWriteLine
+//  708  *
+//  709  * @brief       Write one line on display
+//  710  *
+//  711  * @param       uint8 line - display line
+//  712  *              char *pText - text buffer to write
+//  713  *
+//  714  * @return      none
+//  715  **************************************************************************************************/
+//  716 void HalLcd_HW_WriteLine(uint8 line, const char *pText)
+//  717 {
+//  718   uint8 count;
+//  719   uint8 totalLength = (uint8)osal_strlen( (char *)pText );
+//  720 
+//  721   /* Write the content first */
+//  722   for (count=0; count<totalLength; count++)
+//  723   {
+//  724     HalLcd_HW_WriteChar(line, count, (*(pText++)));
+//  725   }
+//  726 
+//  727   /* Write blank spaces to rest of the line */
+//  728   for(count=totalLength; count<HAL_LCD_MAX_CHARS;count++)
+//  729   {
+//  730     HalLcd_HW_WriteChar(line, count, ' ');
+//  731   }
+//  732 }
+//  733 
+//  734 /**************************************************************************************************
+//  735  * @fn      HalLcd_HW_WaitUs
+//  736  *
+//  737  * @brief   wait for x us. @ 32MHz MCU clock it takes 32 "nop"s for 1 us delay.
+//  738  *
+//  739  * @param   x us. range[0-65536]
+//  740  *
+//  741  * @return  None
+//  742  **************************************************************************************************/
+//  743 void HalLcd_HW_WaitUs(uint16 microSecs)
+//  744 {
+//  745   while(microSecs--)
+//  746   {
+//  747     /* 32 NOPs == 1 usecs */
+//  748     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  749     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  750     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  751     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  752     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  753     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  754     asm("nop"); asm("nop");
+//  755   }
+//  756 }
+//  757 #endif
+//  758 
+//  759 
+//  760 /**************************************************************************************************
+//  761 **************************************************************************************************/
+//  762 
+//  763 
+//  764 
+// 
+// 21 bytes in segment BANKED_CODE
+// 42 bytes in segment BANK_RELAYS
+// 
+// 42 bytes of CODE     memory
+// 21 bytes of HUGECODE memory
+//
+//Errors: none
+//Warnings: none

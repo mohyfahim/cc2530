@@ -1,0 +1,1279 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.40.1.7397 for 8051              01/May/2021  14:31:14
+// Copyright 2004-2021 IAR Systems AB.
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        E:\Texas Instruments\Z-Stack
+//        3.0.2\Components\stack\bdb\bdb_FindingAndBinding.c
+//    Command line       =  
+//        -f C:\Users\asus\AppData\Local\Temp\EW1DA5.tmp ("E:\Texas
+//        Instruments\Z-Stack
+//        3.0.2\Components\stack\bdb\bdb_FindingAndBinding.c" -D
+//        BDB_FINDING_BINDING_CAPABILITY_ENABLED=0 -D TC_LINKKEY_JOIN -D
+//        HAL_UART_DMA_RX_MAX=128 -D MAXMEMHEAP=2765 -D NWK_MAX_DEVICE_LIST=10
+//        -D ZDSECMGR_TC_DEVICE_MAX=30 -D DISABLE_GREENPOWER_BASIC_PROXY -D
+//        POWER_SAVING -D FEATURE_SYSTEM_STATS -D MT_GP_CB_FUNC -D ASSERT_RESET
+//        -D MAKE_CRC_SHDW -lC "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-without-SBL\List" -lA
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-without-SBL\List"
+//        --diag_suppress Pe001,Pa010 -o "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-without-SBL\Obj" -e
+//        --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 16 -f "E:\Texas
+//        Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+//        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR |
+//        DEVICE_BUILD_ROUTER | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL
+//        -DZNP_RUN_WDOG=FALSE -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO
+//        -DZIGBEE_FRAGMENTATION -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE
+//        -DSAPI_CB_FUNC=FALSE -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT
+//        -DNUM_DISC_ATTEMPTS=0 -DMT_UTIL_FUNC -DMT_SYS_FUNC -DMT_AF_FUNC
+//        -DMT_SAPI_FUNC -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC -DMT_ZDO_FUNC
+//        -DMT_ZDO_MGMT -DMT_ZDO_EXTENSIONS -DMT_GP_CB_FUNC -DMT_APP_FUNC
+//        -DMT_APP_CNF_FUNC) -f "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0}
+//        -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
+//        -DENABLE_LED4_DISABLE_S1) -f "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg" -I
+//        "E:\Texas Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\Source\" -I "E:\Texas
+//        Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\..\Source\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I "E:\Texas
+//        Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Utilities\BootLoad\Source\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I "E:\Texas
+//        Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\gp\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\bdb\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\"
+//        -I "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\" -I
+//        "E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+//        -Ohz --require_prototypes --no_code_motion)
+//    Locale             =  English_USA.1252
+//    List file          =  
+//        E:\Texas Instruments\Z-Stack
+//        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-without-SBL\List\bdb_FindingAndBinding.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME bdb_FindingAndBinding
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+
+        END
+// E:\Texas Instruments\Z-Stack 3.0.2\Components\stack\bdb\bdb_FindingAndBinding.c
+//    1 /**************************************************************************************************
+//    2   Filename:       bdb_FindingAndBinding.c
+//    3   Revised:        $Date: 2016-02-25 11:51:49 -0700 (Thu, 25 Feb 2016) $
+//    4   Revision:       $Revision: - $
+//    5 
+//    6   Description:    This file contains the Base Device Behavior functions and attributes.
+//    7 
+//    8 
+//    9   Copyright 2006-2015 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41  * INCLUDES
+//   42  */
+//   43 
+//   44 #include "bdb.h"
+//   45 #include "ZDObject.h"
+//   46 #include "bdb_interface.h"
+//   47 #include "AddrMgr.h"
+//   48    
+//   49 #if (BDB_FINDING_BINDING_CAPABILITY_ENABLED==1)   
+//   50    
+//   51 /*********************************************************************
+//   52  * MACROS
+//   53  */
+//   54 
+//   55 
+//   56 
+//   57    
+//   58 /*********************************************************************
+//   59  * CONSTANTS
+//   60  */
+//   61 /*********************************************************************
+//   62  * TYPEDEFS
+//   63  */
+//   64  
+//   65  
+//   66 /*********************************************************************
+//   67  * GLOBAL VARIABLES
+//   68  */
+//   69 
+//   70 uint8 grpName[6] = {'G','r','o','u','p','\0'};
+//   71 bdbGCB_IdentifyTimeChange_t      pfnIdentifyTimeChangeCB = NULL; 
+//   72 bdbGCB_BindNotification_t        pfnBindNotificationCB = NULL;
+//   73 
+//   74 /*********************************************************************
+//   75  * EXTERNAL VARIABLES
+//   76  */
+//   77 
+//   78 /*********************************************************************
+//   79  * EXTERNAL FUNCTIONS
+//   80  */
+//   81 
+//   82 
+//   83 
+//   84 /*********************************************************************
+//   85  * LOCAL VARIABLES
+//   86  */
+//   87 
+//   88 SimpleDescriptionFormat_t  bdb_FindingBindingTargetSimpleDesc;
+//   89 
+//   90 uint8 bdbIndentifyActiveEndpoint  = 0xFF;
+//   91 
+//   92 //Your JOB:
+//   93 //Remove the clusters that your application do not use. This will save some flash and processing
+//   94 //when looking into matching clusters during the finding & binding procedure
+//   95 const cId_t bdb_ZclType1Clusters[] =
+//   96 {
+//   97   ZCL_CLUSTER_ID_GEN_SCENES,
+//   98   ZCL_CLUSTER_ID_GEN_ON_OFF,
+//   99   ZCL_CLUSTER_ID_GEN_LEVEL_CONTROL,
+//  100   ZCL_CLUSTER_ID_GEN_ALARMS,
+//  101   ZCL_CLUSTER_ID_GEN_PARTITION,
+//  102   ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING,
+//  103   ZCL_CLUSTER_ID_HVAC_FAN_CONTROL,
+//  104   ZCL_CLUSTER_ID_HVAC_DIHUMIDIFICATION_CONTROL,
+//  105   ZCL_CLUSTER_ID_LIGHTING_COLOR_CONTROL,
+//  106   ZCL_CLUSTER_ID_LIGHTING_BALLAST_CONFIG,
+//  107   ZCL_CLUSTER_ID_SS_IAS_ACE,
+//  108   ZCL_CLUSTER_ID_SS_IAS_WD,
+//  109   ZCL_CLUSTER_ID_PI_GENERIC_TUNNEL,
+//  110   ZCL_CLUSTER_ID_PI_BACNET_PROTOCOL_TUNNEL,
+//  111   ZCL_CLUSTER_ID_HA_ELECTRICAL_MEASUREMENT,
+//  112   ZCL_CLUSTER_ID_PI_11073_PROTOCOL_TUNNEL,
+//  113   ZCL_CLUSTER_ID_PI_ISO7818_PROTOCOL_TUNNEL,
+//  114   ZCL_CLUSTER_ID_PI_RETAIL_TUNNEL,
+//  115   ZCL_CLUSTER_ID_SE_PRICE,
+//  116   ZCL_CLUSTER_ID_SE_DRLC,
+//  117   ZCL_CLUSTER_ID_SE_METERING,
+//  118   ZCL_CLUSTER_ID_SE_MESSAGING,
+//  119   ZCL_CLUSTER_ID_TELECOMMUNICATIONS_VOICE_OVER_ZIGBEE,
+//  120   ZCL_CLUSTER_ID_TELECOMMUNICATIONS_INFORMATION,
+//  121 };
+//  122 
+//  123 //Your JOB:
+//  124 //Remove the clusters that your application do not use. This will save some flash and processing
+//  125 //when looking into matching clusters during the finding & binding procedure
+//  126 const cId_t bdb_ZclType2Clusters[] =
+//  127 {
+//  128   ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG,
+//  129   ZCL_CLUSTER_ID_GEN_TIME,
+//  130   ZCL_CLUSTER_ID_GEN_ANALOG_INPUT_BASIC,
+//  131   ZCL_CLUSTER_ID_GEN_ANALOG_OUTPUT_BASIC,
+//  132   ZCL_CLUSTER_ID_GEN_ANALOG_VALUE_BASIC,
+//  133   ZCL_CLUSTER_ID_GEN_BINARY_INPUT_BASIC,
+//  134   ZCL_CLUSTER_ID_GEN_BINARY_OUTPUT_BASIC,
+//  135   ZCL_CLUSTER_ID_GEN_BINARY_VALUE_BASIC,
+//  136   ZCL_CLUSTER_ID_GEN_MULTISTATE_INPUT_BASIC,
+//  137   ZCL_CLUSTER_ID_GEN_MULTISTATE_OUTPUT_BASIC,
+//  138   ZCL_CLUSTER_ID_GEN_MULTISTATE_VALUE_BASIC,
+//  139   ZCL_CLUSTER_ID_OTA,
+//  140   ZCL_CLUSTER_ID_GEN_APPLIANCE_CONTROL,
+//  141   ZCL_CLUSTER_ID_CLOSURES_SHADE_CONFIG,
+//  142   ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+//  143   ZCL_CLUSTER_ID_HVAC_PUMP_CONFIG_CONTROL,
+//  144   ZCL_CLUSTER_ID_HVAC_THERMOSTAT,
+//  145   ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+//  146   ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,
+//  147   ZCL_CLUSTER_ID_MS_ILLUMINANCE_LEVEL_SENSING_CONFIG,
+//  148   ZCL_CLUSTER_ID_MS_PRESSURE_MEASUREMENT,
+//  149   ZCL_CLUSTER_ID_MS_FLOW_MEASUREMENT,
+//  150   ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+//  151   ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+//  152   ZCL_CLUSTER_ID_SS_IAS_ZONE,
+//  153   ZCL_CLUSTER_ID_PI_ANALOG_INPUT_BACNET_REG,
+//  154   ZCL_CLUSTER_ID_PI_ANALOG_INPUT_BACNET_EXT,
+//  155   ZCL_CLUSTER_ID_PI_ANALOG_OUTPUT_BACNET_REG,
+//  156   ZCL_CLUSTER_ID_PI_ANALOG_OUTPUT_BACNET_EXT,
+//  157   ZCL_CLUSTER_ID_PI_ANALOG_VALUE_BACNET_REG,
+//  158   ZCL_CLUSTER_ID_PI_ANALOG_VALUE_BACNET_EXT,
+//  159   ZCL_CLUSTER_ID_PI_BINARY_INPUT_BACNET_REG,
+//  160   ZCL_CLUSTER_ID_PI_BINARY_INPUT_BACNET_EXT,
+//  161   ZCL_CLUSTER_ID_PI_BINARY_OUTPUT_BACNET_REG,
+//  162   ZCL_CLUSTER_ID_PI_BINARY_OUTPUT_BACNET_EXT,
+//  163   ZCL_CLUSTER_ID_PI_BINARY_VALUE_BACNET_REG,
+//  164   ZCL_CLUSTER_ID_PI_BINARY_VALUE_BACNET_EXT,
+//  165   ZCL_CLUSTER_ID_PI_MULTISTATE_INPUT_BACNET_REG,
+//  166   ZCL_CLUSTER_ID_PI_MULTISTATE_INPUT_BACNET_EXT,
+//  167   ZCL_CLUSTER_ID_PI_MULTISTATE_OUTPUT_BACNET_REG,
+//  168   ZCL_CLUSTER_ID_PI_MULTISTATE_OUTPUT_BACNET_EXT,
+//  169   ZCL_CLUSTER_ID_PI_MULTISTATE_VALUE_BACNET_REG,
+//  170   ZCL_CLUSTER_ID_PI_MULTISTATE_VALUE_BACNET_EXT,
+//  171   ZCL_CLUSTER_ID_SE_TUNNELING,
+//  172   ZCL_CLUSTER_ID_TELECOMMUNICATIONS_INFORMATION,
+//  173   ZCL_CLUSTER_ID_HA_APPLIANCE_IDENTIFICATION,
+//  174   ZCL_CLUSTER_ID_HA_METER_IDENTIFICATION,
+//  175   ZCL_CLUSTER_ID_HA_APPLIANCE_EVENTS_ALERTS,
+//  176   ZCL_CLUSTER_ID_HA_APPLIANCE_STATISTICS,
+//  177 };
+//  178 
+//  179 #ifdef ZCL_GROUPS
+//  180 static zclOptionRec_t zcl_Groups_Options[] =
+//  181 {
+//  182   {
+//  183     ZCL_CLUSTER_ID_GEN_GROUPS,
+//  184     ( AF_ACK_REQUEST ),
+//  185   },
+//  186 };
+//  187 #endif
+//  188 
+//  189 
+//  190  /*********************************************************************
+//  191  * LOCAL FUNCTIONS
+//  192  */
+//  193 static ZStatus_t bdb_zclFindingBindingAddBindEntry( byte SrcEndpInt,
+//  194                                   uint16 BindClusterId,
+//  195                                   byte Cnt,                 
+//  196                                   uint16 * ClusterList,
+//  197                                   zAddrType_t *DstAddr, byte DstEndpInt, uint8 addBind, uint8 isClusterOutput );
+//  198 
+//  199 uint8 bdb_FindIfAppCluster( cId_t ClusterId, uint8 isClusterOutput );
+//  200 
+//  201 
+//  202 static void bdb_zclSimpleDescClusterListClean( SimpleDescriptionFormat_t *pSimpleDesc );
+//  203 bdbFindingBindingRespondent_t* bdb_findRespondentNode(uint8 endpoint, uint16 shortAddress);
+//  204 bdbFindingBindingRespondent_t* bdb_getRespondentRetry(bdbFindingBindingRespondent_t* pRespondentHead);
+//  205 void bdb_checkMatchingEndpoints(uint8 bindIfMatch, uint16 shortAddress, bdbFindingBindingRespondent_t **pCurr);
+//  206  /*********************************************************************
+//  207  * PUBLIC FUNCTIONS
+//  208  *********************************************************************/
+//  209 
+//  210 void bdb_ProcessSimpleDesc( zdoIncomingMsg_t *msgPtr );
+//  211 void bdb_ProcessIEEEAddrRsp(zdoIncomingMsg_t *pMsg);
+//  212 
+//  213 /*********************************************************************
+//  214  * @fn      bdb_SetIdentifyActiveEndpoint
+//  215  *
+//  216  * @brief   Set the endpoint which will perform the finding and binding (either Target or Initiator)
+//  217  *
+//  218  * @param   Active endpoint with which perform F&B. If set to 0xFF all endpoints with Identify will be attempted. The endpoint must be either Initiator or Target or Both
+//  219  *
+//  220  * @return  ZFailure - F&B commissioning mode already requested
+//  221  *          ZInvalidParameter - Endpoint specified not found or reserved by Zigbee
+//  222  *          ZSuccess - 
+//  223  */
+//  224 ZStatus_t bdb_SetIdentifyActiveEndpoint(uint8 activeEndpoint)
+//  225 {
+//  226   epList_t *bdb_EpDescriptorListTemp = NULL;
+//  227   
+//  228   //Cannot process the request if no endpoints or F&B is under process
+//  229   if(bdbAttributes.bdbCommissioningMode & BDB_COMMISSIONING_MODE_FINDING_BINDING)
+//  230   {
+//  231     return ZFailure;
+//  232   }
+//  233   
+//  234   if(activeEndpoint == 0xFF)
+//  235   {
+//  236     bdbIndentifyActiveEndpoint = activeEndpoint;
+//  237     return ZSuccess;
+//  238   }
+//  239   
+//  240   if((activeEndpoint != 0) && (activeEndpoint < BDB_ZIGBEE_RESERVED_ENDPOINTS_START))
+//  241   {
+//  242     bdb_EpDescriptorListTemp = bdb_HeadEpDescriptorList;
+//  243     
+//  244     while(bdb_EpDescriptorListTemp != NULL)
+//  245     {
+//  246       if(bdb_EpDescriptorListTemp->epDesc->endPoint == activeEndpoint)
+//  247       {
+//  248         if(bdb_EpDescriptorListTemp->epDesc->epType)
+//  249         {
+//  250           bdbIndentifyActiveEndpoint = activeEndpoint;
+//  251           return ZSuccess;
+//  252         }
+//  253         else
+//  254         {
+//  255           return ZInvalidParameter;
+//  256         }
+//  257       }
+//  258       bdb_EpDescriptorListTemp = bdb_EpDescriptorListTemp->nextDesc;
+//  259     }
+//  260   }
+//  261   
+//  262   return ZInvalidParameter;
+//  263 }
+//  264 
+//  265 
+//  266 /*********************************************************************
+//  267  * @fn      bdb_setEpDescListToActiveEndpoint
+//  268  *
+//  269  * @brief   Set the endpoint list to the active endpoint selected by the application for F&B process
+//  270  *
+//  271  * @return  Current endpoint descriptor
+//  272  */
+//  273 
+//  274 endPointDesc_t* bdb_setEpDescListToActiveEndpoint(void)
+//  275 {
+//  276   bdb_CurrEpDescriptorList = bdb_HeadEpDescriptorList;
+//  277  
+//  278   //Check which active endpoit is being requested
+//  279   if(bdbIndentifyActiveEndpoint != 0xFF)
+//  280   {
+//  281     //Search for an specific endpoint
+//  282     while(bdb_CurrEpDescriptorList != NULL)
+//  283     {
+//  284       if(bdb_CurrEpDescriptorList->epDesc->endPoint == bdbIndentifyActiveEndpoint)
+//  285       {
+//  286         return bdb_CurrEpDescriptorList->epDesc;
+//  287       }
+//  288       bdb_CurrEpDescriptorList = bdb_CurrEpDescriptorList->nextDesc;
+//  289     }
+//  290   }
+//  291   else
+//  292   {
+//  293     //Look for the first endpoint that is either intiator or target to perform F&B. Is assumed that the endpoint supports Identify
+//  294     while(bdb_CurrEpDescriptorList != NULL)
+//  295     {
+//  296       if((bdb_CurrEpDescriptorList->epDesc->endPoint != 0) && 
+//  297          (bdb_CurrEpDescriptorList->epDesc->endPoint < BDB_ZIGBEE_RESERVED_ENDPOINTS_START) && 
+//  298          (bdb_CurrEpDescriptorList->epDesc->epType))
+//  299       {
+//  300         return bdb_CurrEpDescriptorList->epDesc;
+//  301       }
+//  302       bdb_CurrEpDescriptorList = bdb_CurrEpDescriptorList->nextDesc;
+//  303     }
+//  304   }
+//  305   //not found
+//  306   return NULL;
+//  307 }
+//  308 
+//  309 
+//  310 /*********************************************************************
+//  311  * @fn      bdb_ProcessIEEEAddrRsp
+//  312  *
+//  313  * @brief   Process IEEE addr response and mark the entry as done or remove the 
+//  314  *          bind if not successful.
+//  315  *
+//  316  * @param   zdoIncomingMsg_t *pMsg
+//  317  *
+//  318  * @return  none
+//  319  */
+//  320 void bdb_ProcessIEEEAddrRsp(zdoIncomingMsg_t *pMsg)
+//  321 {
+//  322   ZDO_NwkIEEEAddrResp_t *pAddrRsp = NULL;
+//  323   bdbFindingBindingRespondent_t *pCurr = NULL;
+//  324 
+//  325   pAddrRsp = ZDO_ParseAddrRsp( pMsg );
+//  326   
+//  327   if(pAddrRsp == NULL)
+//  328   {
+//  329     return;
+//  330   }
+//  331   
+//  332   bdb_setEpDescListToActiveEndpoint();
+//  333   
+//  334   pCurr = bdb_findRespondentNode(bdb_FindingBindingTargetSimpleDesc.EndPoint, pAddrRsp->nwkAddr);
+//  335   
+//  336   //Does the entry exist and we were waiting an IEEE addr rsp from this device?
+//  337   if((pCurr != NULL) && (pCurr->attempts > FINDING_AND_BINDING_MISSING_IEEE_ADDR))
+//  338   {
+//  339     if(pAddrRsp->status == ZSuccess )
+//  340     {
+//  341       uint8 extAddr[8]; 
+//  342       AddrMgrEntry_t entry;
+//  343       
+//  344       entry.nwkAddr = pAddrRsp->nwkAddr;
+//  345       entry.user = ADDRMGR_USER_BINDING;
+//  346       AddrMgrExtAddrSet(entry.extAddr, pAddrRsp->extAddr);
+//  347       
+//  348       //Add it as bind entry
+//  349       if(AddrMgrEntryUpdate(&entry) == FALSE)
+//  350       {
+//  351         //No space, then report F&B table full
+//  352         //If periodic was triggered, then finish it
+//  353         if(FINDING_AND_BINDING_PERIODIC_ENABLE == TRUE)                                  
+//  354         {
+//  355           bdb_FB_InitiatorCurrentCyclesNumber = 0;
+//  356           osal_stop_timerEx(bdb_TaskID, BDB_FINDING_AND_BINDING_PERIOD_TIMEOUT);
+//  357         }
+//  358         
+//  359         bdb_zclSimpleDescClusterListClean( &bdb_FindingBindingTargetSimpleDesc );
+//  360         osal_stop_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT );
+//  361         bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_FB_BINDING_TABLE_FULL );
+//  362         return;
+//  363       }
+//  364 
+//  365       //search for the matching clusters to be added this time as we have the IEEE addrs
+//  366       bdb_checkMatchingEndpoints(TRUE, pAddrRsp->nwkAddr, &pCurr);
+//  367       (void)extAddr;  //dummy
+//  368     }
+//  369     //Bind cannot be added if the device was not found
+//  370     pCurr->attempts = FINDING_AND_BINDING_RESPONDENT_COMPLETE;
+//  371   }
+//  372   
+//  373   //release the memory
+//  374   osal_mem_free( pAddrRsp );
+//  375 }
+//  376 
+//  377 
+//  378 /*********************************************************************
+//  379  * @fn      bdb_StopInitiatorFindingBinding
+//  380  *
+//  381  * @brief   Stops finding and binding for initiator devices.
+//  382  *
+//  383  * @param   none
+//  384  *
+//  385  * @return  none
+//  386  */
+//  387 void bdb_StopInitiatorFindingBinding(void)
+//  388 {
+//  389   //If periodic was triggered, then finish it
+//  390   if(FINDING_AND_BINDING_PERIODIC_ENABLE == TRUE)                                  
+//  391   {
+//  392     bdb_FB_InitiatorCurrentCyclesNumber = 0;
+//  393     osal_stop_timerEx(bdb_TaskID, BDB_FINDING_AND_BINDING_PERIOD_TIMEOUT);
+//  394   }      
+//  395   //Clean the respondent list and stop its timer
+//  396   bdb_zclRespondentListClean( &pRespondentHead );
+//  397   osal_stop_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT );
+//  398   
+//  399   //Notify status
+//  400   bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_FB_NO_IDENTIFY_QUERY_RESPONSE );
+//  401 
+//  402 }
+//  403 
+//  404 
+//  405 /*********************************************************************
+//  406  * @fn      bdb_checkMatchingEndpoints
+//  407  *
+//  408  * @brief   Check active endpoints for F&B and the respondant simple descriptor 
+//  409  *          for matching application clusters
+//  410  *
+//  411  * @param   pRespondant - Respondant to be process
+//  412  * @param   bindIfMatch - Flag to indicate that binds for matching cluster must 
+//  413  *                        be done
+//  414  *
+//  415  * @return  status - Result of the operation
+//  416  */
+//  417 void bdb_checkMatchingEndpoints(uint8 bindIfMatch, uint16 shortAddr, bdbFindingBindingRespondent_t **pCurr)
+//  418 {
+//  419   uint8 matchFound;
+//  420   endPointDesc_t *bdb_CurrEpDescriptor;
+//  421   uint8 i, status;
+//  422   zAddrType_t dstAddr;
+//  423 #ifdef ZCL_GROUPS
+//  424   afAddrType_t afDstAddr;
+//  425 #endif  
+//  426   
+//  427   //Check all the endpoints active for F&B
+//  428   while(bdb_CurrEpDescriptorList != NULL)
+//  429   {
+//  430     matchFound = FALSE;
+//  431 
+//  432     bdb_CurrEpDescriptor = bdb_CurrEpDescriptorList->epDesc;
+//  433 
+//  434 #ifdef ZCL_GROUPS
+//  435     if ( bdbAttributes.bdbCommissioningGroupID != 0xFFFF )    
+//  436     {
+//  437       zcl_registerClusterOptionList(bdb_CurrEpDescriptor->endPoint,1,zcl_Groups_Options);      
+//  438       
+//  439       dstAddr.addr.shortAddr = bdbAttributes.bdbCommissioningGroupID;
+//  440       dstAddr.addrMode = AddrGroup;
+//  441     }
+//  442     else
+//  443 #endif
+//  444     {
+//  445       dstAddr.addrMode = Addr64Bit;
+//  446       if(bindIfMatch)
+//  447       {
+//  448         //if bind is to be created, then we should have the ext address in addr mgr
+//  449         AddrMgrExtAddrLookup( shortAddr, dstAddr.addr.extAddr );
+//  450       }
+//  451     }
+//  452     for(i = 0; i < bdb_CurrEpDescriptor->simpleDesc->AppNumOutClusters; i++)
+//  453     {
+//  454       //Filter for Application clusters (to bind app clusters only)
+//  455       status = bdb_zclFindingBindingAddBindEntry( bdb_CurrEpDescriptor->endPoint,
+//  456                               bdb_CurrEpDescriptor->simpleDesc->pAppOutClusterList[i],
+//  457                               bdb_FindingBindingTargetSimpleDesc.AppNumInClusters,
+//  458                               bdb_FindingBindingTargetSimpleDesc.pAppInClusterList,
+//  459                               &dstAddr, bdb_FindingBindingTargetSimpleDesc.EndPoint, bindIfMatch, TRUE );
+//  460       
+//  461       if ( status == ZApsTableFull )
+//  462       {
+//  463         break;
+//  464       }
+//  465       else if(status == ZSuccess)
+//  466       {
+//  467         matchFound = TRUE;
+//  468         //If a match is found and we are not adding due to lack of IEEE addrs, then skip looking
+//  469         if(!bindIfMatch)
+//  470         {
+//  471           break;
+//  472         }
+//  473       }
+//  474     }
+//  475     
+//  476     //Only search for other matches if the table is not full and we have not 
+//  477     //found any match or we have to add bind as many as we can
+//  478     if( (status != ZApsTableFull) && (!matchFound || bindIfMatch) )      
+//  479     {
+//  480       for(i = 0; i < bdb_CurrEpDescriptor->simpleDesc->AppNumInClusters; i++)
+//  481       {
+//  482         //Filter for Application clusters (to bind app clusters only)
+//  483         status = bdb_zclFindingBindingAddBindEntry( bdb_CurrEpDescriptor->endPoint,
+//  484                                 bdb_CurrEpDescriptor->simpleDesc->pAppInClusterList[i],
+//  485                                 bdb_FindingBindingTargetSimpleDesc.AppNumOutClusters,
+//  486                                 bdb_FindingBindingTargetSimpleDesc.pAppOutClusterList,
+//  487                                 &dstAddr, bdb_FindingBindingTargetSimpleDesc.EndPoint, bindIfMatch, FALSE );
+//  488 
+//  489         if ( status == ZApsTableFull )
+//  490         {
+//  491           break;
+//  492         }
+//  493         else if(status == ZSuccess)
+//  494         {
+//  495           matchFound = TRUE;
+//  496           
+//  497           //If a match is found and we are not adding due to lack of IEEE addrs, then skip looking
+//  498           if(!bindIfMatch)
+//  499           {
+//  500             break;
+//  501           }
+//  502         }
+//  503       }
+//  504     }
+//  505     
+//  506     //Check if we have found any match
+//  507     if( matchFound == TRUE )
+//  508     {
+//  509       if(bindIfMatch)
+//  510       {
+//  511         //Mark respondent as complete as simple desc has been process and we do 
+//  512         //have IEEE addrs
+//  513         (*pCurr)->attempts = FINDING_AND_BINDING_RESPONDENT_COMPLETE;
+//  514       }
+//  515       else
+//  516       {
+//  517         //Mark as we need IEEE addrs
+//  518         (*pCurr)->attempts = FINDING_AND_BINDING_MISSING_IEEE_ADDR;
+//  519       }
+//  520 
+//  521 #ifdef ZCL_GROUPS
+//  522       if ( bdbAttributes.bdbCommissioningGroupID != 0xFFFF )
+//  523       {
+//  524         afDstAddr.addr.shortAddr = shortAddr;
+//  525         afDstAddr.addrMode = afAddr16Bit;
+//  526         afDstAddr.endPoint = bdb_FindingBindingTargetSimpleDesc.EndPoint;
+//  527             
+//  528         zclGeneral_SendAddGroupRequest( bdb_CurrEpDescriptor->endPoint, &afDstAddr,
+//  529                                     COMMAND_GROUP_ADD, bdbAttributes.bdbCommissioningGroupID, grpName,
+//  530                                     TRUE, 0x00 );
+//  531       }
+//  532 #endif
+//  533     }
+//  534     else
+//  535     {
+//  536       //No matching cluster, then we are done with this respondent
+//  537       (*pCurr)->attempts = FINDING_AND_BINDING_RESPONDENT_COMPLETE;
+//  538     }
+//  539     
+//  540     if ( status == ZApsTableFull )
+//  541     {
+//  542       //If periodic was triggered, then finish it
+//  543       if(FINDING_AND_BINDING_PERIODIC_ENABLE == TRUE)                                  
+//  544       {
+//  545         bdb_FB_InitiatorCurrentCyclesNumber = 0;
+//  546         osal_stop_timerEx(bdb_TaskID, BDB_FINDING_AND_BINDING_PERIOD_TIMEOUT);
+//  547       }      
+//  548       
+//  549       bdb_zclSimpleDescClusterListClean( &bdb_FindingBindingTargetSimpleDesc );
+//  550       osal_stop_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT );
+//  551       bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_FB_BINDING_TABLE_FULL );
+//  552       
+//  553       return;
+//  554     }
+//  555     
+//  556     //If an specific endpoint was requested, then don't go trough the rest of 
+//  557     //the endpoints
+//  558     if( bdbIndentifyActiveEndpoint != 0xFF )
+//  559     {
+//  560       break;
+//  561     }
+//  562     else
+//  563     {
+//  564       //If active endpoints 'all' is attempted, then process the next endpoint in 
+//  565       //the list
+//  566       bdb_CurrEpDescriptorList = bdb_CurrEpDescriptorList->nextDesc;
+//  567 
+//  568       while(bdb_CurrEpDescriptorList != NULL)
+//  569       {
+//  570         //It has to be different from 0 or reserved for Zigbee
+//  571         if((bdb_CurrEpDescriptorList->epDesc->endPoint != 0) && (bdb_CurrEpDescriptorList->epDesc->endPoint < BDB_ZIGBEE_RESERVED_ENDPOINTS_START))
+//  572         {
+//  573           break;
+//  574         }
+//  575         bdb_CurrEpDescriptorList = bdb_CurrEpDescriptorList->nextDesc;
+//  576       }
+//  577     }
+//  578   }
+//  579 }
+//  580 
+//  581 
+//  582 
+//  583 /*********************************************************************
+//  584  * @fn      bdb_ProcessSimpleDesc
+//  585  *
+//  586  * @brief   Process simple descriptor requested by F&B. Binds will be added if 
+//  587  *          matching cluster is found and if IEEE addrs of the device is already 
+//  588  *          stored
+//  589  *
+//  590  * @param   msgPtr - pointer to simple descriptor response indication message
+//  591  *
+//  592  * @return  none
+//  593  */
+//  594 void bdb_ProcessSimpleDesc( zdoIncomingMsg_t *msgPtr )
+//  595 {
+//  596   zAddrType_t dstAddr;
+//  597   bdbFindingBindingRespondent_t *pCurr = NULL;
+//  598   uint8 isRespondantReadyToBeAdded = FALSE;
+//  599 
+//  600   bdb_setEpDescListToActiveEndpoint();
+//  601   
+//  602   if ( !(bdb_CurrEpDescriptorList->epDesc->epType & BDB_FINDING_AND_BINDING_INITIATOR )) 
+//  603   {  
+//  604     //We should not be processing these commands as we are not initiator
+//  605     return;
+//  606   }
+//  607   
+//  608   dstAddr.addr.shortAddr = BUILD_UINT16( msgPtr->asdu[1], msgPtr->asdu[2] );
+//  609   dstAddr.addrMode = Addr16Bit;
+//  610   
+//  611   ZDO_ParseSimpleDescBuf( &msgPtr->asdu[4], &bdb_FindingBindingTargetSimpleDesc );
+//  612   
+//  613   pCurr = bdb_findRespondentNode(bdb_FindingBindingTargetSimpleDesc.EndPoint, dstAddr.addr.shortAddr);
+//  614   
+//  615   //Just for safety check this is a valid entry
+//  616   if(pCurr != NULL) 
+//  617   {
+//  618     uint8 extAddr[Z_EXTADDR_LEN]; 
+//  619     
+//  620     if(AddrMgrExtAddrLookup( pCurr->data.addr.shortAddr, extAddr ))
+//  621     {
+//  622       isRespondantReadyToBeAdded = TRUE;
+//  623     }
+//  624     else
+//  625     {
+//  626       //Save the simple desc to don't ask for it again
+//  627       pCurr->SimpleDescriptor = &bdb_FindingBindingTargetSimpleDesc;
+//  628     }
+//  629     (void)extAddr;  //dummy
+//  630   }
+//  631   else
+//  632   {
+//  633     //This simple desc rsp was not requested by BDB F&B
+//  634     return;
+//  635   } 
+//  636   
+//  637   bdb_checkMatchingEndpoints(isRespondantReadyToBeAdded, dstAddr.addr.shortAddr, &pCurr);
+//  638   
+//  639   //If the respondent got process complete, then release the entry
+//  640   if(pCurr->attempts == FINDING_AND_BINDING_RESPONDENT_COMPLETE)
+//  641   {
+//  642     bdb_zclSimpleDescClusterListClean( &bdb_FindingBindingTargetSimpleDesc );  
+//  643   }
+//  644 }
+//  645 
+//  646 /*********************************************************************
+//  647  * @fn      bdb_zclFindingBindingEpType
+//  648  *
+//  649  * @brief   Gives the Ep Type according to application clusters in
+//  650  *          simple descriptor
+//  651  *
+//  652  * @return  epType - If Target, Initiator or both
+//  653  */
+//  654 uint8 bdb_zclFindingBindingEpType( endPointDesc_t *epDesc )
+//  655 {
+//  656   uint8 epType = 0;
+//  657   uint8 status;
+//  658   uint8 type1ClusterCnt;
+//  659   uint8 type2ClusterCnt;
+//  660   
+//  661   type1ClusterCnt = sizeof( bdb_ZclType1Clusters )/sizeof( uint16 );
+//  662   type2ClusterCnt = sizeof( bdb_ZclType2Clusters )/sizeof( uint16 );
+//  663   
+//  664 
+//  665   // Are there matching type 1 on server side?
+//  666   status = ZDO_AnyClusterMatches( epDesc->simpleDesc->AppNumInClusters, 
+//  667                                   epDesc->simpleDesc->pAppInClusterList,
+//  668                                   type1ClusterCnt,
+//  669                                   (uint16*)bdb_ZclType1Clusters);
+//  670   
+//  671   if( status == TRUE )
+//  672   {
+//  673     epType |= BDB_FINDING_AND_BINDING_TARGET;
+//  674   }
+//  675   
+//  676   // Are there matching type 1 on client side?
+//  677   status = ZDO_AnyClusterMatches( epDesc->simpleDesc->AppNumOutClusters, 
+//  678                                   epDesc->simpleDesc->pAppOutClusterList,
+//  679                                   type1ClusterCnt,
+//  680                                   (uint16*)bdb_ZclType1Clusters);
+//  681   
+//  682   if( status == TRUE )
+//  683   {
+//  684     epType |= BDB_FINDING_AND_BINDING_INITIATOR;
+//  685   }
+//  686   
+//  687   // Are there matching type 2 on server side?
+//  688   status = ZDO_AnyClusterMatches( epDesc->simpleDesc->AppNumInClusters, 
+//  689                                   epDesc->simpleDesc->pAppInClusterList,
+//  690                                   type2ClusterCnt,
+//  691                                   (uint16*)bdb_ZclType2Clusters);
+//  692   
+//  693   if( status == TRUE )
+//  694   {
+//  695     epType |= BDB_FINDING_AND_BINDING_INITIATOR;
+//  696   }
+//  697   
+//  698   // Are there matching type 2 on client side?
+//  699   status = ZDO_AnyClusterMatches( epDesc->simpleDesc->AppNumOutClusters, 
+//  700                                   epDesc->simpleDesc->pAppOutClusterList,
+//  701                                   type2ClusterCnt,
+//  702                                   (uint16*)bdb_ZclType2Clusters);
+//  703   
+//  704   if( status == TRUE )
+//  705   {
+//  706     epType |= BDB_FINDING_AND_BINDING_TARGET;
+//  707   }
+//  708 
+//  709   return epType;
+//  710 
+//  711 }
+//  712 
+//  713 /*********************************************************************
+//  714  * @fn      bdb_zclFindingBindingAddBindEntry
+//  715  *
+//  716  * @brief   This function is used to Add an entry to the binding table
+//  717  *
+//  718  * @param   SrcEndpInt - source endpoint
+//  719  * @param   BindClusterId - cluster to try bind
+//  720  * @param   Cnt - list of remote clusters
+//  721  * @param   ClusterList - pointer to the Object ID list
+//  722  * @param   DstAddr - Address of remote node
+//  723  * @param   DstEndpInt - EndPoint of remote node
+//  724  * @param   addBind - Indicate wheter or not bind must be added or not
+//  725  * @param   isClusterOutput - True if the bind attempted is output cluster in the local device, false otherwise
+//  726  *
+//  727  * @return  status - Success if added
+//  728  */
+//  729 static ZStatus_t bdb_zclFindingBindingAddBindEntry( byte SrcEndpInt,
+//  730                                   uint16 BindClusterId,
+//  731                                   byte Cnt,                 
+//  732                                   uint16 * ClusterList,
+//  733                                   zAddrType_t *DstAddr, byte DstEndpInt, uint8 addBind, uint8 isClusterOutput )
+//  734 {
+//  735   uint8 status;
+//  736 
+//  737   if ( bdb_FindIfAppCluster ( BindClusterId, isClusterOutput ) != SUCCESS )
+//  738   {
+//  739     return ( ZApsFail ); // No App cluster
+//  740   }
+//  741 
+//  742   // Are there matching clusters?
+//  743   status = ZDO_AnyClusterMatches( Cnt, 
+//  744                                   ClusterList,
+//  745                                   1,
+//  746                                  &BindClusterId);
+//  747   if ( status == FALSE )
+//  748   {
+//  749     return ( ZApsFail ); // No matched Cluster
+//  750   }
+//  751 
+//  752   if(addBind)  
+//  753   {
+//  754     if ( pbindAddEntry )
+//  755     {
+//  756       // Add the entry into the binding table
+//  757       if (!pbindAddEntry( SrcEndpInt, DstAddr, DstEndpInt,
+//  758                              1, &BindClusterId ) )
+//  759       {
+//  760         return ( ZApsTableFull );
+//  761       }
+//  762     }
+//  763   }
+//  764   
+//  765   return ( ZSuccess );
+//  766 }
+//  767 
+//  768 /*********************************************************************
+//  769  * @fn      bdb_exitFindingBindingWStatus
+//  770  *
+//  771  * @brief   Clean respondent list and reports the status to bdb state machine
+//  772  *
+//  773  * @return  
+//  774  */
+//  775 void bdb_exitFindingBindingWStatus( uint8 status )
+//  776 {
+//  777   // bdb report status
+//  778   bdbAttributes.bdbCommissioningStatus = status;
+//  779   
+//  780   bdb_reportCommissioningState( BDB_COMMISSIONING_STATE_FINDING_BINDING, TRUE );
+//  781 }
+//  782 
+//  783 /*********************************************************************
+//  784  * @fn      bdb_zclSimpleDescClusterListClean
+//  785  *
+//  786  * @brief   This function free Simple Descriptor cluster lists
+//  787  *
+//  788  * @param   pSimpleDesc - pointer to simple descriptor
+//  789  *
+//  790  * @return  status
+//  791  */
+//  792 static void bdb_zclSimpleDescClusterListClean( SimpleDescriptionFormat_t *pSimpleDesc )
+//  793 {
+//  794   if(pSimpleDesc->pAppInClusterList != NULL)
+//  795   {
+//  796     osal_mem_free( pSimpleDesc->pAppInClusterList );
+//  797     pSimpleDesc->pAppInClusterList = ( cId_t* )NULL;
+//  798   }
+//  799   if(pSimpleDesc->pAppOutClusterList != NULL)
+//  800   {
+//  801     osal_mem_free( pSimpleDesc->pAppOutClusterList );
+//  802     pSimpleDesc->pAppOutClusterList = ( cId_t* )NULL;
+//  803   }
+//  804 }
+//  805 
+//  806 /*********************************************************************
+//  807  * @fn      bdb_RegisterIdentifyTimeChangeCB
+//  808  *
+//  809  * @brief   Register an Application's Identify Time change callback function
+//  810  *          to let know the application when identify is active or not.
+//  811  *
+//  812  * @param   pfnIdentify - application callback
+//  813  *
+//  814  * @return  none
+//  815  */
+//  816 void bdb_RegisterIdentifyTimeChangeCB( bdbGCB_IdentifyTimeChange_t pfnIdentifyTimeChange )
+//  817 {
+//  818   pfnIdentifyTimeChangeCB = pfnIdentifyTimeChange;
+//  819 }
+//  820 
+//  821 #if (FINDING_AND_BINDING_PERIODIC_ENABLE==TRUE)
+//  822 /*********************************************************************
+//  823  * @fn      bdb_GetFBInitiatorStatus
+//  824  *
+//  825  * @brief   Get the F&B initiator status for periodic requests.
+//  826  *
+//  827  * @param   RemainingTime - in seconds
+//  828  * @param   AttemptsLeft - number of attempts to be done
+//  829  * @param   MatchesFound - Add the number of matches to this parameter
+//  830  *                         since the last bdb_GetFBInitiatorStatus call
+//  831  *
+//  832  * @return  none
+//  833  */
+//  834 void bdb_GetFBInitiatorStatus(uint8 *RemainingTime, uint8* AttemptsLeft)
+//  835 {
+//  836   if(RemainingTime != NULL)  
+//  837   {
+//  838     if (bdb_FB_InitiatorCurrentCyclesNumber == 0)
+//  839     {
+//  840       *RemainingTime = 0;
+//  841     }
+//  842     else
+//  843     {
+//  844       *RemainingTime = (bdb_FB_InitiatorCurrentCyclesNumber - 1) * FINDING_AND_BINDING_PERIODIC_TIME + ((osal_get_timeoutEx(bdb_TaskID, BDB_FINDING_AND_BINDING_PERIOD_TIMEOUT) + 999) / 1000);
+//  845     }
+//  846   }
+//  847   
+//  848   if(AttemptsLeft != NULL)
+//  849   {
+//  850     *AttemptsLeft = bdb_FB_InitiatorCurrentCyclesNumber;
+//  851   }
+//  852 }
+//  853 #endif
+//  854 
+//  855 /*********************************************************************
+//  856  * @fn      bdb_RegisterBindNotificationCB
+//  857  *
+//  858  * @brief   Register an Application's notification callback function to let 
+//  859  *          know the application when a new bind is added to the binding table.
+//  860  *
+//  861  * @param   pfnIdentify - application callback
+//  862  *
+//  863  * @return  none
+//  864  */
+//  865 void bdb_RegisterBindNotificationCB( bdbGCB_BindNotification_t pfnBindNotification )
+//  866 {
+//  867   pfnBindNotificationCB = pfnBindNotification;
+//  868 }
+//  869 
+//  870 /*********************************************************************
+//  871  * @fn      bdb_SendIdentifyQuery
+//  872  *
+//  873  * @brief   Sends Identify query from the given endpoint
+//  874  *
+//  875  * @param   endpoint
+//  876  *
+//  877  * @return  ZStatus_t
+//  878  */
+//  879 ZStatus_t bdb_SendIdentifyQuery( uint8 endpoint )
+//  880 {
+//  881   afAddrType_t dstAddr;
+//  882   ZStatus_t    status;
+//  883   
+//  884   dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR_DEVALL;
+//  885   dstAddr.addrMode = afAddr16Bit;
+//  886   dstAddr.endPoint = 0xFF;
+//  887 
+//  888   status = zclGeneral_SendIdentifyQuery( endpoint, &dstAddr, TRUE, bdb_getZCLFrameCounter() ); 
+//  889   
+//  890   if(status == ZSuccess)
+//  891   {
+//  892     osal_start_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT, IDENTIFY_QUERY_RSP_TIMEOUT );
+//  893   }
+//  894   
+//  895   return status;
+//  896 }
+//  897 
+//  898 /*********************************************************************
+//  899  * @fn      bdb_ZclIdentifyQueryCmdInd
+//  900  *
+//  901  * @brief   Callback from the ZCL General Cluster Library when
+//  902  *          it received an Identity Query Response Command for this 
+//  903  *          application.
+//  904  *
+//  905  * @param   srcAddr - source address and endpoint of the response message
+//  906  * @param   identifyTime - the number of seconds to identify yourself
+//  907  *
+//  908  * @return  none
+//  909  */
+//  910 void bdb_ZclIdentifyQueryCmdInd( zclIdentifyQueryRsp_t *pCmd )
+//  911 {
+//  912   bdbFindingBindingRespondent_t *pCurr;
+//  913   
+//  914   // Stop the timer before refresh
+//  915   osal_stop_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT );
+//  916   
+//  917   // add new node to the list
+//  918   pCurr = bdb_AddRespondentNode( &pRespondentHead, pCmd );
+//  919   
+//  920   if(pCurr != NULL)
+//  921   {
+//  922     pCurr->data.addrMode = pCmd->srcAddr->addrMode;
+//  923     pCurr->data.addr.shortAddr = pCmd->srcAddr->addr.shortAddr;
+//  924     pCurr->data.endPoint = pCmd->srcAddr->endPoint;
+//  925     pCurr->data.panId = pCmd->srcAddr->panId;
+//  926     pCurr->attempts = FINDING_AND_BINDING_NEW_RESPONDENT;
+//  927     pCurr->SimpleDescriptor = NULL;
+//  928   }
+//  929   
+//  930   //Process the identify query rsp
+//  931   osal_set_event(bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT);
+//  932 }
+//  933 
+//  934 /*********************************************************************
+//  935  * @fn      bdb_ProcessRespondentList
+//  936  *
+//  937  * @brief   Process the respondent list by sending Simple Descriptor request to 
+//  938  *          devices respondent in the list. Also send IEEE Addr Req to those 
+//  939  *          device for which a bind is created buy IEEE addr is missing.
+//  940  *
+//  941  * @param   none
+//  942  *
+//  943  * @return  none
+//  944  */
+//  945 void bdb_ProcessRespondentList( void )
+//  946 {
+//  947   zAddrType_t dstAddr = { 0 };
+//  948   
+//  949   // Look for the first respondent
+//  950   if ( pRespondentCurr == NULL )
+//  951   {
+//  952     pRespondentCurr = bdb_getRespondentRetry(pRespondentHead);
+//  953     
+//  954     // If null, then no responses from Identify query request
+//  955     if ( (pRespondentCurr == NULL) )
+//  956     {
+//  957       //No responses, then no responses
+//  958       if(pRespondentHead == NULL)
+//  959       {
+//  960         bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_FB_NO_IDENTIFY_QUERY_RESPONSE );
+//  961       }
+//  962       //Responses and binded to all clusters possible
+//  963       else
+//  964       {
+//  965         bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_SUCCESS );
+//  966       }
+//  967       return;
+//  968     }
+//  969   }
+//  970   else
+//  971   {
+//  972     //Validate that we are not processing a missing IEEE Address before chaning 
+//  973     //the current respondent to be process
+//  974     if((pRespondentCurr->attempts & FINDING_AND_BINDING_MISSING_IEEE_ADDR) &&
+//  975        ((pRespondentCurr->attempts & (~FINDING_AND_BINDING_MISSING_IEEE_ADDR)) >= FINDING_AND_BINDING_MAX_ATTEMPTS))
+//  976     {
+//  977       if(pRespondentNext == NULL)
+//  978       {
+//  979         //Review the whole list if we have simple desc that we need to attempt.
+//  980         pRespondentCurr = bdb_getRespondentRetry(pRespondentHead);
+//  981           
+//  982         if(pRespondentCurr == NULL)
+//  983         {
+//  984           bdb_exitFindingBindingWStatus( BDB_COMMISSIONING_SUCCESS );
+//  985           return;
+//  986         }
+//  987       }
+//  988       else
+//  989       {
+//  990         pRespondentCurr = pRespondentNext;
+//  991       }
+//  992     }
+//  993   }
+//  994   
+//  995   //Start the timer to process the next respondent
+//  996   osal_start_timerEx( bdb_TaskID, BDB_RESPONDENT_PROCESS_TIMEOUT, SIMPLEDESC_RESPONSE_TIMEOUT );
+//  997   
+//  998   //If ParentLost is reported, then do not attempt send SimpleDesc, mark those as pending, 
+//  999   //if Parent Lost is restored, then these simpleDesc attempts will be restored to 0
+// 1000   if(bdbCommissioningProcedureState.bdbCommissioningState != BDB_PARENT_LOST)
+// 1001   {
+// 1002     dstAddr.addr.shortAddr = pRespondentCurr->data.addr.shortAddr;
+// 1003     dstAddr.addrMode = pRespondentCurr->data.addrMode;
+// 1004 
+// 1005     //Update the attempts, ahead of actually sending the frame, as this is done just below
+// 1006     pRespondentCurr->attempts++;
+// 1007     
+// 1008     //Send IEEE addr request or simple desc req
+// 1009     if(pRespondentCurr->attempts & FINDING_AND_BINDING_MISSING_IEEE_ADDR)
+// 1010     {
+// 1011       ZDP_IEEEAddrReq(pRespondentCurr->data.addr.shortAddr,0,0,0);
+// 1012     }
+// 1013     else
+// 1014     {
+// 1015       //Send simple descriptor
+// 1016       ZDP_SimpleDescReq( &dstAddr, pRespondentCurr->data.addr.shortAddr, pRespondentCurr->data.endPoint, 0 );
+// 1017     }
+// 1018   }
+// 1019   else
+// 1020   {
+// 1021     //Stop any attempt due to parent lost
+// 1022     pRespondentCurr->attempts |= FINDING_AND_BINDING_PARENT_LOST;
+// 1023   }
+// 1024   
+// 1025   //Search for the next respondant that has not enough tries in the list
+// 1026   pRespondentNext = bdb_getRespondentRetry(pRespondentCurr->pNext);
+// 1027 }
+// 1028 
+// 1029 /*********************************************************************
+// 1030  * @fn      bdb_FindIfAppCluster
+// 1031  *
+// 1032  * @brief   To verify if cluster is application type and should the local device create a bind for it
+// 1033  *
+// 1034  * @param   ClusterId - cluster ID to be verified
+// 1035  * @param   isClusterOutput - True if the bind attempted is output cluster in the local device, false otherwise
+// 1036  *
+// 1037  * @return  true if success
+// 1038  */
+// 1039 uint8 bdb_FindIfAppCluster( cId_t ClusterId, uint8 isClusterOutput )
+// 1040 {
+// 1041   uint8 i;
+// 1042   uint8 ClusterCnt;
+// 1043 
+// 1044   if(isClusterOutput)
+// 1045   {
+// 1046       ClusterCnt = sizeof( bdb_ZclType1Clusters )/sizeof( uint16 );
+// 1047 
+// 1048       for ( i = 0; i < ClusterCnt; i++ )
+// 1049       {
+// 1050         if ( bdb_ZclType1Clusters[i] == ClusterId )
+// 1051         {
+// 1052           return ( SUCCESS );
+// 1053         }
+// 1054       }
+// 1055   }
+// 1056   else
+// 1057   {
+// 1058       ClusterCnt = sizeof( bdb_ZclType2Clusters )/sizeof( uint16 );
+// 1059 
+// 1060       for ( i = 0; i < ClusterCnt; i++ )
+// 1061       {
+// 1062         if ( bdb_ZclType2Clusters[i] == ClusterId )
+// 1063         {
+// 1064           return ( SUCCESS );
+// 1065         }
+// 1066       }
+// 1067   }
+// 1068   
+// 1069   // If not found, take it as application cluster it will be filtered
+// 1070   // by simple descriptor at some point
+// 1071   return ( FAILURE );
+// 1072 }
+// 1073 
+// 1074 
+// 1075 /*********************************************************************
+// 1076  * @fn      bdb_getRespondentRetry
+// 1077  *
+// 1078  * @brief   Get the next Respondant entry to retry
+// 1079  *
+// 1080  * @param   pHead - pointer to a pointer of the list head
+// 1081  *
+// 1082  * @return  respondant entry if found, otherwise NULL
+// 1083  */
+// 1084 bdbFindingBindingRespondent_t* bdb_getRespondentRetry(bdbFindingBindingRespondent_t* pRespondentHead)
+// 1085 {
+// 1086   bdbFindingBindingRespondent_t *pTemp;
+// 1087   
+// 1088   pTemp = pRespondentHead;
+// 1089   
+// 1090   while(pTemp != NULL)
+// 1091   {
+// 1092     //does the next entry requires to perform an attempt on simple desc req or IEEE addr req?
+// 1093     if((pTemp->attempts & ~FINDING_AND_BINDING_MISSING_IEEE_ADDR) < FINDING_AND_BINDING_MAX_ATTEMPTS)
+// 1094     {
+// 1095       return pTemp;
+// 1096     }
+// 1097    
+// 1098     pTemp = pTemp->pNext;
+// 1099   }
+// 1100   return NULL;
+// 1101 }
+// 1102 
+// 1103 
+// 1104 bdbFindingBindingRespondent_t* bdb_findRespondentNode(uint8 endpoint, uint16 shortAddress)
+// 1105 {
+// 1106   bdbFindingBindingRespondent_t* pTemp = pRespondentHead;
+// 1107   
+// 1108   while(pTemp != NULL)  
+// 1109   {
+// 1110     if((pTemp->data.addr.shortAddr == shortAddress) && (pTemp->data.endPoint == endpoint))
+// 1111     {
+// 1112       return pTemp;
+// 1113     }
+// 1114     
+// 1115     pTemp = pTemp->pNext;
+// 1116   }
+// 1117   
+// 1118   return NULL;
+// 1119 }
+// 1120 
+// 1121 #endif  
+// 1122 
+// 1123 /*********************************************************************
+// 1124 *********************************************************************/
+// 
+//
+// 
+//
+//
+//Errors: none
+//Warnings: none

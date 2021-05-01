@@ -1,0 +1,12 @@
+saddr.pbi: \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Components\services\saddr\saddr.c \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_types.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\OSAL.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib\limits.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib/sysmac.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/comdef.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_defs.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/OSAL_Memory.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/OSAL_Timers.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Components\services\saddr/saddr.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\R2R_FlashJT.h
