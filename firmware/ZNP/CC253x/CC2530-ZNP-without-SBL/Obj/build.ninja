@@ -1,0 +1,116 @@
+#Generating source browse information for project CC2530
+
+
+#Abbreviations
+cc = E$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\SourceIndexer.exe
+ll = E$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\PbdLink.exe
+bd = E$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build OSAL_ZNP.pbi : index OSAL_ZNP.xcl
+build znp_app.pbi : index znp_app.xcl
+build znp_soc.pbi : index znp_soc.xcl
+build znp_spi.pbi : index znp_spi.xcl
+build bdb.pbi : index bdb.xcl
+build bdb_FindingAndBinding.pbi : index bdb_FindingAndBinding.xcl
+build bdb_Reporting.pbi : index bdb_Reporting.xcl
+build bdb_tlCommissioning.pbi : index bdb_tlCommissioning.xcl
+build bdb_touchlink.pbi : index bdb_touchlink.xcl
+build bdb_touchlink_initiator.pbi : index bdb_touchlink_initiator.xcl
+build bdb_touchlink_target.pbi : index bdb_touchlink_target.xcl
+build hal_assert.pbi : index hal_assert.xcl
+build hal_drivers.pbi : index hal_drivers.xcl
+build hal_adc.pbi : index hal_adc.xcl
+build hal_dma.pbi : index hal_dma.xcl
+build hal_flash.pbi : index hal_flash.xcl
+build hal_key.pbi : index hal_key.xcl
+build hal_lcd.pbi : index hal_lcd.xcl
+build hal_led.pbi : index hal_led.xcl
+build hal_sleep.pbi : index hal_sleep.xcl
+build hal_spi.pbi : index hal_spi.xcl
+build hal_startup.pbi : index hal_startup.xcl
+build hal_timer.pbi : index hal_timer.xcl
+build hal_uart.pbi : index hal_uart.xcl
+build mac_cfg.pbi : index mac_cfg.xcl
+build mac_pib.pbi : index mac_pib.xcl
+build mac_autopend.pbi : index mac_autopend.xcl
+build mac_backoff_timer.pbi : index mac_backoff_timer.xcl
+build mac_low_level.pbi : index mac_low_level.xcl
+build mac_radio.pbi : index mac_radio.xcl
+build mac_rx.pbi : index mac_rx.xcl
+build mac_rx_onoff.pbi : index mac_rx_onoff.xcl
+build mac_sleep.pbi : index mac_sleep.xcl
+build mac_tx.pbi : index mac_tx.xcl
+build mac_csp_tx.pbi : index mac_csp_tx.xcl
+build mac_mcu.pbi : index mac_mcu.xcl
+build mac_mem.pbi : index mac_mem.xcl
+build mac_radio_defs.pbi : index mac_radio_defs.xcl
+build mac_rffrontend.pbi : index mac_rffrontend.xcl
+build DebugTrace.pbi : index DebugTrace.xcl
+build MT.pbi : index MT.xcl
+build MT_AF.pbi : index MT_AF.xcl
+build MT_APP.pbi : index MT_APP.xcl
+build MT_APP_CONFIG.pbi : index MT_APP_CONFIG.xcl
+build MT_DEBUG.pbi : index MT_DEBUG.xcl
+build MT_GP.pbi : index MT_GP.xcl
+build MT_NWK.pbi : index MT_NWK.xcl
+build MT_SAPI.pbi : index MT_SAPI.xcl
+build MT_SYS.pbi : index MT_SYS.xcl
+build MT_TASK.pbi : index MT_TASK.xcl
+build MT_UART.pbi : index MT_UART.xcl
+build MT_UTIL.pbi : index MT_UTIL.xcl
+build MT_VERSION.pbi : index MT_VERSION.xcl
+build MT_ZDO.pbi : index MT_ZDO.xcl
+build MT_ZNP.pbi : index MT_ZNP.xcl
+build BindingTable.pbi : index BindingTable.xcl
+build nwk_globals.pbi : index nwk_globals.xcl
+build stub_aps.pbi : index stub_aps.xcl
+build ZDiags.pbi : index ZDiags.xcl
+build ZGlobals.pbi : index ZGlobals.xcl
+build OSAL.pbi : index OSAL.xcl
+build OSAL_Clock.pbi : index OSAL_Clock.xcl
+build OSAL_Memory.pbi : index OSAL_Memory.xcl
+build OSAL_Nv.pbi : index OSAL_Nv.xcl
+build OSAL_PwrMgr.pbi : index OSAL_PwrMgr.xcl
+build OSAL_Timers.pbi : index OSAL_Timers.xcl
+build AF.pbi : index AF.xcl
+build sapi.pbi : index sapi.xcl
+build zcl.pbi : index zcl.xcl
+build zcl_key_establish.pbi : index zcl_key_establish.xcl
+build saddr.pbi : index saddr.xcl
+build ZDApp.pbi : index ZDApp.xcl
+build ZDConfig.pbi : index ZDConfig.xcl
+build ZDNwkMgr.pbi : index ZDNwkMgr.xcl
+build ZDObject.pbi : index ZDObject.xcl
+build ZDProfile.pbi : index ZDProfile.xcl
+build ZDSecMgr.pbi : index ZDSecMgr.xcl
+build zmac.pbi : index zmac.xcl
+build zmac_cb.pbi : index zmac_cb.xcl
+build OnBoard.pbi : index OnBoard.xcl
+build ZMain.pbi : index ZMain.xcl
+build CC2530_part0.pbi : link OSAL_ZNP.pbi znp_app.pbi znp_soc.pbi znp_spi.pbi bdb.pbi bdb_FindingAndBinding.pbi bdb_Reporting.pbi bdb_tlCommissioning.pbi bdb_touchlink.pbi
+build CC2530_part1.pbi : link bdb_touchlink_initiator.pbi bdb_touchlink_target.pbi hal_assert.pbi hal_drivers.pbi hal_adc.pbi hal_dma.pbi hal_flash.pbi hal_key.pbi hal_lcd.pbi
+build CC2530_part2.pbi : link hal_led.pbi hal_sleep.pbi hal_spi.pbi hal_startup.pbi hal_timer.pbi hal_uart.pbi mac_cfg.pbi mac_pib.pbi mac_autopend.pbi
+build CC2530_part3.pbi : link mac_backoff_timer.pbi mac_low_level.pbi mac_radio.pbi mac_rx.pbi mac_rx_onoff.pbi mac_sleep.pbi mac_tx.pbi mac_csp_tx.pbi mac_mcu.pbi
+build CC2530_part4.pbi : link mac_mem.pbi mac_radio_defs.pbi mac_rffrontend.pbi DebugTrace.pbi MT.pbi MT_AF.pbi MT_APP.pbi MT_APP_CONFIG.pbi MT_DEBUG.pbi
+build CC2530_part5.pbi : link MT_GP.pbi MT_NWK.pbi MT_SAPI.pbi MT_SYS.pbi MT_TASK.pbi MT_UART.pbi MT_UTIL.pbi MT_VERSION.pbi MT_ZDO.pbi
+build CC2530_part6.pbi : link MT_ZNP.pbi BindingTable.pbi nwk_globals.pbi stub_aps.pbi ZDiags.pbi ZGlobals.pbi OSAL.pbi OSAL_Clock.pbi OSAL_Memory.pbi
+build CC2530_part7.pbi : link OSAL_Nv.pbi OSAL_PwrMgr.pbi OSAL_Timers.pbi AF.pbi sapi.pbi zcl.pbi zcl_key_establish.pbi saddr.pbi ZDApp.pbi
+build CC2530_part8.pbi : link ZDConfig.pbi ZDNwkMgr.pbi ZDObject.pbi ZDProfile.pbi ZDSecMgr.pbi zmac.pbi zmac_cb.pbi OnBoard.pbi ZMain.pbi
+build CC2530.pbd : link CC2530_part0.pbi CC2530_part1.pbi CC2530_part2.pbi CC2530_part3.pbi CC2530_part4.pbi CC2530_part5.pbi CC2530_part6.pbi CC2530_part7.pbi CC2530_part8.pbi
+build CC2530.pbw : browsedata CC2530.pbd
+
+

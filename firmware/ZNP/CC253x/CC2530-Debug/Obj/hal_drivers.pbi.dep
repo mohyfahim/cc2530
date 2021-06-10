@@ -1,0 +1,30 @@
+hal_drivers.pbi: \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Components\hal\common\hal_drivers.c \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_adc.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_types.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include/hal_board.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_board_cfg.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP/hal_mcu.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_defs.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP/hal_types.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\ioCC2530.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_aes.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\ZComDef.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/comdef.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\saddr.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_dma.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_board.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_drivers.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_key.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_lcd.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_led.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_sleep.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_timer.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_uart.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\OSAL.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib\limits.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib/sysmac.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/OSAL_Memory.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/OSAL_Timers.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\OSAL_PwrMgr.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_spi.h

@@ -1,0 +1,24 @@
+OSAL_Memory.pbi: \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Components\osal\common\OSAL_Memory.c \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib\stdlib.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib/sysmac.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\comdef.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_types.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_defs.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\OSAL.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib\limits.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/comdef.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/OSAL_Memory.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include/OSAL_Timers.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\OSAL_Memory.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\OnBoard.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_board_cfg.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP/hal_mcu.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP/hal_types.h \
+  E:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\ioCC2530.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\hal_mcu.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_uart.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include/hal_board.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_sleep.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\osal.h \
+  E:\Texas\ Instruments\Z-Stack\ 3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\hal_assert.h

@@ -1,0 +1,1119 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.40.1.7397 for 8051               01/May/2021  16:40:02
+# Copyright 2004-2021 IAR Systems AB.
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        E:\Texas Instruments\Z-Stack 3.0.2\Components\mt\MT_APP_CONFIG.c
+#    Command line       =  
+#        -f C:\Users\asus\AppData\Local\Temp\EW971.tmp ("E:\Texas
+#        Instruments\Z-Stack 3.0.2\Components\mt\MT_APP_CONFIG.c" -D
+#        BDB_FINDING_BINDING_CAPABILITY_ENABLED=0 -D TC_LINKKEY_JOIN -D
+#        HAL_UART_DMA_RX_MAX=128 -D MAXMEMHEAP=2765 -D NWK_MAX_DEVICE_LIST=10
+#        -D ZDSECMGR_TC_DEVICE_MAX=30 -D DISABLE_GREENPOWER_BASIC_PROXY -D
+#        FEATURE_SYSTEM_STATS -D MT_GP_CB_FUNC -D ASSERT_RESET -D FAKE_CRC_SHDW
+#        -lC "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List" -lA
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List"
+#        --diag_suppress Pe001,Pa010 -o "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\Obj" -e --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+#        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR | DEVICE_BUILD_ROUTER
+#        | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL -DZNP_RUN_WDOG=FALSE
+#        -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO -DZIGBEE_FRAGMENTATION
+#        -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE -DSAPI_CB_FUNC=FALSE
+#        -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT -DNUM_DISC_ATTEMPTS=0
+#        -DMT_UTIL_FUNC -DMT_SYS_FUNC -DMT_AF_FUNC -DMT_SAPI_FUNC
+#        -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC -DMT_ZDO_FUNC -DMT_ZDO_MGMT
+#        -DMT_ZDO_EXTENSIONS -DMT_GP_CB_FUNC -DMT_APP_FUNC -DMT_APP_CNF_FUNC
+#        -DZNP_ALT) -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
+#        -f "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg" -I
+#        "E:\Texas Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\Source\" -I "E:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\ZNP\CC253x\..\Source\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I "E:\Texas
+#        Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\Utilities\BootLoad\Source\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I "E:\Texas
+#        Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530ZNP\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\gp\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\bdb\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+#        -I "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\" -I
+#        "E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes --no_code_motion)
+#    Locale             =  English_USA.1252
+#    List file          =  
+#        E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\List\MT_APP_CONFIG.lst
+#    Object file        =  
+#        E:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\ZNP\CC253x\CC2530-ZNP-with-SBL\Obj\MT_APP_CONFIG.r51
+#
+###############################################################################
+
+E:\Texas Instruments\Z-Stack 3.0.2\Components\mt\MT_APP_CONFIG.c
+      1          /***************************************************************************************************
+      2            Filename:       MT_APP_CONFIG.c
+      3            Revised:        $Date: 2016-03-31 01:06:52 -0700 (Thu, 31 Marc 2016) $
+      4            Revision:       $Revision:  $
+      5          
+      6            Description:    MonitorTest functions for application configuration.
+      7          
+      8            Copyright 2007-2013 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License"). You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product. Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED ?AS IS? WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          
+     38           ***************************************************************************************************/
+     39          
+     40          /***************************************************************************************************
+     41           * INCLUDES
+     42           ***************************************************************************************************/
+     43           
+     44           
+     45          #include "ZComDef.h"
+     46          #include "MT.h"
+     47          #include "MT_APP_CONFIG.h"
+     48          #include "MT_UART.h"
+     49          
+     50          #include "bdb.h"
+     51          #include "bdb_interface.h"
+     52          #include "ZDApp.h"
+     53           
+     54          /***************************************************************************************************
+     55          * LOCAL FUNCTIONs
+     56          ***************************************************************************************************/
+     57             
+     58          #if defined (MT_APP_CNF_FUNC)
+     59          
+     60          static void MT_AppCnfSetNwkFrameCounter(uint8 *pBuf);   
+     61          static void MT_AppCnfSetDefaultRemoteEndDeviceTimeout(uint8 *pBuf);
+     62          static void MT_AppCnfSetEndDeviceTimeout(uint8 *pBuf);
+     63          #if (ZG_BUILD_COORDINATOR_TYPE)
+     64          static void MT_AppCnfSetAllowRejoinTCPolicy(uint8 *pBuf);
+     65          #endif
+     66          
+     67          static void MT_AppCnfBDBSetChannel(uint8* pBuf);
+     68          static void MT_AppCnfBDBStartCommissioning(uint8* pBuf);
+     69          #if (ZG_BUILD_COORDINATOR_TYPE)
+     70              static void MT_AppCnfBDBSetTCRequireKeyExchange(uint8 *pBuf);
+     71              static void MT_AppCnfBDBAddInstallCode(uint8 *pBuf);
+     72              static void MT_AppCnfBDBSetJoinUsesInstallCodeKey(uint8 *pBuf);
+     73          #endif
+     74          #if (ZG_BUILD_JOINING_TYPE)
+     75              static void MT_AppCnfBDBSetActiveCentralizedKey(uint8* pBuf);
+     76          #endif
+     77          
+     78          #if (ZG_BUILD_ENDDEVICE_TYPE)    
+     79              static void MT_AppCnfBDBZedAttemptRecoverNwk(uint8* pBuf);
+     80          #endif
+     81                
+     82          #endif
+     83          
+     84          
+     85          /***************************************************************************************************
+     86          * External variables
+     87          ***************************************************************************************************/
+     88          extern uint32 nwkFrameCounter;
+     89          extern uint16 nwkFrameCounterChanges;
+     90          
+     91          
+     92          #if defined (MT_APP_CNF_FUNC)
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     93          uint8 MT_AppCnfCommandProcessing(uint8 *pBuf)
+   \                     MT_AppCnfCommandProcessing:
+     94          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV       A,#-0x1
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FC           MOV       R4,A
+   \   00000C   EB           MOV       A,R3
+   \   00000D   FD           MOV       R5,A
+     95            uint8 status = MT_RPC_SUCCESS;
+     96          
+     97            switch (pBuf[MT_RPC_POS_CMD1])
+   \   00000E   8A82         MOV       DPL,R2
+   \   000010   F583         MOV       DPH,A
+   \   000012   A3           INC       DPTR
+   \   000013   A3           INC       DPTR
+   \   000014   E0           MOVX      A,@DPTR
+   \   000015   14           DEC       A
+   \   000016   6067         JZ        ??MT_AppCnfCommandProcessing_0
+   \   000018   14           DEC       A
+   \   000019   7003         JNZ       $+5
+   \   00001B   02....       LJMP      ??MT_AppCnfCommandProcessing_1 & 0xFFFF
+   \   00001E   14           DEC       A
+   \   00001F   7003         JNZ       $+5
+   \   000021   02....       LJMP      ??MT_AppCnfCommandProcessing_2 & 0xFFFF
+   \   000024   14           DEC       A
+   \   000025   7003         JNZ       $+5
+   \   000027   02....       LJMP      ??MT_AppCnfCommandProcessing_3 & 0xFFFF
+   \   00002A   14           DEC       A
+   \   00002B   7003         JNZ       $+5
+   \   00002D   02....       LJMP      ??MT_AppCnfCommandProcessing_4 & 0xFFFF
+   \   000030   14           DEC       A
+   \   000031   7003         JNZ       $+5
+   \   000033   02....       LJMP      ??MT_AppCnfCommandProcessing_5 & 0xFFFF
+   \   000036   14           DEC       A
+   \   000037   7003         JNZ       $+5
+   \   000039   02....       LJMP      ??MT_AppCnfCommandProcessing_6 & 0xFFFF
+   \   00003C   14           DEC       A
+   \   00003D   7003         JNZ       $+5
+   \   00003F   02....       LJMP      ??MT_AppCnfCommandProcessing_7 & 0xFFFF
+   \   000042   14           DEC       A
+   \   000043   7003         JNZ       $+5
+   \   000045   02....       LJMP      ??MT_AppCnfCommandProcessing_8 & 0xFFFF
+   \   000048   14           DEC       A
+   \   000049   7003         JNZ       $+5
+   \   00004B   02....       LJMP      ??MT_AppCnfCommandProcessing_9 & 0xFFFF
+   \   00004E   240B         ADD       A,#0xb
+   \   000050   6003         JZ        $+5
+   \   000052   02....       LJMP      ??MT_AppCnfCommandProcessing_10 & 0xFFFF
+     98            {
+     99              case MT_APP_CNF_SET_NWK_FRAME_COUNTER:
+    100                MT_AppCnfSetNwkFrameCounter(pBuf);
+   \   000055   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   000058                ; Setup parameters for call to function osal_build_uint32
+   \   000058   7904         MOV       R1,#0x4
+   \   00005A   EA           MOV       A,R2
+   \   00005B   2403         ADD       A,#0x3
+   \   00005D   FA           MOV       R2,A
+   \   00005E   E4           CLR       A
+   \   00005F   3D           ADDC      A,R5
+   \   000060   FB           MOV       R3,A
+   \   000061   12....       LCALL     `??osal_build_uint32::?relay`; Banked call to: osal_build_uint32
+   \   000064   EA           MOV       A,R2
+   \   000065   F8           MOV       R0,A
+   \   000066   EB           MOV       A,R3
+   \   000067   F9           MOV       R1,A
+   \   000068   EC           MOV       A,R4
+   \   000069   FA           MOV       R2,A
+   \   00006A   ED           MOV       A,R5
+   \   00006B   FB           MOV       R3,A
+   \   00006C   90....       MOV       DPTR,#nwkFrameCounter
+   \   00006F   12....       LCALL     ?XSTORE_R0123
+   \   000072   90....       MOV       DPTR,#nwkFrameCounterChanges
+   \   000075   E4           CLR       A
+   \   000076   F0           MOVX      @DPTR,A
+   \   000077   A3           INC       DPTR
+   \   000078   F0           MOVX      @DPTR,A
+   \   000079                ; Setup parameters for call to function ZDApp_SaveNwkKey
+   \   000079   12....       LCALL     `??ZDApp_SaveNwkKey::?relay`; Banked call to: ZDApp_SaveNwkKey
+   \   00007C                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   00007C   02....       LJMP      ??MT_AppCnfCommandProcessing_11 & 0xFFFF
+    101              break;
+    102              case MT_APP_CNF_SET_DEFAULT_REMOTE_ENDDEVICE_TIMEOUT:
+    103                MT_AppCnfSetDefaultRemoteEndDeviceTimeout(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_0:
+   \   00007F   12....       LCALL     ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000082   F8           MOV       R0,A
+   \   000083   C3           CLR       C
+   \   000084   940F         SUBB      A,#0xf
+   \   000086   400B         JC        ??MT_AppCnfCommandProcessing_12
+   \   000088   85..82       MOV       DPL,?XSP + 0
+   \   00008B   85..83       MOV       DPH,?XSP + 1
+   \   00008E   7402         MOV       A,#0x2
+   \   000090   F0           MOVX      @DPTR,A
+   \   000091   802B         SJMP      ??MT_AppCnfCommandProcessing_13
+   \                     ??MT_AppCnfCommandProcessing_12:
+   \   000093   E8           MOV       A,R0
+   \   000094   90....       MOV       DPTR,#zgNwkEndDeviceTimeoutDefault
+   \   000097   F0           MOVX      @DPTR,A
+   \   000098                ; Setup parameters for call to function osal_nv_write
+   \   000098   75....       MOV       ?V0,#zgNwkEndDeviceTimeoutDefault & 0xff
+   \   00009B   75....       MOV       ?V1,#(zgNwkEndDeviceTimeoutDefault >> 8) & 0xff
+   \   00009E   78..         MOV       R0,#?V0
+   \   0000A0   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000A3   75..01       MOV       ?V0,#0x1
+   \   0000A6   75..00       MOV       ?V1,#0x0
+   \   0000A9   78..         MOV       R0,#?V0
+   \   0000AB   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000AE   7C00         MOV       R4,#0x0
+   \   0000B0   7D00         MOV       R5,#0x0
+   \   0000B2   7A52         MOV       R2,#0x52
+   \   0000B4   7B00         MOV       R3,#0x0
+   \   0000B6   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   0000B9   7404         MOV       A,#0x4
+   \   0000BB   12....       LCALL     ?DEALLOC_XSTACK8
+   \                     ??MT_AppCnfCommandProcessing_13:
+   \   0000BE                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   0000BE   02....       LJMP      ??MT_AppCnfCommandProcessing_11 & 0xFFFF
+    104              break;
+    105              case MT_APP_CNF_SET_ENDDEVICETIMEOUT:
+    106                MT_AppCnfSetEndDeviceTimeout(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_1:
+   \   0000C1   12....       LCALL     ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   0000C4   C3           CLR       C
+   \   0000C5   940F         SUBB      A,#0xf
+   \   0000C7   400B         JC        ??MT_AppCnfCommandProcessing_14
+   \   0000C9   85..82       MOV       DPL,?XSP + 0
+   \   0000CC   85..83       MOV       DPH,?XSP + 1
+   \   0000CF   7402         MOV       A,#0x2
+   \   0000D1   F0           MOVX      @DPTR,A
+   \   0000D2   8032         SJMP      ??MT_AppCnfCommandProcessing_15
+   \                     ??MT_AppCnfCommandProcessing_14:
+   \   0000D4   8A82         MOV       DPL,R2
+   \   0000D6   8B83         MOV       DPH,R3
+   \   0000D8   A3           INC       DPTR
+   \   0000D9   A3           INC       DPTR
+   \   0000DA   A3           INC       DPTR
+   \   0000DB   E0           MOVX      A,@DPTR
+   \   0000DC   90....       MOV       DPTR,#zgEndDeviceTimeoutValue
+   \   0000DF   F0           MOVX      @DPTR,A
+   \   0000E0                ; Setup parameters for call to function osal_nv_write
+   \   0000E0   75....       MOV       ?V0,#zgEndDeviceTimeoutValue & 0xff
+   \   0000E3   75....       MOV       ?V1,#(zgEndDeviceTimeoutValue >> 8) & 0xff
+   \   0000E6   78..         MOV       R0,#?V0
+   \   0000E8   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000EB   75..01       MOV       ?V0,#0x1
+   \   0000EE   75..00       MOV       ?V1,#0x0
+   \   0000F1   78..         MOV       R0,#?V0
+   \   0000F3   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000F6   7C00         MOV       R4,#0x0
+   \   0000F8   7D00         MOV       R5,#0x0
+   \   0000FA   7A53         MOV       R2,#0x53
+   \   0000FC   7B00         MOV       R3,#0x0
+   \   0000FE   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   000101   7404         MOV       A,#0x4
+   \   000103   12....       LCALL     ?DEALLOC_XSTACK8
+   \                     ??MT_AppCnfCommandProcessing_15:
+   \   000106                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000106   02....       LJMP      ??MT_AppCnfCommandProcessing_11 & 0xFFFF
+    107              break;
+    108          #if (ZG_BUILD_COORDINATOR_TYPE)
+    109              case MT_APP_CNF_SET_ALLOWREJOIN_TC_POLICY:
+    110                MT_AppCnfSetAllowRejoinTCPolicy(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_2:
+   \   000109   85..82       MOV       DPL,?XSP + 0
+   \   00010C   85..83       MOV       DPH,?XSP + 1
+   \   00010F   E4           CLR       A
+   \   000110   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000113   FA           MOV       R2,A
+   \   000114   8C82         MOV       DPL,R4
+   \   000116   8B83         MOV       DPH,R3
+   \   000118   A3           INC       DPTR
+   \   000119   A3           INC       DPTR
+   \   00011A   A3           INC       DPTR
+   \   00011B   E0           MOVX      A,@DPTR
+   \   00011C   90....       MOV       DPTR,#zgAllowRejoins
+   \   00011F   6004         JZ        ??MT_AppCnfCommandProcessing_16
+   \   000121   7401         MOV       A,#0x1
+   \   000123   8001         SJMP      ??MT_AppCnfCommandProcessing_17
+   \                     ??MT_AppCnfCommandProcessing_16:
+   \   000125   E4           CLR       A
+   \                     ??MT_AppCnfCommandProcessing_17:
+   \   000126   F0           MOVX      @DPTR,A
+   \   000127                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000127   AC..         MOV       R4,?XSP + 0
+   \   000129   AD..         MOV       R5,?XSP + 1
+   \   00012B   7B01         MOV       R3,#0x1
+   \   00012D   02....       LJMP      ??MT_AppCnfCommandProcessing_18 & 0xFFFF
+    111              break;
+    112          #endif
+    113              
+    114          
+    115              case MT_APP_CNF_BDB_START_COMMISSIONING:
+    116                MT_AppCnfBDBStartCommissioning(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_4:
+   \   000130   12....       LCALL     ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000133   F9           MOV       R1,A
+   \   000134   12....       LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+   \   000137                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000137   02....       LJMP      ??MT_AppCnfCommandProcessing_11 & 0xFFFF
+    117              break;
+    118              case MT_APP_CNF_BDB_SET_CHANNEL:
+    119                MT_AppCnfBDBSetChannel(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_7:
+   \   00013A   12....       LCALL     ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   00013D   FF           MOV       R7,A
+   \   00013E                ; Setup parameters for call to function osal_build_uint32
+   \   00013E   7904         MOV       R1,#0x4
+   \   000140   EA           MOV       A,R2
+   \   000141   29           ADD       A,R1
+   \   000142   FA           MOV       R2,A
+   \   000143   E4           CLR       A
+   \   000144   3D           ADDC      A,R5
+   \   000145   FB           MOV       R3,A
+   \   000146   12....       LCALL     `??osal_build_uint32::?relay`; Banked call to: osal_build_uint32
+   \   000149                ; Setup parameters for call to function bdb_setChannelAttribute
+   \   000149   EF           MOV       A,R7
+   \   00014A   F9           MOV       R1,A
+   \   00014B   12....       LCALL     `??bdb_setChannelAttribute::?relay`; Banked call to: bdb_setChannelAttribute
+   \   00014E                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   00014E   02....       LJMP      ??MT_AppCnfCommandProcessing_11 & 0xFFFF
+    120              break;
+    121          
+    122          #if (ZG_BUILD_COORDINATOR_TYPE)
+    123                case MT_APP_CNF_BDB_ADD_INSTALLCODE:
+    124                  MT_AppCnfBDBAddInstallCode(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_3:
+   \   000151   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000154   EA           MOV       A,R2
+   \   000155   2403         ADD       A,#0x3
+   \   000157   FA           MOV       R2,A
+   \   000158   E4           CLR       A
+   \   000159   3D           ADDC      A,R5
+   \   00015A   8A82         MOV       DPL,R2
+   \   00015C   F583         MOV       DPH,A
+   \   00015E   E0           MOVX      A,@DPTR
+   \   00015F   F8           MOV       R0,A
+   \   000160   A3           INC       DPTR
+   \   000161   E582         MOV       A,DPL
+   \   000163   2408         ADD       A,#0x8
+   \   000165   FA           MOV       R2,A
+   \   000166   E4           CLR       A
+   \   000167   3583         ADDC      A,DPH
+   \   000169   FB           MOV       R3,A
+   \   00016A   E8           MOV       A,R0
+   \   00016B   14           DEC       A
+   \   00016C   600C         JZ        ??MT_AppCnfCommandProcessing_19
+   \   00016E   14           DEC       A
+   \   00016F   706A         JNZ       ??MT_AppCnfCommandProcessing_11
+   \   000171                ; Setup parameters for call to function APSME_AddTCLinkKey
+   \   000171   AC82         MOV       R4,DPL
+   \   000173   AD83         MOV       R5,DPH
+   \   000175   12....       LCALL     `??APSME_AddTCLinkKey::?relay`; Banked call to: APSME_AddTCLinkKey
+   \   000178   8007         SJMP      ??MT_AppCnfCommandProcessing_20
+   \                     ??MT_AppCnfCommandProcessing_19:
+   \   00017A                ; Setup parameters for call to function bdb_addInstallCode
+   \   00017A   AC82         MOV       R4,DPL
+   \   00017C   AD83         MOV       R5,DPH
+   \   00017E   12....       LCALL     `??bdb_addInstallCode::?relay`; Banked call to: bdb_addInstallCode
+   \                     ??MT_AppCnfCommandProcessing_20:
+   \   000181   E9           MOV       A,R1
+   \   000182   85..82       MOV       DPL,?XSP + 0
+   \   000185   85..83       MOV       DPH,?XSP + 1
+   \   000188   F0           MOVX      @DPTR,A
+   \                     ??MT_AppCnfCommandProcessing_21:
+   \   000189                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000189   8050         SJMP      ??MT_AppCnfCommandProcessing_11
+    125                break;
+    126                case MT_APP_CNF_BDB_SET_TC_REQUIRE_KEY_EXCHANGE:
+    127                  MT_AppCnfBDBSetTCRequireKeyExchange(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_8:
+   \   00018B   12....       LCALL     ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00018E   6004         JZ        ??MT_AppCnfCommandProcessing_22
+   \   000190                ; Setup parameters for call to function bdb_setTCRequireKeyExchange
+   \   000190   7901         MOV       R1,#0x1
+   \   000192   8002         SJMP      ??MT_AppCnfCommandProcessing_23
+   \                     ??MT_AppCnfCommandProcessing_22:
+   \   000194                ; Setup parameters for call to function bdb_setTCRequireKeyExchange
+   \   000194   7900         MOV       R1,#0x0
+   \                     ??MT_AppCnfCommandProcessing_23:
+   \   000196   12....       LCALL     `??bdb_setTCRequireKeyExchange::?relay`; Banked call to: bdb_setTCRequireKeyExchange
+   \   000199                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000199   8040         SJMP      ??MT_AppCnfCommandProcessing_11
+    128                break;
+    129                case MT_APP_CNF_BDB_SET_JOINUSESINSTALLCODEKEY:
+    130                  MT_AppCnfBDBSetJoinUsesInstallCodeKey(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_5:
+   \   00019B   12....       LCALL     ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   00019E   6004         JZ        ??MT_AppCnfCommandProcessing_24
+   \   0001A0                ; Setup parameters for call to function bdb_setJoinUsesInstallCodeKey
+   \   0001A0   7901         MOV       R1,#0x1
+   \   0001A2   8002         SJMP      ??MT_AppCnfCommandProcessing_25
+   \                     ??MT_AppCnfCommandProcessing_24:
+   \   0001A4                ; Setup parameters for call to function bdb_setJoinUsesInstallCodeKey
+   \   0001A4   7900         MOV       R1,#0x0
+   \                     ??MT_AppCnfCommandProcessing_25:
+   \   0001A6   12....       LCALL     `??bdb_setJoinUsesInstallCodeKey::?relay`; Banked call to: bdb_setJoinUsesInstallCodeKey
+   \   0001A9                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   0001A9   8030         SJMP      ??MT_AppCnfCommandProcessing_11
+    131                break;
+    132          #endif
+    133          #if (ZG_BUILD_JOINING_TYPE)
+    134                case MT_APP_CNF_BDB_SET_ACTIVE_DEFAULT_CENTRALIZED_KEY:
+    135                  MT_AppCnfBDBSetActiveCentralizedKey(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_6:
+   \   0001AB   8A82         MOV       DPL,R2
+   \   0001AD   8B83         MOV       DPH,R3
+   \   0001AF   A3           INC       DPTR
+   \   0001B0   A3           INC       DPTR
+   \   0001B1   E0           MOVX      A,@DPTR
+   \   0001B2   FE           MOV       R6,A
+   \   0001B3                ; Setup parameters for call to function bdb_setActiveCentralizedLinkKey
+   \   0001B3   EA           MOV       A,R2
+   \   0001B4   2404         ADD       A,#0x4
+   \   0001B6   FA           MOV       R2,A
+   \   0001B7   E4           CLR       A
+   \   0001B8   3D           ADDC      A,R5
+   \   0001B9   FB           MOV       R3,A
+   \   0001BA   8C82         MOV       DPL,R4
+   \   0001BC   8D83         MOV       DPH,R5
+   \   0001BE   A3           INC       DPTR
+   \   0001BF   A3           INC       DPTR
+   \   0001C0   A3           INC       DPTR
+   \   0001C1   E0           MOVX      A,@DPTR
+   \   0001C2   F9           MOV       R1,A
+   \   0001C3   12....       LCALL     `??bdb_setActiveCentralizedLinkKey::?relay`; Banked call to: bdb_setActiveCentralizedLinkKey
+   \   0001C6   800B         SJMP      ??MT_AppCnfCommandProcessing_26
+    136                break;
+    137          #endif
+    138                
+    139          #if (ZG_BUILD_ENDDEVICE_TYPE)        
+    140                case MT_APP_CNF_BDB_ZED_ATTEMPT_RECOVER_NWK:
+    141                  MT_AppCnfBDBZedAttemptRecoverNwk(pBuf);
+   \                     ??MT_AppCnfCommandProcessing_9:
+   \   0001C8   8A82         MOV       DPL,R2
+   \   0001CA   8B83         MOV       DPH,R3
+   \   0001CC   A3           INC       DPTR
+   \   0001CD   A3           INC       DPTR
+   \   0001CE   E0           MOVX      A,@DPTR
+   \   0001CF   FE           MOV       R6,A
+   \   0001D0                ; Setup parameters for call to function bdb_ZedAttemptRecoverNwk
+   \   0001D0   12....       LCALL     `??bdb_ZedAttemptRecoverNwk::?relay`; Banked call to: bdb_ZedAttemptRecoverNwk
+   \                     ??MT_AppCnfCommandProcessing_26:
+   \   0001D3   E9           MOV       A,R1
+   \   0001D4   85..82       MOV       DPL,?XSP + 0
+   \   0001D7   85..83       MOV       DPH,?XSP + 1
+   \   0001DA   F0           MOVX      @DPTR,A
+   \   0001DB                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \                     ??MT_AppCnfCommandProcessing_11:
+   \   0001DB   AC..         MOV       R4,?XSP + 0
+   \   0001DD   AD..         MOV       R5,?XSP + 1
+   \   0001DF   7B01         MOV       R3,#0x1
+   \   0001E1   EE           MOV       A,R6
+   \   0001E2   FA           MOV       R2,A
+   \                     ??MT_AppCnfCommandProcessing_18:
+   \   0001E3   796F         MOV       R1,#0x6f
+   \   0001E5   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    142                break;
+    143          #endif
+    144          
+    145            }
+    146            return status;
+   \                     ??MT_AppCnfCommandProcessing_10:
+   \   0001E8   7900         MOV       R1,#0x0
+   \   0001EA   7401         MOV       A,#0x1
+   \   0001EC   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0001EF   7F04         MOV       R7,#0x4
+   \   0001F1   02....       LJMP      ?BANKED_LEAVE_XDATA
+    147          }
+    148          
+    149          
+    150          /***************************************************************************************************
+    151          * @fn      MT_AppCnfCommissioningNotification
+    152          *
+    153          * @brief   Notify the host processor about an event in BDB
+    154          *
+    155          * @param   bdbCommissioningModeMsg - Commissioning notification message
+    156          *
+    157          * @return  void
+    158          ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    159          void MT_AppCnfCommissioningNotification(bdbCommissioningModeMsg_t* bdbCommissioningModeMsg)
+   \                     MT_AppCnfCommissioningNotification:
+    160          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 3
+   \   000004   74FD         MOV       A,#-0x3
+   \   000006   12....       LCALL     ?ALLOC_XSTACK8
+    161            uint8 retArray[3];
+    162            
+    163            retArray[0] = bdbCommissioningModeMsg->bdbCommissioningStatus;
+   \   000009   8A82         MOV       DPL,R2
+   \   00000B   8B83         MOV       DPH,R3
+   \   00000D   E0           MOVX      A,@DPTR
+   \   00000E   85..82       MOV       DPL,?XSP + 0
+   \   000011   85..83       MOV       DPH,?XSP + 1
+   \   000014   F0           MOVX      @DPTR,A
+    164            retArray[1] = bdbCommissioningModeMsg->bdbCommissioningMode;
+   \   000015   8A82         MOV       DPL,R2
+   \   000017   8B83         MOV       DPH,R3
+   \   000019   A3           INC       DPTR
+   \   00001A   E0           MOVX      A,@DPTR
+   \   00001B   C0E0         PUSH      A
+   \   00001D   7401         MOV       A,#0x1
+   \   00001F   12....       LCALL     ?XSTACK_DISP0_8
+   \   000022   D0E0         POP       A
+   \   000024   12....       LCALL     ?Subroutine2 & 0xFFFF
+    165            retArray[2] = bdbCommissioningModeMsg->bdbRemainingCommissioningModes;
+   \                     ??CrossCallReturnLabel_9:
+   \   000027   C0E0         PUSH      A
+   \   000029   7402         MOV       A,#0x2
+   \   00002B   12....       LCALL     ?XSTACK_DISP0_8
+   \   00002E   D0E0         POP       A
+   \   000030   F0           MOVX      @DPTR,A
+    166          
+    167            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_APP_CNF), MT_APP_CNF_BDB_COMMISSIONING_NOTIFICATION, sizeof(bdbCommissioningModeMsg_t), retArray);
+   \   000031                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   000031   AC..         MOV       R4,?XSP + 0
+   \   000033   AD..         MOV       R5,?XSP + 1
+   \   000035   7B03         MOV       R3,#0x3
+   \   000037   7A80         MOV       R2,#-0x80
+   \   000039   794F         MOV       R1,#0x4f
+   \   00003B   12....       LCALL     `??MT_BuildAndSendZToolResponse::?relay`; Banked call to: MT_BuildAndSendZToolResponse
+    168          }
+   \   00003E   7403         MOV       A,#0x3
+   \   000040   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000043   D083         POP       DPH
+   \   000045   D082         POP       DPL
+   \   000047   02....       LJMP      ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   8A82         MOV       DPL,R2
+   \   000003   8B83         MOV       DPH,R3
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006   E4           CLR       A
+   \   000007   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   00000A   FE           MOV       R6,A
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000003                ; Setup parameters for call to function bdb_StartCommissioning
+   \   000003   8A82         MOV       DPL,R2
+   \   000005   8B83         MOV       DPH,R3
+   \   000007   A3           INC       DPTR
+   \   000008   A3           INC       DPTR
+   \   000009   A3           INC       DPTR
+   \   00000A   E0           MOVX      A,@DPTR
+   \   00000B   22           RET
+    169          
+    170          
+    171          /***************************************************************************************************
+    172          * @fn      MT_AppCnfBDBStartCommissioning
+    173          *
+    174          * @brief   Start the commissioning process setting the commissioning mode given.
+    175          *
+    176          * @param   pBuf - pointer to received buffer
+    177          *
+    178          * @return  void
+    179          ***************************************************************************************************/
+    180          static void MT_AppCnfBDBStartCommissioning(uint8* pBuf)
+    181          {
+    182            uint8 retValue = ZSuccess;
+    183            uint8 cmdId;
+    184            
+    185            /* parse header */
+    186            cmdId = pBuf[MT_RPC_POS_CMD1];
+    187            pBuf += MT_RPC_FRAME_HDR_SZ;
+    188            
+    189            bdb_StartCommissioning(*pBuf);
+    190            
+    191            /* Build and send back the response */
+    192            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    193          }
+    194          
+    195          
+    196          /***************************************************************************************************
+    197          * @fn      MT_AppCnfBDBSetChannel
+    198          *
+    199          * @brief   Set the primary or seconday channel for discovery or formation procedure
+    200          *
+    201          * @param   pBuf - pointer to received buffer
+    202          *
+    203          * @return  void
+    204          ***************************************************************************************************/
+    205          static void MT_AppCnfBDBSetChannel(uint8* pBuf)
+    206          {
+    207            uint8 retValue = ZSuccess;
+    208            uint8 cmdId;
+    209            uint8 isPrimary;
+    210            uint32 Channel;
+    211            
+    212            /* parse header */
+    213            cmdId = pBuf[MT_RPC_POS_CMD1];
+    214            pBuf += MT_RPC_FRAME_HDR_SZ;
+    215            
+    216            isPrimary = *pBuf;
+    217            pBuf++;
+    218            
+    219            Channel = osal_build_uint32(pBuf, sizeof(uint32));
+    220              
+    221            bdb_setChannelAttribute(isPrimary,Channel);
+    222            
+    223            /* Build and send back the response */
+    224            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    225          }
+    226          
+    227          
+    228          
+    229          #if (ZG_BUILD_COORDINATOR_TYPE)
+    230          /*********************************************************************
+    231           * @fn          MT_AppCnfBDBSetTCRequireKeyExchange
+    232           *
+    233           * @brief       Configure bdbTrustCenterRequireKeyExchange attribute.
+    234           *
+    235           * @param       Set attribute to FALSE if *pBuf == 0, FALSE otherwise
+    236           *
+    237           * @return      none
+    238           */
+    239          static void MT_AppCnfBDBSetTCRequireKeyExchange(uint8 *pBuf)
+    240          {
+    241            uint8 retValue = ZSuccess;
+    242            uint8 cmdId;
+    243            
+    244            /* parse header */
+    245            cmdId = pBuf[MT_RPC_POS_CMD1];
+    246            pBuf += MT_RPC_FRAME_HDR_SZ;
+    247            
+    248            if(*pBuf)
+    249            {
+    250              bdb_setTCRequireKeyExchange(TRUE);
+    251            }
+    252            else
+    253            {
+    254              bdb_setTCRequireKeyExchange(FALSE);
+    255            }
+    256            /* Build and send back the response */
+    257            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    258          }
+    259          
+    260           /*********************************************************************
+    261           * @fn          MT_AppCnfBDBSetJoinUsesInstallCodeKey
+    262           *
+    263           * @brief       Configure bdbJoinUsesInstallCodeKey attribute.
+    264           *
+    265           * @param       Set attribute to FALSE if *pBuf == 0, FALSE otherwise
+    266           *
+    267           * @return      none
+    268           */
+    269          static void MT_AppCnfBDBSetJoinUsesInstallCodeKey(uint8 *pBuf)
+    270          {
+    271            uint8 retValue = ZSuccess;
+    272            uint8 cmdId;
+    273            
+    274            /* parse header */
+    275            cmdId = pBuf[MT_RPC_POS_CMD1];
+    276            pBuf += MT_RPC_FRAME_HDR_SZ;
+    277            
+    278            if(*pBuf)
+    279            {
+    280              bdb_setJoinUsesInstallCodeKey(TRUE);
+    281            }
+    282            else
+    283            {
+    284              bdb_setJoinUsesInstallCodeKey(FALSE);
+    285            }
+    286            /* Build and send back the response */
+    287            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    288          }
+    289          
+    290           /*********************************************************************
+    291           * @fn          MT_AppCnfBDBAddInstallCode
+    292           *
+    293           * @brief       Add a preconfigured key used as IC derived key to TC device
+    294           *              see formats allowed in BDB_INSTALL_CODE_USE.
+    295           *
+    296           * @param       pBuf - pointer to received buffer
+    297           *
+    298           * @return      none
+    299           */
+    300          static void MT_AppCnfBDBAddInstallCode(uint8* pBuf)
+    301          {
+    302            uint8 retValue = ZSuccess;
+    303            uint8 cmdId;
+    304            uint8 *pExtAddr;
+    305            uint8 installCodeFormat;
+    306            
+    307            /* parse header */
+    308            cmdId = pBuf[MT_RPC_POS_CMD1];
+    309            pBuf += MT_RPC_FRAME_HDR_SZ;
+    310            
+    311            installCodeFormat = *pBuf;
+    312            
+    313            pBuf++;
+    314            
+    315            /* Extended Addr */
+    316            pExtAddr = pBuf;
+    317            pBuf += Z_EXTADDR_LEN;  //Point to the IC data
+    318             
+    319            switch(installCodeFormat)
+    320            {
+    321              case BDB_INSTALL_CODE_USE_IC_CRC:
+    322                retValue = bdb_addInstallCode(pBuf,pExtAddr);
+    323              break;
+    324              case BDB_INSTALL_CODE_USE_KEY:
+    325                retValue = APSME_AddTCLinkKey(pBuf,pExtAddr);
+    326              break;
+    327            }
+    328            
+    329            /* Build and send back the response */
+    330            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    331          }
+    332          #endif
+    333          #if (ZG_BUILD_JOINING_TYPE)
+    334          
+    335           /*********************************************************************
+    336           * @fn      MT_AppCnfBDBSetActiveCentralizedKey
+    337           *
+    338           * @brief   Set the active centralized key to be used.
+    339           *
+    340           * @param   pBuf - pointer to received buffer
+    341           *
+    342           * @return  void
+    343           */
+    344          static void MT_AppCnfBDBSetActiveCentralizedKey(uint8* pBuf)
+    345          {
+    346            uint8 retValue;
+    347            uint8 cmdId;
+    348            uint8 keyMode;
+    349            
+    350            /* parse header */
+    351            cmdId = pBuf[MT_RPC_POS_CMD1];
+    352            pBuf += MT_RPC_FRAME_HDR_SZ;
+    353            
+    354            //get the key mode
+    355            keyMode = *pBuf;
+    356            
+    357            //point to the key input
+    358            pBuf++;
+    359          
+    360            retValue = bdb_setActiveCentralizedLinkKey(keyMode,pBuf);
+    361          
+    362            /* Build and send back the response */
+    363            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    364          }
+    365          
+    366          #endif //#if(ZG_BUILD_JOINING_TYPE)
+    367          
+    368          #if (ZG_BUILD_ENDDEVICE_TYPE) 
+    369           /*********************************************************************
+    370           * @fn      MT_AppCnfBDBZedAttemptRecoverNwk
+    371           *
+    372           * @brief   Instruct the ZED to try to rejoin its previews network
+    373           *
+    374           * @param   pBuf - pointer to received buffer
+    375           *
+    376           * @return  void
+    377           */
+    378          static void MT_AppCnfBDBZedAttemptRecoverNwk(uint8* pBuf)
+    379          {
+    380            uint8 retValue;
+    381            uint8 cmdId;
+    382            
+    383            /* parse header */
+    384            cmdId = pBuf[MT_RPC_POS_CMD1];
+    385            pBuf += MT_RPC_FRAME_HDR_SZ;
+    386            
+    387            retValue = bdb_ZedAttemptRecoverNwk();
+    388          
+    389            /* Build and send back the response */
+    390            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    391          }
+    392          #endif
+    393          
+    394          
+    395          
+    396          
+    397          #if (ZG_BUILD_COORDINATOR_TYPE)
+    398          /***************************************************************************************************
+    399          * @fn      MT_AppCnfSetAllowRejoinTCPolicy
+    400          *
+    401          * @brief   Set the AllowRejoin TC policy
+    402          *
+    403          * @param   pBuf - pointer to received buffer
+    404          *
+    405          * @return  void
+    406          ***************************************************************************************************/
+    407          static void MT_AppCnfSetAllowRejoinTCPolicy(uint8 *pBuf)
+    408          {
+    409            uint8 retValue = ZSuccess;
+    410            uint8 cmdId;
+    411          
+    412            /* parse header */
+    413            cmdId = pBuf[MT_RPC_POS_CMD1];
+    414            pBuf += MT_RPC_FRAME_HDR_SZ;
+    415           
+    416            if(*pBuf)
+    417            {
+    418              zgAllowRejoins = TRUE;
+    419            }
+    420            else
+    421            {
+    422              zgAllowRejoins = FALSE;
+    423            }
+    424          
+    425            /* Build and send back the response */
+    426            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    427          }
+    428          #endif
+    429          
+    430          /***************************************************************************************************
+    431           * @fn      MT_AppCnfSetEndDeviceTimeout
+    432           *
+    433           * @brief   Set End Device Timeout
+    434           *
+    435           * @param   pBuf - pointer to received buffer
+    436           *
+    437           * @return  void
+    438           ***************************************************************************************************/
+    439          static void MT_AppCnfSetEndDeviceTimeout(uint8 *pBuf)
+    440          {
+    441            uint8 retValue = ZSuccess;
+    442            uint8 cmdId;
+    443            
+    444            /* parse header */
+    445            cmdId = pBuf[MT_RPC_POS_CMD1];
+    446            pBuf += MT_RPC_FRAME_HDR_SZ;
+    447          
+    448            if(*pBuf > 14)
+    449            {
+    450              retValue = ZInvalidParameter;
+    451            }
+    452            else
+    453            {
+    454              /* Populate info */
+    455              zgEndDeviceTimeoutValue = *pBuf;
+    456              osal_nv_write( ZCD_NV_END_DEV_TIMEOUT_VALUE, 0, sizeof(zgEndDeviceTimeoutValue), &zgEndDeviceTimeoutValue);
+    457            }
+    458            /* Build and send back the response */
+    459            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    460          }
+    461            
+    462          /***************************************************************************************************
+    463           * @fn      MT_AppCnfSetDefaultRemoteEndDeviceTimeout
+    464           *
+    465           * @brief   Set Remote End Device Timeout
+    466           *
+    467           * @param   pBuf - pointer to received buffer
+    468           *
+    469           * @return  void
+    470           ***************************************************************************************************/
+    471          static void MT_AppCnfSetDefaultRemoteEndDeviceTimeout(uint8 *pBuf)
+    472          {
+    473            uint8 retValue = ZSuccess;
+    474            uint8 cmdId;
+    475            uint8  tempTimeoutIndex;
+    476          
+    477            /* parse header */
+    478            cmdId = pBuf[MT_RPC_POS_CMD1];
+    479            pBuf += MT_RPC_FRAME_HDR_SZ;
+    480           
+    481            /* Populate info */
+    482            tempTimeoutIndex = *pBuf++;
+    483            
+    484            if(tempTimeoutIndex > 14)
+    485            {
+    486              retValue = ZInvalidParameter;
+    487            }
+    488            else
+    489            {
+    490              /* Populate info */
+    491              zgNwkEndDeviceTimeoutDefault = tempTimeoutIndex;
+    492              osal_nv_write( ZCD_NV_NWK_ENDDEV_TIMEOUT_DEF, 0, sizeof(zgNwkEndDeviceTimeoutDefault), &zgNwkEndDeviceTimeoutDefault );
+    493            }
+    494          
+    495            /* Build and send back the response */
+    496            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    497          }
+    498          
+    499           /***************************************************************************************************
+    500           * @fn      MT_AppCnfSetNwkFrameCounter
+    501           *
+    502           * @brief   Set the nwk frame counter to the specified value for the current network.
+    503           *          THIS IS ONLY A DEBUG INTERFACE AND SHOULD NOT BE USE IN REAL APPLICATIONS
+    504           *
+    505           * @param   pBuf - nwk frame counter
+    506           *
+    507           * @return  void
+    508           ***************************************************************************************************/
+    509           static void MT_AppCnfSetNwkFrameCounter(uint8* pBuf)
+    510          {
+    511            uint8 retValue = ZSuccess;
+    512            uint8 cmdId;
+    513          
+    514            /* parse header */
+    515            cmdId = pBuf[MT_RPC_POS_CMD1];
+    516            pBuf += MT_RPC_FRAME_HDR_SZ;
+    517          
+    518            nwkFrameCounter = osal_build_uint32(pBuf, sizeof(uint32));
+    519            nwkFrameCounterChanges = 0;
+    520            
+    521            //Save the NwkFrameCounter
+    522            ZDApp_SaveNwkKey();
+    523          
+    524            /* Build and send back the response */
+    525            MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP_CNF), cmdId, 1, &retValue);
+    526          }
+    527          
+    528          #endif
+    529          
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      1     17   MT_AppCnfCommandProcessing
+        0     13   -> APSME_AddTCLinkKey
+        0     13   -> MT_BuildAndSendZToolResponse
+        0     13   -> ZDApp_SaveNwkKey
+        0     13   -> bdb_StartCommissioning
+        0     13   -> bdb_ZedAttemptRecoverNwk
+        0     13   -> bdb_addInstallCode
+        0     13   -> bdb_setActiveCentralizedLinkKey
+        0     13   -> bdb_setChannelAttribute
+        0     13   -> bdb_setJoinUsesInstallCodeKey
+        0     13   -> bdb_setTCRequireKeyExchange
+        0     13   -> osal_build_uint32
+        0     17   -> osal_nv_write
+      3      3   MT_AppCnfCommissioningNotification
+        2      3   -> MT_BuildAndSendZToolResponse
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?Subroutine0
+       4  ?Subroutine1
+       4  ?Subroutine2
+      12  ?Subroutine3
+       9  ?Subroutine4
+     500  MT_AppCnfCommandProcessing
+      74  MT_AppCnfCommissioningNotification
+      12  -- Other
+
+ 
+ 615 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+ 
+  12 bytes of CODE     memory
+ 615 bytes of HUGECODE memory
+
+Errors: none
+Warnings: none
