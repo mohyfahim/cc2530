@@ -1,0 +1,50 @@
+#Generating source browse information for project light_switch
+
+
+#Abbreviations
+cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\SourceIndexer.exe
+ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\PbdLink.exe
+bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build light_switch.pbi : index light_switch.xcl
+build basic_rf.pbi : index basic_rf.xcl
+build basic_rf_security.pbi : index basic_rf_security.xcl
+build hal_int.pbi : index hal_int.xcl
+build hal_lcd_srf05.pbi : index hal_lcd_srf05.xcl
+build adc.pbi : index adc.xcl
+build clock.pbi : index clock.xcl
+build hal_mcu.pbi : index hal_mcu.xcl
+build hal_rf.pbi : index hal_rf.xcl
+build hal_rf_security.pbi : index hal_rf_security.xcl
+build hal_assert.pbi : index hal_assert.xcl
+build hal_board.pbi : index hal_board.xcl
+build hal_button.pbi : index hal_button.xcl
+build hal_digio.pbi : index hal_digio.xcl
+build hal_joystick.pbi : index hal_joystick.xcl
+build hal_led.pbi : index hal_led.xcl
+build util.pbi : index util.xcl
+build util_buffer.pbi : index util_buffer.xcl
+build util_lcd.pbi : index util_lcd.xcl
+build light_switch_part0.pbi : link light_switch.pbi basic_rf.pbi basic_rf_security.pbi hal_int.pbi
+build light_switch_part1.pbi : link hal_lcd_srf05.pbi adc.pbi clock.pbi hal_mcu.pbi
+build light_switch_part2.pbi : link hal_rf.pbi hal_rf_security.pbi hal_assert.pbi hal_board.pbi
+build light_switch_part3.pbi : link hal_button.pbi hal_digio.pbi hal_joystick.pbi hal_led.pbi
+build light_switch_part4.pbi : link util.pbi util_buffer.pbi util_lcd.pbi
+build light_switch.pbd : link light_switch_part0.pbi light_switch_part1.pbi light_switch_part2.pbi light_switch_part3.pbi light_switch_part4.pbi
+build light_switch.pbw : browsedata light_switch.pbd
+
+

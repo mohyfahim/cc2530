@@ -1,0 +1,11 @@
+basic_rf.pbi: \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\basicrf\basic_rf.c \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/targets/interface\hal_int.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/common\hal_types.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/targets/interface\hal_mcu.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/targets/interface\hal_rf.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\basicrf/basic_rf.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/common\hal_defs.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/utils\util.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib\string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib/sysmac.h

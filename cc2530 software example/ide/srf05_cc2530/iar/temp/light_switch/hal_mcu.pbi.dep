@@ -1,0 +1,8 @@
+hal_mcu.pbi: \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\radios\cc2530\hal_mcu.c \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/common\hal_types.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/targets/interface\hal_mcu.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\radios\cc2530/clock.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/common\hal_defs.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\ioCC2530.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/targets/interface\hal_assert.h

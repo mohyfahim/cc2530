@@ -1,0 +1,13 @@
+hal_rf_security.pbi: \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\radios\cc2530\hal_rf_security.c \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/targets/srf05_soc\hal_board.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\ioCC2530.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/common/cc8051\hal_cc8051.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/common\hal_types.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/common\hal_defs.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/targets/interface\hal_mcu.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/targets/interface\hal_rf.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/targets/interface\hal_rf_security.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530_91\iar/../../../source/Components/utils\util.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib\string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\clib/sysmac.h

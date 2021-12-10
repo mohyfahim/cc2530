@@ -1,0 +1,9 @@
+hal_led.pbi: \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\targets\srf05_soc\hal_led.c \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/common\hal_types.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/targets/interface\hal_led.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\targets\srf05_soc/hal_board.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\8051\inc\ioCC2530.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/common/cc8051\hal_cc8051.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/common\hal_defs.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/targets/interface\hal_mcu.h

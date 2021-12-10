@@ -1,0 +1,6 @@
+util.pbi: \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\utils\util.c \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\source\components\utils/util.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/common\hal_types.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/common\hal_defs.h \
+  C:\Users\Fahim\Documents\cc2530\ software\ example\ide\srf05_cc2530\iar/../../../source/Components/targets/interface\hal_rf.h
